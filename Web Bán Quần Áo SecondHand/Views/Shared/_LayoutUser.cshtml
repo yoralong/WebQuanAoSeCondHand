@@ -1,0 +1,411 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="header">
+        <div class=" container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="~/Content/Images/test.png" width="150px" height="100px" />
+                </div>
+                <nav>
+                    <ul id="MenuItem">
+                        <li><a href="#home">TRANG CHỦ | HOME</a></li>
+
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropbtn">BỘ SƯU TẬP | COLLECTIONS</a>
+                            <i class="fa fa-chevron-down" aria-hidden="true">
+
+                            </i>
+                            <div class="dropdown-content">
+                                <a href="#">T-Shirt</a>
+                                <a href="#">Shirt</a>
+                                <a href="#">Jacket</a>
+                                <a href="#">Hoodie</a>
+                                <a href="#">Pants</a>
+                                <a href="#">Short</a>
+                            </div>
+                        </li>
+                        <li><a href="#home">CALA | ABOUT US</a></li>
+                        <li><a href="#home">Chính sách đổi trả</a></li>
+                        
+
+                    </ul>
+                </nav>
+                <img src="~/Content/Images/cart.png" width="25px" height="25px" />
+            </div>
+            <!--end logo and menu-->
+            <!--Banner-->
+            <div class="row">
+                <div class="col-2">
+                    <h1>CALA <br /> Summer Collection</h1>
+                    <p>
+                        Mùa Hè Vui Tươi. Một mùa hè rực rỡ đã về cùng sắc màu và những niềm hân hoan bung nở..<br />
+
+                    </p>
+                    <a href="" class="btn"> Xem Ngay &#10132;</a>
+
+                </div>
+                <div class="col-2">
+                    <img src="~/Content/Images/all-sports-banner.png" />
+                </div>
+            </div>
+            <!--End banner-->
+        </div>
+    </div>
+    <div style="color:red;font-size:18px">
+           
+        @RenderBody()
+    </div>
+    <!--End header-->
+    <!--Categories-->
+    <div class="small-container">
+        <div class="categories">
+            <div class="row">
+                <div class="col-3">
+                    <img src="~/Content/Images/category-one.png" />
+                </div>
+                <div class="col-3">
+                    <img src="~/Content/Images/category-2.jpg" />
+                </div>
+                <div class="col-3">
+                    <img src="~/Content/Images/category4.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End categories-->
+    <!--Sản phẩm nổi bật-->
+    <div class="small-container">
+        <h2 class="title">Products Display</h2>
+        <div class="row">
+            <div class="col-4">
+                <img src="~/Content/Images/1.jpg" />
+                <h4>Race Car T-Shirt White</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <img src="~/Content/Images/2.jpg" />
+                <h4> Race Car T-Shirt Brown</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <img src="~/Content/Images/3.jpg" alt="Alternate Text" />
+                <h4> Robot T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <img src="~/Content/Images/4.jpg" alt="Alternate Text" />
+                <h4>Eagle T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <img src="~/Content/Images/5.jpg" alt="Alternate Text" />
+                <h4>1871 Grey T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+
+                </div>
+            </div>
+
+            <div class="col-4">
+                <img src="~/Content/Images/6.jpg" alt="Alternate Text" />
+                <h4>MLB Blue T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <img src="~/Content/Images/7.jpg" alt="Alternate Text" />
+                <h4>Lips T-Shirt</h4>
+                <div class="rating">
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <img src="~/Content/Images/8.jpg" alt="Alternate Text" />
+                <h4>University Blue T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <img src="~/Content/Images/9.jpg" alt="Alternate Text" />
+                <h4>Blue Cow T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <img src="~/Content/Images/10.jpg" alt="Alternate Text" />
+                <h4>Saw White T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <img src="~/Content/Images/11.jpg" alt="Alternate Text" />
+                <h4>Champion White T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <img src="~/Content/Images/12.jpg" alt="Alternate Text" />
+                <h4>Cowboys White T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End sản phẩm nổi bật-->
+    <!--Quảng cáo sản phẩm mới-->
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="~/Content/Images/exclusive Product.png" class="offer-img" />
+                </div>
+                <div class="col-2">
+                    <p>Only Available in This Store</p>
+                    <h1>Xiaomi Mi Smart Band 4</h1>
+                    <small>
+                        AMOLED color touch screen with better brightness and 40% more viewable screen.
+                        View your call, message and notification.
+                        Track physical activity (including swimming).
+                        Water resistant up to 50m.
+                        Improvement in the meansurement of metrics.
+                    </small>
+                    <div class="button">
+                        <a href="javascript:buyNow()" class="btn">Buy Now &#10132;</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--END quảng cáo sản phẩm mới-->
+    <!--Nhận xét khách hàng-->
+    <div class="testimonial">
+        <div class="small-container">
+            <div class="row">
+
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>
+                        Sản phẩm này rất tốt,giao hàng tận tình tôi rất thích.
+                    </p>
+                    <div class="rating">
+                        <i class=" fa fa-star"></i>
+                        <i class=" fa fa-star"></i>
+                        <i class=" fa fa-star"></i>
+                        <i class=" fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <img src="~/Content/Images/user-1.png" alt="Alternate Text" />
+                    <h3>Lucy Bemana</h3>
+                </div>
+
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>
+                        Sản phẩm này rất tốt,Đây là điều tôi mong chờ.
+                    </p>
+                    <div class="rating">
+                        <i class=" fa fa-star"></i>
+                        <i class=" fa fa-star"></i>
+                        <i class=" fa fa-star"></i>
+                        <i class=" fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <img src="~/Content/Images/user-2.png" alt="Alternate Text" />
+                    <h3>Brian Stacy</h3>
+                </div>
+
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>
+                        Sản phẩm này rất tốt. Tôi sẽ mua lại vào lần sau.
+                    </p>
+                    <div class="rating">
+                        <i class=" fa fa-star"></i>
+                        <i class=" fa fa-star"></i>
+                        <i class=" fa fa-star"></i>
+                        <i class=" fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <img src="~/Content/Images/user-3.png" alt="Alternate Text" />
+                    <h3>Betty Jane</h3>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--Logo Thương Hiệu -->
+    <div class="brands">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-5">
+                    <img src="~/Content/Images/logo-coca-cola.png" alt="Alternate Text" />
+                </div>
+
+                <div class="col-5">
+                    <img src="~/Content/Images/logo-godrej.png" alt="Alternate Text" />
+                </div>
+
+                <div class="col-5">
+                    <img src="~/Content/Images/logo-paypal.png" alt="Alternate Text" />
+                </div>
+
+                <div class="col-5">
+                    <img src="~/Content/Images/logo-oppo.png" alt="Alternate Text" />
+                </div>
+
+                <div class="col-5">
+                    <img src="~/Content/Images/logo-philips.png" alt="Alternate Text" />
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!--footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <!--Phần download app-->
+                <div class="footer-col-1">
+                    <h3>Dowload Our App</h3>
+                    <p> Dowload App for Andriod and ios mobile phone.</p>
+                    <div class="app-logo">
+                        <img src="~/Content/Images/play-store.png" alt="Alternate Text" />
+                        <img src="~/Content/Images/app-store.png" alt="Alternate Text" />
+                    </div>
+                </div>
+
+                <!--Logo footer-->
+                <div class="footer-col-2">
+                    <img src="~/Content/Images/logo-one.png" alt="Alternate Text" />
+                    <p>Our Purpose Is to Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many</p>
+                </div>
+
+                <!--Usefull link-->
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Become Affiliate</li>
+                    </ul>
+                </div>
+
+                <!--Follow us-->
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+
+            </div>
+            <!--chan footer-->
+            <hr>
+            <p class="copyright">copyright 2021 - CALA Team</p>
+        </div>
+    </div>
+    <!--End footer-->
+
+</body>
+</html>
+
+<script type="text/javascript">
+    function buyNow() {
+        question = confirm("Bạn muốn mua sản phẩm này ? ");
+        if (question != false) {
+            alert('Cảm ơn bạn đã mua sản phẩm');
+        }
+    }
+</script>
