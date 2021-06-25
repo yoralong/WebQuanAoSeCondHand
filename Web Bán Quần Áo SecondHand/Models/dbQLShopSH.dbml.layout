@@ -58,7 +58,7 @@
         <classShapeMoniker Id="be852065-b454-4037-82eb-a653f7300a9a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.06814697265625); (4 : 2.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 2.06814697265625); (4 : 2.06814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbQLShopSHDataContext/Voucher/Voucher_HoaDon" />
       <nodes>
         <classShapeMoniker Id="71584941-0cf0-4dfe-8525-26ce6903d47e" />
@@ -73,26 +73,26 @@
       </nodes>
     </associationConnector>
     <classShape Id="e25355bd-5bad-4535-afeb-cfaf811121a3" absoluteBounds="9.75, 2.25, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/dbQLShopSHDataContext/SanPham1" />
+      <DataClassMoniker Name="/dbQLShopSHDataContext/SanPham" />
       <nestedChildShapes>
         <elementListCompartment Id="ff507d7b-6377-437e-84af-4767f45996db" absoluteBounds="9.765, 2.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(9.75 : 3.89024983723958); (8.875 : 3.89024983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/dbQLShopSHDataContext/SanPham1/SanPham1_CTHD" />
+    <associationConnector edgePoints="[(9.75 : 3.89024983723958); (8.875 : 3.89024983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbQLShopSHDataContext/SanPham/SanPham1_CTHD" />
       <nodes>
         <classShapeMoniker Id="e25355bd-5bad-4535-afeb-cfaf811121a3" />
         <classShapeMoniker Id="43dc4578-308e-42ad-954f-1b3f18b031e2" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(12.75 : 3.95274983723958); (12.4270833333333 : 3.95274983723958 : JumpStart); (12.2604166666667 : 3.95274983723958 : JumpEnd); (11.75 : 3.95274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(12.75 : 3.95274983723958); (11.75 : 3.95274983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbQLShopSHDataContext/LoaiSP/LoaiSP_SanPham1" />
       <nodes>
         <classShapeMoniker Id="9759f28e-7f7f-4c2b-b87e-b1d8f5c45f19" />
         <classShapeMoniker Id="e25355bd-5bad-4535-afeb-cfaf811121a3" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(12.34375 : 6.25); (12.34375 : 2.84375); (11.75 : 2.84375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(12.34375 : 6.25); (12.34375 : 2.84375); (11.75 : 2.84375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbQLShopSHDataContext/ThuongHieu/ThuongHieu_SanPham1" />
       <nodes>
         <classShapeMoniker Id="2d10f815-551f-41e7-887a-a49707677c58" />

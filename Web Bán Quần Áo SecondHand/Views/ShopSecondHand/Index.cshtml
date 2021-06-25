@@ -3,10 +3,29 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
+<div class="small-container">
+    <h2 class="title">Products Display</h2>
+    <div class="row">
 
-@foreach(var sanpham in Model)
-{
-    @sanpham.TenSP;
-}
+        @foreach (var sanpham in Model)
+        {
+            <div class="col-4">
+                <img src="@sanpham.Image" />
+                <h4>@sanpham.TenSP</h4>
+                <p class="price ">
+                    
+                    @sanpham.DonGia.ToString() đ
+                    <span class="price-del"></span>
+                </p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+            </div>
 
-
+        }
+    </div>
+</div>

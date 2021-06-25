@@ -25,7 +25,7 @@
       <Column Name="SL" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="DonGia" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Association Name="HoaDon_CTHD" Member="HoaDon" ThisKey="MaHD" OtherKey="MaHD" Type="HoaDon" IsForeignKey="true" />
-      <Association Name="SanPham1_CTHD" Member="SanPham1" ThisKey="MaSP" OtherKey="MaSP" Type="SanPham1" IsForeignKey="true" />
+      <Association Name="SanPham1_CTHD" Member="SanPham" Storage="_SanPham1" ThisKey="MaSP" OtherKey="MaSP" Type="SanPham" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.HoaDon" Member="HoaDons">
@@ -57,7 +57,7 @@
     <Type Name="LoaiSP">
       <Column Name="MaLoai" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenLoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="LoaiSP_SanPham1" Member="SanPham1s" ThisKey="MaLoai" OtherKey="MaLoai" Type="SanPham1" />
+      <Association Name="LoaiSP_SanPham1" Member="SanPhams" Storage="_SanPham1s" ThisKey="MaLoai" OtherKey="MaLoai" Type="SanPham" />
     </Type>
   </Table>
   <Table Name="dbo.ThuongHieu" Member="ThuongHieus">
@@ -66,11 +66,11 @@
       <Column Name="TenTH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="SDT" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Association Name="ThuongHieu_SanPham1" Member="SanPham1s" ThisKey="MaTH" OtherKey="MaTH" Type="SanPham1" />
+      <Association Name="ThuongHieu_SanPham1" Member="SanPhams" Storage="_SanPham1s" ThisKey="MaTH" OtherKey="MaTH" Type="SanPham" />
     </Type>
   </Table>
-  <Table Name="dbo.SanPham" Member="SanPham1s">
-    <Type Name="SanPham1">
+  <Table Name="dbo.SanPham" Member="SanPhams">
+    <Type Name="SanPham">
       <Column Name="MaSP" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MaLoai" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="MaTH" Type="System.String" DbType="NChar(10)" CanBeNull="true" />

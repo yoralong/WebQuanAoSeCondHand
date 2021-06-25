@@ -51,9 +51,9 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
     partial void InsertThuongHieu(ThuongHieu instance);
     partial void UpdateThuongHieu(ThuongHieu instance);
     partial void DeleteThuongHieu(ThuongHieu instance);
-    partial void InsertSanPham1(SanPham1 instance);
-    partial void UpdateSanPham1(SanPham1 instance);
-    partial void DeleteSanPham1(SanPham1 instance);
+    partial void InsertSanPham(SanPham instance);
+    partial void UpdateSanPham(SanPham instance);
+    partial void DeleteSanPham(SanPham instance);
     #endregion
 		
 		public dbQLShopSHDataContext() : 
@@ -142,11 +142,11 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<SanPham1> SanPham1s
+		public System.Data.Linq.Table<SanPham> SanPhams
 		{
 			get
 			{
-				return this.GetTable<SanPham1>();
+				return this.GetTable<SanPham>();
 			}
 		}
 	}
@@ -491,7 +491,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 		
 		private EntityRef<HoaDon> _HoaDon;
 		
-		private EntityRef<SanPham1> _SanPham1;
+		private EntityRef<SanPham> _SanPham1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -510,7 +510,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 		public CTHD()
 		{
 			this._HoaDon = default(EntityRef<HoaDon>);
-			this._SanPham1 = default(EntityRef<SanPham1>);
+			this._SanPham1 = default(EntityRef<SanPham>);
 			OnCreated();
 		}
 		
@@ -637,7 +637,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SanPham1_CTHD", Storage="_SanPham1", ThisKey="MaSP", OtherKey="MaSP", IsForeignKey=true)]
-		public SanPham1 SanPham1
+		public SanPham SanPham
 		{
 			get
 			{
@@ -645,7 +645,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 			}
 			set
 			{
-				SanPham1 previousValue = this._SanPham1.Entity;
+				SanPham previousValue = this._SanPham1.Entity;
 				if (((previousValue != value) 
 							|| (this._SanPham1.HasLoadedOrAssignedValue == false)))
 				{
@@ -665,7 +665,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 					{
 						this._MaSP = default(string);
 					}
-					this.SendPropertyChanged("SanPham1");
+					this.SendPropertyChanged("SanPham");
 				}
 			}
 		}
@@ -1244,7 +1244,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 		
 		private string _TenLoai;
 		
-		private EntitySet<SanPham1> _SanPham1s;
+		private EntitySet<SanPham> _SanPham1s;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1258,7 +1258,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 		
 		public LoaiSP()
 		{
-			this._SanPham1s = new EntitySet<SanPham1>(new Action<SanPham1>(this.attach_SanPham1s), new Action<SanPham1>(this.detach_SanPham1s));
+			this._SanPham1s = new EntitySet<SanPham>(new Action<SanPham>(this.attach_SanPham1s), new Action<SanPham>(this.detach_SanPham1s));
 			OnCreated();
 		}
 		
@@ -1303,7 +1303,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiSP_SanPham1", Storage="_SanPham1s", ThisKey="MaLoai", OtherKey="MaLoai")]
-		public EntitySet<SanPham1> SanPham1s
+		public EntitySet<SanPham> SanPhams
 		{
 			get
 			{
@@ -1335,13 +1335,13 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 			}
 		}
 		
-		private void attach_SanPham1s(SanPham1 entity)
+		private void attach_SanPham1s(SanPham entity)
 		{
 			this.SendPropertyChanging();
 			entity.LoaiSP = this;
 		}
 		
-		private void detach_SanPham1s(SanPham1 entity)
+		private void detach_SanPham1s(SanPham entity)
 		{
 			this.SendPropertyChanging();
 			entity.LoaiSP = null;
@@ -1362,7 +1362,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 		
 		private string _SDT;
 		
-		private EntitySet<SanPham1> _SanPham1s;
+		private EntitySet<SanPham> _SanPham1s;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1380,7 +1380,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 		
 		public ThuongHieu()
 		{
-			this._SanPham1s = new EntitySet<SanPham1>(new Action<SanPham1>(this.attach_SanPham1s), new Action<SanPham1>(this.detach_SanPham1s));
+			this._SanPham1s = new EntitySet<SanPham>(new Action<SanPham>(this.attach_SanPham1s), new Action<SanPham>(this.detach_SanPham1s));
 			OnCreated();
 		}
 		
@@ -1465,7 +1465,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ThuongHieu_SanPham1", Storage="_SanPham1s", ThisKey="MaTH", OtherKey="MaTH")]
-		public EntitySet<SanPham1> SanPham1s
+		public EntitySet<SanPham> SanPhams
 		{
 			get
 			{
@@ -1497,13 +1497,13 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 			}
 		}
 		
-		private void attach_SanPham1s(SanPham1 entity)
+		private void attach_SanPham1s(SanPham entity)
 		{
 			this.SendPropertyChanging();
 			entity.ThuongHieu = this;
 		}
 		
-		private void detach_SanPham1s(SanPham1 entity)
+		private void detach_SanPham1s(SanPham entity)
 		{
 			this.SendPropertyChanging();
 			entity.ThuongHieu = null;
@@ -1511,7 +1511,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SanPham")]
-	public partial class SanPham1 : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class SanPham : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -1556,7 +1556,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
     partial void OnImageChanged();
     #endregion
 		
-		public SanPham1()
+		public SanPham()
 		{
 			this._CTHDs = new EntitySet<CTHD>(new Action<CTHD>(this.attach_CTHDs), new Action<CTHD>(this.detach_CTHDs));
 			this._LoaiSP = default(EntityRef<LoaiSP>);
@@ -1742,12 +1742,12 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 					if ((previousValue != null))
 					{
 						this._LoaiSP.Entity = null;
-						previousValue.SanPham1s.Remove(this);
+						previousValue.SanPhams.Remove(this);
 					}
 					this._LoaiSP.Entity = value;
 					if ((value != null))
 					{
-						value.SanPham1s.Add(this);
+						value.SanPhams.Add(this);
 						this._MaLoai = value.MaLoai;
 					}
 					else
@@ -1776,12 +1776,12 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 					if ((previousValue != null))
 					{
 						this._ThuongHieu.Entity = null;
-						previousValue.SanPham1s.Remove(this);
+						previousValue.SanPhams.Remove(this);
 					}
 					this._ThuongHieu.Entity = value;
 					if ((value != null))
 					{
-						value.SanPham1s.Add(this);
+						value.SanPhams.Add(this);
 						this._MaTH = value.MaTH;
 					}
 					else
@@ -1816,13 +1816,13 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 		private void attach_CTHDs(CTHD entity)
 		{
 			this.SendPropertyChanging();
-			entity.SanPham1 = this;
+			entity.SanPham = this;
 		}
 		
 		private void detach_CTHDs(CTHD entity)
 		{
 			this.SendPropertyChanging();
-			entity.SanPham1 = null;
+			entity.SanPham = null;
 		}
 	}
 }
