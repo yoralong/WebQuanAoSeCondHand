@@ -6,7 +6,7 @@
     <title></title>
     
     <link href="~/Content/style.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!---- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"></!-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
@@ -14,14 +14,14 @@
         <div class=" container">
             <div class="navbar">
                 <div class="logo">
-                    <img src="~/Content/Images/test.png" width="150px" height="100px" />
+                    <img src="~/Content/Images/CaLaIcon1.jpg" width="150px" height="100px" />
                 </div>
                 <nav>
                     <ul id="MenuItem">
-                        <li><a href="#home">TRANG CHỦ | HOME</a></li>
+                        <li><a href="#home">TRANG CHỦ</a></li>
 
                         <li class="dropdown">
-                            <a href="javascript:void(0)" class="dropbtn">BỘ SƯU TẬP | COLLECTIONS</a>
+                            <a href="javascript:void(0)" class="dropbtn">BỘ SƯU TẬP</a>
                             <i class="fa fa-chevron-down" aria-hidden="true">
 
                             </i>
@@ -34,10 +34,10 @@
                                 <a href="#">Short</a>
                             </div>
                         </li>
-                        <li><a href="#home">CALA | ABOUT US</a></li>
+                        <li><a href="#home">CALA</a></li>
                         <li><a href="#home">Chính sách đổi trả</a></li>
-                        
-                       
+
+
                     </ul>
                 </nav>
                 <img src="~/Content/Images/cart.png" width="25px" height="25px" />
@@ -46,7 +46,7 @@
             <!--Banner-->
             <div class="row">
                 <div class="col-2">
-                    <h1>CALA <br /> Summer Collection</h1>
+                    <h1>Cala <br /> Summer Collection</h1>
                     <p>
                         Mùa Hè Vui Tươi. Một mùa hè rực rỡ đã về cùng sắc màu và những niềm hân hoan bung nở..<br />
 
@@ -55,16 +55,13 @@
 
                 </div>
                 <div class="col-2">
-                    <img src="~/Content/Images/all-sports-banner.png" />
+                    <img src="~/Content/Images/bia.jpg" />
                 </div>
             </div>
             <!--End banner-->
         </div>
     </div>
-    <div style="color:red;font-size:18px">
-           
-        @RenderBody()
-    </div>
+
     <!--End header-->
     <!--Categories-->
     <div class="CSSgal">
@@ -76,17 +73,17 @@
         <s id="s4"></s>
 
         <div class="slider">
-            <div style="background-image:url(../../Content/Images/anh.jpg);">
-                
+            <div style="background-image:url(../../Content/Images/all1.jpg);">
+
             </div>
-            <div style="background:#85b;">
-                
+            <div style="background-image:url(../../Content/Images/all2.jpg);">
+
             </div>
-            <div style="background:#e95;">
-                
+            <div style="background-image: url(../../Content/Images/all3.jpg);">
+
             </div>
-            <div style="background:#e59;">
-               
+            <div style="background-image: url(../../Content/Images/all4.jpg);">
+
             </div>
         </div>
 
@@ -106,6 +103,10 @@
 
     </div>
     <!--End categories-->
+    <div style="color:red;font-size:18px">
+        Dây la trang chủ
+        @RenderBody()
+    </div>
     <!--Sản phẩm nổi bật-->
     <div class="small-container">
         <h2 class="title">Products Display</h2>

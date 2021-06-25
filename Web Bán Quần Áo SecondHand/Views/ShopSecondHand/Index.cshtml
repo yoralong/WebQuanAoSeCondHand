@@ -1,8 +1,12 @@
-﻿
+﻿@model IEnumerable<Web_Bán_Quần_Áo_SecondHand.Models.SanPham>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
+@foreach(var sanpham in Model)
+{
+    @sanpham.TenSP;
+}
 
 
