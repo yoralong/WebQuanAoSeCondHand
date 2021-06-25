@@ -173,6 +173,7 @@
     <Content Include="Content\Images\logo-oppo.png" />
     <Content Include="Content\Images\logo-paypal.png" />
     <Content Include="Content\Images\logo-philips.png" />
+    <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\menu.png" />
     <Content Include="Content\Images\play-store.png" />
     <Content Include="Content\Images\product-10.jpg" />
