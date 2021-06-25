@@ -236,6 +236,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
     <Content Include="Views\ShopSecondHand\Index.cshtml" />
+    <Content Include="Views\ShopSecondHand\BoSuuTap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

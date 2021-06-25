@@ -22,5 +22,12 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
             return View(sanphammoi);
         }
 
+        public ActionResult BoSuuTap()
+		{
+            var suutap = from cd in data.LoaiSPs select cd;
+            return PartialView(suutap);
+		}
+
+
     }
 }
