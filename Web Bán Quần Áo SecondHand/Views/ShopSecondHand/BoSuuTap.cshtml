@@ -10,14 +10,9 @@
         @foreach(var item in Model)
         {
             <a href="@Url.Action("TenLoai","ShopSecondHand" ,new { id = item.MaLoai})" >
-
+                @item.TenLoai
             </a>
         }
-        <a href="#">T-Shirt</a>
-        <a href="#">Shirt</a>
-        <a href="#">Jacket</a>
-        <a href="#">Hoodie</a>
-        <a href="#">Pants</a>
-        <a href="#">Short</a>
+        
     </div>
 </li>
