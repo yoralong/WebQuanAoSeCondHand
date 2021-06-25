@@ -11,7 +11,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
     {
         // GET: ShopSecondHand
         dbQLShopSHDataContext data = new dbQLShopSHDataContext();
-
+       
         private List<SanPham> laysanpham (int count)
 		{
             return data.SanPhams.OrderByDescending(a => a.NgayNhap).Take(count).ToList();
