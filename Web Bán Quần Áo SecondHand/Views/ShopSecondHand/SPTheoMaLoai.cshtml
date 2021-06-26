@@ -1,15 +1,18 @@
-﻿@model IEnumerable<Web_Bán_Quần_Áo_SecondHand.Models.SanPham>
+﻿@model  IEnumerable<Web_Bán_Quần_Áo_SecondHand.Models.SanPham>
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "SPTheoMaLoai";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
-<!--Sản phẩm nổi bật-->
-<div class="small-container">
-    <h2 class="title">Products Display</h2>
-    <div class="row">
 
-        @foreach (var sanpham in Model)
-        {
+
+
+<div class="small-container">
+<h2 class="title">Loại Sản Phẩm</h2>
+<div class="row">
+
+    @foreach (var sanpham in Model)
+    {
         <div class="col-4">
             <a href="@Url.Action("Details","ShopSecondHand",new { id = sanpham.MaSP.Trim()})">
                 <img src="@sanpham.Image" />
@@ -27,9 +30,9 @@
                     <i class="fa fa-star-o"></i>
                 </div>
             </a>
+            
         </div>
-        }
-    
+        
+    }
 </div>
 </div>
-<!--End sản phẩm nổi bật-->

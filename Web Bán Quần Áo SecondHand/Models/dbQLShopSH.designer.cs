@@ -491,7 +491,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 		
 		private EntityRef<HoaDon> _HoaDon;
 		
-		private EntityRef<SanPham> _SanPham1;
+		private EntityRef<SanPham> _SanPham;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -510,7 +510,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 		public CTHD()
 		{
 			this._HoaDon = default(EntityRef<HoaDon>);
-			this._SanPham1 = default(EntityRef<SanPham>);
+			this._SanPham = default(EntityRef<SanPham>);
 			OnCreated();
 		}
 		
@@ -549,7 +549,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 			{
 				if ((this._MaSP != value))
 				{
-					if (this._SanPham1.HasLoadedOrAssignedValue)
+					if (this._SanPham.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -636,26 +636,26 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SanPham1_CTHD", Storage="_SanPham1", ThisKey="MaSP", OtherKey="MaSP", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SanPham1_CTHD", Storage="_SanPham", ThisKey="MaSP", OtherKey="MaSP", IsForeignKey=true)]
 		public SanPham SanPham
 		{
 			get
 			{
-				return this._SanPham1.Entity;
+				return this._SanPham.Entity;
 			}
 			set
 			{
-				SanPham previousValue = this._SanPham1.Entity;
+				SanPham previousValue = this._SanPham.Entity;
 				if (((previousValue != value) 
-							|| (this._SanPham1.HasLoadedOrAssignedValue == false)))
+							|| (this._SanPham.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._SanPham1.Entity = null;
+						this._SanPham.Entity = null;
 						previousValue.CTHDs.Remove(this);
 					}
-					this._SanPham1.Entity = value;
+					this._SanPham.Entity = value;
 					if ((value != null))
 					{
 						value.CTHDs.Add(this);
@@ -1244,7 +1244,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 		
 		private string _TenLoai;
 		
-		private EntitySet<SanPham> _SanPham1s;
+		private EntitySet<SanPham> _SanPhams;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1258,7 +1258,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 		
 		public LoaiSP()
 		{
-			this._SanPham1s = new EntitySet<SanPham>(new Action<SanPham>(this.attach_SanPham1s), new Action<SanPham>(this.detach_SanPham1s));
+			this._SanPhams = new EntitySet<SanPham>(new Action<SanPham>(this.attach_SanPhams), new Action<SanPham>(this.detach_SanPhams));
 			OnCreated();
 		}
 		
@@ -1302,16 +1302,16 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiSP_SanPham1", Storage="_SanPham1s", ThisKey="MaLoai", OtherKey="MaLoai")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiSP_SanPham1", Storage="_SanPhams", ThisKey="MaLoai", OtherKey="MaLoai")]
 		public EntitySet<SanPham> SanPhams
 		{
 			get
 			{
-				return this._SanPham1s;
+				return this._SanPhams;
 			}
 			set
 			{
-				this._SanPham1s.Assign(value);
+				this._SanPhams.Assign(value);
 			}
 		}
 		
@@ -1335,13 +1335,13 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 			}
 		}
 		
-		private void attach_SanPham1s(SanPham entity)
+		private void attach_SanPhams(SanPham entity)
 		{
 			this.SendPropertyChanging();
 			entity.LoaiSP = this;
 		}
 		
-		private void detach_SanPham1s(SanPham entity)
+		private void detach_SanPhams(SanPham entity)
 		{
 			this.SendPropertyChanging();
 			entity.LoaiSP = null;
@@ -1362,7 +1362,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 		
 		private string _SDT;
 		
-		private EntitySet<SanPham> _SanPham1s;
+		private EntitySet<SanPham> _SanPhams;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1380,7 +1380,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 		
 		public ThuongHieu()
 		{
-			this._SanPham1s = new EntitySet<SanPham>(new Action<SanPham>(this.attach_SanPham1s), new Action<SanPham>(this.detach_SanPham1s));
+			this._SanPhams = new EntitySet<SanPham>(new Action<SanPham>(this.attach_SanPhams), new Action<SanPham>(this.detach_SanPhams));
 			OnCreated();
 		}
 		
@@ -1464,16 +1464,16 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ThuongHieu_SanPham1", Storage="_SanPham1s", ThisKey="MaTH", OtherKey="MaTH")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ThuongHieu_SanPham1", Storage="_SanPhams", ThisKey="MaTH", OtherKey="MaTH")]
 		public EntitySet<SanPham> SanPhams
 		{
 			get
 			{
-				return this._SanPham1s;
+				return this._SanPhams;
 			}
 			set
 			{
-				this._SanPham1s.Assign(value);
+				this._SanPhams.Assign(value);
 			}
 		}
 		
@@ -1497,13 +1497,13 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 			}
 		}
 		
-		private void attach_SanPham1s(SanPham entity)
+		private void attach_SanPhams(SanPham entity)
 		{
 			this.SendPropertyChanging();
 			entity.ThuongHieu = this;
 		}
 		
-		private void detach_SanPham1s(SanPham entity)
+		private void detach_SanPhams(SanPham entity)
 		{
 			this.SendPropertyChanging();
 			entity.ThuongHieu = null;
@@ -1530,6 +1530,8 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 		
 		private string _Image;
 		
+		private string _Details;
+		
 		private EntitySet<CTHD> _CTHDs;
 		
 		private EntityRef<LoaiSP> _LoaiSP;
@@ -1554,6 +1556,8 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
     partial void OnNgayNhapChanged();
     partial void OnImageChanging(string value);
     partial void OnImageChanged();
+    partial void OnDetailsChanging(string value);
+    partial void OnDetailsChanged();
     #endregion
 		
 		public SanPham()
@@ -1708,6 +1712,26 @@ namespace Web_Bán_Quần_Áo_SecondHand.Models
 					this._Image = value;
 					this.SendPropertyChanged("Image");
 					this.OnImageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Details", DbType="NVarChar(255)")]
+		public string Details
+		{
+			get
+			{
+				return this._Details;
+			}
+			set
+			{
+				if ((this._Details != value))
+				{
+					this.OnDetailsChanging(value);
+					this.SendPropertyChanging();
+					this._Details = value;
+					this.SendPropertyChanged("Details");
+					this.OnDetailsChanged();
 				}
 			}
 		}

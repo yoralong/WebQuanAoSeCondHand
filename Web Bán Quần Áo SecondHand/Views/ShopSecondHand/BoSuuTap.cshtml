@@ -9,7 +9,7 @@
     <div class="dropdown-content">
         @foreach(var item in Model)
         {
-            <a href="@Url.Action("SPTheoMaLoai","ShopSecondHand" ,new { id = item.MaLoai})" >
+            <a href="@Url.Action("SPTheoMaLoai","ShopSecondHand" ,new { id = item.MaLoai.Trim()})" >
                 @item.TenLoai
             </a>
         }

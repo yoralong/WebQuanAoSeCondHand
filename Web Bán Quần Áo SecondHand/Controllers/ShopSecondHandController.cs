@@ -16,6 +16,11 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
 		{
             return data.SanPhams.OrderByDescending(a => a.NgayNhap).Take(count).ToList();
 		}
+        public ActionResult SPTheoMaLoai(string id)
+        {
+            var sanphamtheoloai = from cd in data.SanPhams where cd.MaLoai.Trim() == id.Trim() select cd;
+            return View(sanphamtheoloai);
+        }
         public ActionResult Index()
         {
             var sanphammoi = laysanpham(12);
@@ -27,7 +32,13 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
             var suutap = from cd in data.LoaiSPs select cd;
             return PartialView(suutap);
 		}
-
+        public ActionResult Details(string id)
+        {
+            var details = from s in data.SanPhams
+                          where s.MaSP.Trim() == id.Trim()
+                          select s;
+            return View(details.Single());
+        }
 
     }
 }

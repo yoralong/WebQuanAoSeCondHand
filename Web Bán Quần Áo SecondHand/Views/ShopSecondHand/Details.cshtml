@@ -1,0 +1,60 @@
+﻿@model Web_Bán_Quần_Áo_SecondHand.Models.SanPham
+
+<style type="text/css">
+    #datmua a {
+        clear: both;
+        background-color: red;
+        color: white;
+        width: 120px;
+        height: 35px;
+        display: block;
+        float: right ;
+        text-align: center;
+        padding-top: 10px;
+        
+        text-decoration: none;
+        font-weight: bold;
+        
+    }
+
+        #datmua a:hover {
+            background-color: gray;
+            color: red;
+        }
+    #link a{
+        color:black;
+        font-weight:bold;
+    }
+</style>
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<div class="small-container" style="padding:20px 40px">
+    <h2 class="title">THÔNG TIN CHI TIẾT SẢN PHẨM</h2>
+    <div class="row">
+        <div>
+            <div style="width:40%; float:left;border-left:dotted 1px; border-color:azure">
+                <img src="@Model.Image" width="100%" />
+            </div>
+            <div style="width:60%;float:left;padding:10px">
+                <h4 style="font-weight:bold;color:red">Tên sản phẩm:@Model.TenSP</h4>
+                <p style="text-align:justify"><span style="font-weight:bold">Mô tả:</span>@Model.Details</p>
+                <p style="font-weight:bold">Giá bán:<span style="color:red;font-size:16pt">@Model.DonGia VNĐ</span></p>
+            </div>
+            <div>
+                <div id="datmua">
+                    <a href="@Url.Action("AddToCard", "ShoppingCard", new { id = Model.MaSP })" class="list-group-item"> ĐẶT MUA</a>
+                </div>
+            </div>
+        </div>
+        <div id="link">
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.MaSP }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        </div>
+        
+    </div>
+</div>
