@@ -166,9 +166,17 @@
     <Content Include="Content\Images\category-2.jpg" />
     <Content Include="Content\Images\category-one.png" />
     <Content Include="Content\Images\category4.jpg" />
+    <Content Include="Content\Images\donu.jpg" />
     <Content Include="Content\Images\exclusive Product.png" />
+    <Content Include="Content\Images\fb.jpg" />
+    <Content Include="Content\Images\giay-removebg-preview.png" />
+    <Content Include="Content\Images\images.png" />
+    <Content Include="Content\Images\insta.jpg" />
+    <Content Include="Content\Images\kyduyen.jpg" />
+    <Content Include="Content\Images\Lazada.jpg" />
     <Content Include="Content\Images\logo-coca-cola.png" />
     <Content Include="Content\Images\logo-godrej.png" />
+    <Content Include="Content\Images\logo-lazada-1.png" />
     <Content Include="Content\Images\logo-one.png" />
     <Content Include="Content\Images\logo-oppo.png" />
     <Content Include="Content\Images\logo-paypal.png" />
@@ -176,6 +184,7 @@
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\menu.png" />
     <Content Include="Content\Images\play-store.png" />
+    <Content Include="Content\Images\png-clipart-aspria-fitness-computer-icons-user-my-account-icon-miscellaneous-monochrome.png" />
     <Content Include="Content\Images\product-10.jpg" />
     <Content Include="Content\Images\product-11.jpg" />
     <Content Include="Content\Images\product-12.jpg" />
@@ -188,7 +197,10 @@
     <Content Include="Content\Images\product-9.jpg" />
     <Content Include="Content\Images\product-four.png" />
     <Content Include="Content\Images\product-one.png" />
+    <Content Include="Content\Images\quan.jpg" />
+    <Content Include="Content\Images\shopee.jpg" />
     <Content Include="Content\Images\style.css" />
+    <Content Include="Content\Images\tải xuống.jpg" />
     <Content Include="Content\Images\test.png" />
     <Content Include="Content\Images\tran-thanh-p-16031678576061691914167.png" />
     <Content Include="Content\Images\unnamed.jpg" />

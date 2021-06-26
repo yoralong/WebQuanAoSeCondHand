@@ -11,39 +11,40 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0" nonce="DRnzoawa"></script>
     <div class="header">
         <div class=" container">
             <div class="navbar">
                 <div class="logo">
-                    <img src="~/Content/Images/logo.png" width="200px" height="200px" />
+                    <img src="~/Content/Images/logo.png" width="300px" height="300px" />
                 </div>
                 <nav>
-                    <ul id="MenuItem" style="font-family: 'Times New Roman'">
+                    <ul id="MenuItem" style="font-family: Tahoma">
                         <li><a href="#home">TRANG CHỦ</a></li>
                         @Html.Action("BoSuuTap", "ShopSecondHand")
                         <li><a href="#home">CALA</a></li>
                         <li><a href="#home">CHÍNH SÁCH ĐỔI TRẢ</a></li>
-                        <li>
-                            <form id="demo-2">
-                                <input type="search" placeholder="Search">                          
-                            </form>
-                        </li>
                     </ul>
-                    
-
                 </nav>
+                <li>
+                    <form id="demo-2">
+                        <input type="search" placeholder="Search">
+                    </form>
+                </li>
                 <img src="~/Content/Images/cart.png" width="25px" height="25px" />
+                
             </div>
             <!--end logo and menu-->
             <!--Banner-->
-            
+
             <div class="col-2 img">
-                <img src="~/Content/Images/bia.jpg" />
+                <img src="~/Content/Images/bia.jpg" style="width:90%;"  />
             </div>
-                
-                    
-                
-            
+
+
+
+
             <!--End banner-->
         </div>
     </div>
@@ -90,29 +91,23 @@
     </div>
     <!--End categories-->
     <div style="color:black;font-size:18px">
-        
+
         @RenderBody()
     </div>
-    
-   
+
+
     <!--End sản phẩm nổi bật-->
     <!--Quảng cáo sản phẩm mới-->
     <div class="offer">
         <div class="small-container">
             <div class="row">
                 <div class="col-2">
-                    <img src="~/Content/Images/exclusive Product.png" class="offer-img" />
+                    <img src="~/Content/Images/giay-removebg-preview.png" class="offer-img" />
                 </div>
                 <div class="col-2">
                     <p>Only Available in This Store</p>
-                    <h1>Xiaomi Mi Smart Band 4</h1>
-                    <small>
-                        AMOLED color touch screen with better brightness and 40% more viewable screen.
-                        View your call, message and notification.
-                        Track physical activity (including swimming).
-                        Water resistant up to 50m.
-                        Improvement in the meansurement of metrics.
-                    </small>
+                    <h1>Nike Dunk Low</h1>
+                    
                     <div class="button">
                         <a href="javascript:buyNow()" class="btn">Buy Now &#10132;</a>
                     </div>
@@ -130,7 +125,7 @@
                 <div class="col-3">
                     <i class="fa fa-quote-left"></i>
                     <p>
-                        Sản phẩm này rất tốt,giao hàng tận tình tôi rất thích.
+                        Sản phẩm này rất tốt,giao hàng tận tình tôi rất thích.Nói chung rất ưng.
                     </p>
                     <div class="rating">
                         <i class=" fa fa-star"></i>
@@ -140,13 +135,13 @@
                         <i class="fa fa-star-half-o"></i>
                     </div>
                     <img src="~/Content/Images/tran-thanh-p-16031678576061691914167.png" alt="Alternate Text" />
-                    <h3>Lucy Bemana</h3>
+                    <h3>Trấn Thành</h3>
                 </div>
 
                 <div class="col-3">
                     <i class="fa fa-quote-left"></i>
                     <p>
-                        Sản phẩm này rất tốt,Đây là điều tôi mong chờ.
+                        Sản phẩm này rất tốt,Đây là điều tôi mong chờ.Giao hàng nhanh.
                     </p>
                     <div class="rating">
                         <i class=" fa fa-star"></i>
@@ -156,7 +151,7 @@
                         <i class="fa fa-star-half-o"></i>
                     </div>
                     <img src="~/Content/Images/unnamed.jpg" alt="Alternate Text" />
-                    <h3>Brian Stacy</h3>
+                    <h3>Sơn Tùng M-TP</h3>
                 </div>
 
                 <div class="col-3">
@@ -171,8 +166,8 @@
                         <i class=" fa fa-star"></i>
                         <i class="fa fa-star-half-o"></i>
                     </div>
-                    <img src="~/Content/Images/user-3.png" alt="Alternate Text" />
-                    <h3>Betty Jane</h3>
+                    <img src="~/Content/Images/kyduyen.jpg" alt="Alternate Text" />
+                    <h3>Hoa Hậu Kỳ Duyên</h3>
                 </div>
 
             </div>
@@ -184,11 +179,11 @@
         <div class="small-container">
             <div class="row">
                 <div class="col-5">
-                    <img src="~/Content/Images/logo-coca-cola.png" alt="Alternate Text" />
+                    <img src="~/Content/Images/fb.jpg" alt="Alternate Text" />
                 </div>
 
                 <div class="col-5">
-                    <img src="~/Content/Images/logo-godrej.png" alt="Alternate Text" />
+                    <img src="~/Content/Images/insta.jpg" alt="Alternate Text" />
                 </div>
 
                 <div class="col-5">
@@ -196,11 +191,11 @@
                 </div>
 
                 <div class="col-5">
-                    <img src="~/Content/Images/logo-oppo.png" alt="Alternate Text" />
+                    <img src="~/Content/Images/Lazada.jpg" alt="Alternate Text" />
                 </div>
 
                 <div class="col-5">
-                    <img src="~/Content/Images/logo-philips.png" alt="Alternate Text" />
+                    <img src="~/Content/Images/shopee.jpg" alt="Alternate Text" />
                 </div>
 
             </div>
@@ -222,32 +217,22 @@
                     </div>
                 </div>
 
-                <!--Logo footer-->
-                <div class="footer-col-2">
-                    <img src="~/Content/Images/logo-one.png" alt="Alternate Text" />
-                    <p>Our Purpose Is to Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many</p>
-                </div>
-
+                
                 <!--Usefull link-->
                 <div class="footer-col-3">
-                    <h3>Useful Links</h3>
+                    <h3>Hệ Thống Cửa Hàng</h3>
                     <ul>
-                        <li>Coupons</li>
-                        <li>Blog Post</li>
-                        <li>Return Policy</li>
-                        <li>Become Affiliate</li>
+                        <li>Chi nhánh 1:69/7B Nguyễn Gia Trí,Quận Bình Thạnh,TP.HCM</li>
+                        
                     </ul>
                 </div>
 
                 <!--Follow us-->
                 <div class="footer-col-4">
-                    <h3>Follow us</h3>
-                    <ul>
-                        <li>Facebook</li>
-                        <li>Twitter</li>
-                        <li>Instagram</li>
-                        <li>Youtube</li>
-                    </ul>
+                    <h3>FOLLOW FANPAGE</h3>
+                    <!--API-->
+                    <div class="fb-page" data-href="https://www.facebook.com/CALA-Ti%E1%BB%87m-2hand-104941784794471/" data-tabs="timeline" data-width="340" data-height="130" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/CALA-Ti%E1%BB%87m-2hand-104941784794471/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/CALA-Ti%E1%BB%87m-2hand-104941784794471/">CALA. Tiệm 2hand</a></blockquote></div>
+
                 </div>
 
             </div>
