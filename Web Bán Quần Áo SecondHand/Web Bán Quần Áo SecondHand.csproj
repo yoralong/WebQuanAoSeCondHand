@@ -126,10 +126,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\dbQLShopSH.designer.cs">
+    <Compile Include="Models\dbQLShopSHData.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbQLShopSH.dbml</DependentUpon>
+      <DependentUpon>dbQLShopSHData.dbml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -177,7 +177,7 @@
     <Content Include="Content\Images\dress9.jpg" />
     <Content Include="Content\Images\exclusive Product.png" />
     <Content Include="Content\Images\fb.jpg" />
-    <Content Include="Content\Images\giay-removebg-preview.png" />
+    <Content Include="Content\Images\giay-removebg-preview-removebg-preview.png" />
     <Content Include="Content\Images\insta.jpg" />
     <Content Include="Content\Images\kyduyen.jpg" />
     <Content Include="Content\Images\Lazada.jpg" />
@@ -197,13 +197,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Models\dbQLShopSH.dbml">
+    <Content Include="Models\dbQLShopSHData.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>dbQLShopSH.designer.cs</LastGenOutput>
+      <LastGenOutput>dbQLShopSHData.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
-    <None Include="Models\dbQLShopSH.dbml.layout">
-      <DependentUpon>dbQLShopSH.dbml</DependentUpon>
+    <None Include="Models\dbQLShopSHData.dbml.layout">
+      <DependentUpon>dbQLShopSHData.dbml</DependentUpon>
     </None>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

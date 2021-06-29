@@ -185,7 +185,7 @@ ul > li a i {
 }
 nav {
     flex: 1;
-    text-align: right;
+    text-align: center;
     font-weight: bolder;
 }
     nav ul {
@@ -505,7 +505,7 @@ h4 {
     left:50%;
     transform:translateX(-50%);
 }
-/*Quảng cáo sản phẩm mới*/
+/*Quáº£ng cÃ¡o sáº£n pháº©m má»›i*/
 .offer {
     background: radial-gradient(circle,rgba(63,94,251,1)0%,rgba(252,70,107,1)100%);
     margin-top:10px;
@@ -519,8 +519,8 @@ h4 {
 .small{
     color:#fff;
 }
-/*End - quảng cáo sản phẩm*/
-/*Nhận xét khách hàng*/
+/*End - quáº£ng cÃ¡o sáº£n pháº©m*/
+/*Nháº­n xÃ©t khÃ¡ch hÃ ng*/
 .testimonial{
     padding-top:100px;
 }
@@ -554,7 +554,7 @@ h4 {
     color: #777;
 }
 
-/*Logo thuong hiệu*/
+/*Logo thuong hiá»‡u*/
 .brands{
     margin: 100px auto;
 }

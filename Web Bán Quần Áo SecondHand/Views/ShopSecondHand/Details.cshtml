@@ -1,30 +1,64 @@
 ﻿@model Web_Bán_Quần_Áo_SecondHand.Models.SanPham
 
 <style type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600&display=swap" rel="stylesheet" >
     #datmua a {
-        clear: both;
-        background-color: red;
-        color: white;
-        width: 120px;
-        height: 35px;
-        display: block;
-        float: right ;
-        text-align: center;
-        padding-top: 10px;
-        
-        text-decoration: none;
-        font-weight: bold;
-        
+        margin: 0;
+        padding: 0;
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
     }
 
-        #datmua a:hover {
-            background-color: gray;
-            color: red;
-        }
-    #link a{
-        color:black;
-        font-weight:bold;
+    span {
+        position: relative;
+        display: inline-flex;
+        width: 180px;
+        height: 55px;
+        margin: 0 15px;
+        perspective: 1000px;
     }
+
+        span a {
+            font-size: 19px;
+            letter-spacing: 1px;
+            transform-style: preserve-3d;
+            transform: translateZ(-25px);
+            transition: transform .25s;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+            span a:before,
+            span a:after {
+                position: absolute;
+                content: "MUA NGAY";
+                height: 55px;
+                width: 180px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 3px solid #ff0000;
+                box-sizing: border-box;
+                border-radius: 5px;
+            }
+
+            span a:before {
+                color: #fff;
+                background: #ff0000;
+                transform: rotateY(0deg) translateZ(25px);
+            }
+
+            span a:after {
+                color: #000;
+                transform: rotateX(90deg) translateZ(25px);
+                
+            }
+
+            span a:hover {
+                transform: translateZ(-25px) rotateX(-90deg);
+            }
 </style>
 
 @{
@@ -39,13 +73,23 @@
                 <img src="@Model.Image" width="100%" />
             </div>
             <div style="width:60%;float:left;padding:10px">
-                <h4 style="font-weight:bold;color:red">Tên sản phẩm:@Model.TenSP</h4>
-                <p style="text-align:justify"><span style="font-weight:bold">Mô tả:</span>@Model.Details</p>
-                <p style="font-weight:bold">Giá bán:<span style="color:red;font-size:16pt">@Model.DonGia VNĐ</span></p>
+                <h4 style="font-weight: 700; color: black; padding: 0 0 10px; font-size: 30pt; border-bottom: 1px dotted #777;">@Model.TenSP</h4>
+                <h4 style="font-weight: 700; color: black; padding: 0 0 10px; font-size: 28pt; border-bottom: 1px dotted #777;">39,000₫</h4>
+                <h4 style="font-weight: 700;color:black; padding: 0 0 10px; font-size: 16pt ">Mô tả: @Model.Details</h4>
+                <p>100% cotton</p>
+                <p>AVAILABLE NOW !!!</p>
+                <p>Size UK:</p>
+                <p>
+                    S: từ 45kg đến 55kg - 1m50 đến 1m60
+                </p>
+                <p>M: từ 55kg đến 65kg - 1m60 đến 1m7</p>
+                <p>L: từ 65 đến 80kg - 1m70 đến 1m80</p>
+
             </div>
             <div>
                 <div id="datmua">
-                    <a href="@Url.Action("AddToCard", "ShoppingCard", new { id = Model.MaSP })" class="list-group-item"> ĐẶT MUA</a>
+
+                    <span><a href="@Url.Action("AddToCard", "ShoppingCard", new { id = Model.MaSP })"></a></span>
                 </div>
             </div>
         </div>

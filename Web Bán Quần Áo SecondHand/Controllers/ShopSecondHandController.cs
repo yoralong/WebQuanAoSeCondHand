@@ -10,7 +10,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
     public class ShopSecondHandController : Controller
     {
         // GET: ShopSecondHand
-        dbQLShopSHDataContext data = new dbQLShopSHDataContext();
+        dbQLShopSHDataDataContext data = new dbQLShopSHDataDataContext();
        
         private List<SanPham> laysanpham (int count)
 		{
