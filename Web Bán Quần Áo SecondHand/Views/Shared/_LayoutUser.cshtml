@@ -24,7 +24,9 @@
                         <li><a href="#home">TRANG CHỦ</a></li>
                         @Html.Action("BoSuuTap", "ShopSecondHand")
                         <li><a href="#home">CALA</a></li>
-                        <li><a href="#home">CHÍNH SÁCH ĐỔI TRẢ</a></li>
+                        <li><a href="@Url.Action("Dangky","Nguoidung")">Đăng Ký</a></li>
+                        <li><a href="@Url.Action("Dangnhap","Nguoidung")">Đăng Nhập</a></li>
+                        <li><a href="#">Xin chào @Session["Taikhoan"]</a></li>
                     </ul>
                 </nav>
                 <li>

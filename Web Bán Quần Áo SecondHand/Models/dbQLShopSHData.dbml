@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL Shop SH" Class="dbQLShopSHDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-MH41EK8\MSSQLSERVER01;Initial Catalog=&quot;QL Shop SH&quot;;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QL_Shop_SHConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-GISFHHL\YORA;Initial Catalog=&quot;QL Shop SH&quot;;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QL_Shop_SHConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CongTy_VanChuyen" Member="CongTy_VanChuyens">
     <Type Name="CongTy_VanChuyen">
       <Column Name="MaCT" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -7,7 +7,7 @@
       <Column Name="SDT" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="CuocPhi" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Association Name="CongTy_VanChuyen_HoaDon" Member="HoaDons" ThisKey="MaCT" OtherKey="MaCT" Type="HoaDon" />
+      <Association Name="CongTy_VanChuyen_HoaDon1" Member="HoaDons" ThisKey="MaCT" OtherKey="MaCT" Type="HoaDon" />
     </Type>
   </Table>
   <Table Name="dbo.CTHD" Member="CTHDs">
@@ -16,33 +16,8 @@
       <Column Name="MaSP" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="SL" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="DonGia" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Association Name="HoaDon_CTHD" Member="HoaDon" ThisKey="MaHD" OtherKey="MaHD" Type="HoaDon" IsForeignKey="true" />
       <Association Name="SanPham_CTHD" Member="SanPham" ThisKey="MaSP" OtherKey="MaSP" Type="SanPham" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.HoaDon" Member="HoaDons">
-    <Type Name="HoaDon">
-      <Column Name="MaHD" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaKH" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="MaCT" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="MaVC" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="NgayMua" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="NgayGiaoHang" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="TenCT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="HoaDon_CTHD" Member="CTHDs" ThisKey="MaHD" OtherKey="MaHD" Type="CTHD" />
-      <Association Name="CongTy_VanChuyen_HoaDon" Member="CongTy_VanChuyen" ThisKey="MaCT" OtherKey="MaCT" Type="CongTy_VanChuyen" IsForeignKey="true" />
-      <Association Name="KhachHang_HoaDon" Member="KhachHang" ThisKey="MaKH" OtherKey="MaKH" Type="KhachHang" IsForeignKey="true" />
-      <Association Name="Voucher_HoaDon" Member="Voucher" ThisKey="MaVC" OtherKey="MaVC" Type="Voucher" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.KhachHang" Member="KhachHangs">
-    <Type Name="KhachHang">
-      <Column Name="MaKH" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TenKH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Sdt" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="Mail" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Association Name="KhachHang_HoaDon" Member="HoaDons" ThisKey="MaKH" OtherKey="MaKH" Type="HoaDon" />
+      <Association Name="HoaDon1_CTHD" Member="HoaDon" ThisKey="MaHD" OtherKey="MaHD" Type="HoaDon" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.LoaiSP" Member="LoaiSPs">
@@ -81,7 +56,36 @@
       <Column Name="MaVC" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenVC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="GiamGia" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Voucher_HoaDon" Member="HoaDons" ThisKey="MaVC" OtherKey="MaVC" Type="HoaDon" />
+      <Association Name="Voucher_HoaDon1" Member="HoaDons" ThisKey="MaVC" OtherKey="MaVC" Type="HoaDon" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HoaDon" Member="HoaDons">
+    <Type Name="HoaDon">
+      <Column Name="MaHD" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaKH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaCT" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="MaVC" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="NgayMua" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayGiaoHang" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TenCT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="HoaDon1_CTHD" Member="CTHDs" ThisKey="MaHD" OtherKey="MaHD" Type="CTHD" />
+      <Association Name="CongTy_VanChuyen_HoaDon1" Member="CongTy_VanChuyen" ThisKey="MaCT" OtherKey="MaCT" Type="CongTy_VanChuyen" IsForeignKey="true" />
+      <Association Name="Voucher_HoaDon1" Member="Voucher" ThisKey="MaVC" OtherKey="MaVC" Type="Voucher" IsForeignKey="true" />
+      <Association Name="KhachHang_HoaDon" Member="KhachHang" ThisKey="MaKH" OtherKey="MaKH" Type="KhachHang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhachHang" Member="KhachHangs">
+    <Type Name="KhachHang">
+      <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenKH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Sdt" Type="System.String" DbType="NChar(12)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="TaiKhoan" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="MatKhau" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NChar(5)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Association Name="KhachHang_HoaDon" Member="HoaDons" ThisKey="MaKH" OtherKey="MaKH" Type="HoaDon" />
     </Type>
   </Table>
 </Database>

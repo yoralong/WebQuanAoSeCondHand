@@ -122,6 +122,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NguoidungController.cs" />
     <Compile Include="Controllers\ShopSecondHandController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -163,18 +164,18 @@
     <Content Include="Content\Images\CaLaIcon1.jpg" />
     <Content Include="Content\Images\cart.png" />
     <Content Include="Content\Images\donu.jpg" />
-    <Content Include="Content\Images\dress1.jpg" />
-    <Content Include="Content\Images\dress10.jpg" />
-    <Content Include="Content\Images\dress11.jpg" />
-    <Content Include="Content\Images\dress12.jpg" />
-    <Content Include="Content\Images\dress2.jpg" />
-    <Content Include="Content\Images\dress3.jpg" />
-    <Content Include="Content\Images\dress4.jpg" />
-    <Content Include="Content\Images\dress5.jpg" />
-    <Content Include="Content\Images\dress6.jpg" />
-    <Content Include="Content\Images\dress7.jpg" />
-    <Content Include="Content\Images\dress8.jpg" />
-    <Content Include="Content\Images\dress9.jpg" />
+    <Content Include="Content\Images\dress1.png" />
+    <Content Include="Content\Images\dress10.png" />
+    <Content Include="Content\Images\dress11.png" />
+    <Content Include="Content\Images\dress12.png" />
+    <Content Include="Content\Images\dress2.png" />
+    <Content Include="Content\Images\dress3.png" />
+    <Content Include="Content\Images\dress4.png" />
+    <Content Include="Content\Images\dress5.png" />
+    <Content Include="Content\Images\dress6.png" />
+    <Content Include="Content\Images\dress7.png" />
+    <Content Include="Content\Images\dress8.png" />
+    <Content Include="Content\Images\dress9.png" />
     <Content Include="Content\Images\exclusive Product.png" />
     <Content Include="Content\Images\fb.jpg" />
     <Content Include="Content\Images\giay-removebg-preview-removebg-preview.png" />
@@ -235,6 +236,8 @@
     <Content Include="Views\ShopSecondHand\BoSuuTap.cshtml" />
     <Content Include="Views\ShopSecondHand\SPTheoMaLoai.cshtml" />
     <Content Include="Views\ShopSecondHand\Details.cshtml" />
+    <Content Include="Views\Nguoidung\Dangky.cshtml" />
+    <Content Include="Views\Nguoidung\Dangnhap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

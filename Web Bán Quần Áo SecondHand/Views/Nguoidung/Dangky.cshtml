@@ -1,0 +1,73 @@
+﻿@model Web_Bán_Quần_Áo_SecondHand.Models.KhachHang
+
+@{
+    ViewBag.Title = "Dangky";
+    
+}
+
+<table align="center">
+    <h2 style="text-align:center;color:blue">ĐĂNG KÝ THÀNH VIÊN</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <tr style="height:40px;align-self:center">
+            <td>Họ tên khách hàng:</td>
+            <td>
+                <input type="text" name="HotenKH" required size="30" maxlength="30" />
+                <span style="color:red;font-style:italic" > @ViewData["Loi1"] </span> 
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td>Tên đăng nhập:</td>
+            <td>
+                <input type="text" name="TenDN" required size="30" maxlength="30" />
+                <span style="color:red;font-style:italic"> @ViewData["Loi2"] </span>
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td>Mật khẩu:</td>
+            <td>
+                <input type="password" name="Matkhau" required size="25" maxlength="25" />
+                <span style="color:red;font-style:italic"> @ViewData["Loi3"] </span>
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td>Nhập lại mật khẩu:</td>
+            <td>
+                <input type="password" name="NhaplaiMatkhau" required size="25" maxlength="25" />
+                <span style="color:red;font-style:italic"> @ViewData["Loi4"] </span>
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td>Gmail:</td>
+            <td>
+                <input type="email" name="Email" required size="30" maxlength="30" />
+                <span style="color:red;font-style:italic"> @ViewData["Loi5"] </span>
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td>SĐT:</td>
+            <td>
+                <input type="text" name="Dienthoai" required size="12" maxlength="12" />
+                <span style="color:red;font-style:italic"> @ViewData["Loi6"] </span>
+            </td>
+        </tr>
+      
+        <tr style="height:40px">
+            <td>Ngày Sinh:</td>
+            <td>
+                <input type="date" name="Ngaysinh" />
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td></td>
+            <td>
+                <input type="submit" name="Dangky" />
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Back to List", "Index","ShopSecondHand")
+</div>
