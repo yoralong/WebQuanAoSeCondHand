@@ -32,10 +32,10 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
             var suutap = from cd in data.LoaiSPs select cd;
             return PartialView(suutap);
 		}
-        public ActionResult Details(string id)
+        public ActionResult Details(int id)
         {
             var details = from s in data.SanPhams
-                          where s.MaSP.Trim() == id.Trim()
+                          where s.MaSP == id
                           select s;
             return View(details.Single());
         }
