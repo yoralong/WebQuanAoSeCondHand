@@ -29,31 +29,12 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
             var dienthoai = collection["Dienthoai"];
 			
             var ngaysinh = String.Format("{0:MM/dd/yyyy}", collection["Ngaysinh"]);
-			if (String.IsNullOrEmpty(hoten))
-			{
-                ViewData["Loi1"] = "Họ tên khách hàng không được để trống";
-			}
-            else if (String.IsNullOrEmpty(tendn))
+            KhachHang tempt = db.KhachHangs.SingleOrDefault(n => n.TaiKhoan.Trim() == tendn.Trim());
+            
+             if (tempt != null)
             {
-                ViewData["Loi2"] = "Phải nhập tên đăng nhập";
+                ViewData["Loi2"] = "Đã tồn tại";
             }
-            else if (String.IsNullOrEmpty(matkhau))
-            {
-                ViewData["Loi3"] = "Phải nhập mật khẩu";
-            }
-            else if (String.IsNullOrEmpty(nhaplaimatkhau))
-            {
-                ViewData["Loi4"] = "Phải nhập lại mật khẩu";
-            }
-            else if (String.IsNullOrEmpty(email))
-            {
-                ViewData["Loi5"] = "Email không được bỏ trống";
-            }
-            else if (String.IsNullOrEmpty(dienthoai))
-            {
-                ViewData["Loi6"] = "Phải nhập số điện thoại";
-            }
-           
             else
 			{
                 kh.TenKH = hoten;

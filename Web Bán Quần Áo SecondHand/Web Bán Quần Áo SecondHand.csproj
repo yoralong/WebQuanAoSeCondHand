@@ -203,6 +203,8 @@
       <LastGenOutput>dbQLShopSHData.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include=".editorconfig" />
+    <Content Include="libman.json" />
     <None Include="Models\dbQLShopSHData.dbml.layout">
       <DependentUpon>dbQLShopSHData.dbml</DependentUpon>
     </None>
