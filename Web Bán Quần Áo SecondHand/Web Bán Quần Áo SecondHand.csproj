@@ -159,7 +159,8 @@
     <Content Include="Content\Images\all4.jpg" />
     <Content Include="Content\Images\anh.jpg" />
     <Content Include="Content\Images\app-store.png" />
-    <Content Include="Content\Images\bia.jpg" />
+    <Content Include="Content\Images\back.jpg" />
+    <Content Include="Content\Images\bia.png" />
     <Content Include="Content\Images\CalaIcon.png" />
     <Content Include="Content\Images\calalogo.png" />
     <Content Include="Content\Images\cart.png" />
@@ -187,6 +188,7 @@
     <Content Include="Content\Images\menu.png" />
     <Content Include="Content\Images\play-store.png" />
     <Content Include="Content\Images\png-clipart-aspria-fitness-computer-icons-user-my-account-icon-miscellaneous-monochrome.png" />
+    <Content Include="Content\Images\round-account-button-with-user-inside.png" />
     <Content Include="Content\Images\shopee.jpg" />
     <Content Include="Content\Images\style.css" />
     <Content Include="Content\Images\tran-thanh-p-16031678576061691914167.png" />

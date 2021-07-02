@@ -33,7 +33,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
             
              if (tempt != null)
             {
-                ViewData["Loi2"] = "Đã tồn tại";
+                ViewData["Loi2"] = "Username đã tồn tại";
             }
             else
 			{

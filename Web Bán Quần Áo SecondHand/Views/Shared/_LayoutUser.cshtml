@@ -23,27 +23,26 @@
                     <ul id="MenuItem" style="font-family: Tahoma">
                         <li><a href="#home">TRANG CHỦ</a></li>
                         @Html.Action("BoSuuTap", "ShopSecondHand")
-                        <li><a href="#home">CALA</a></li>
-                        <li><a href="@Url.Action("Dangky","Nguoidung")">Đăng Ký</a></li>
-                        <li><a href="@Url.Action("Dangnhap","Nguoidung")">Đăng Nhập</a></li>
+                        <li><a href="#home">CALA |About Us</a></li>        
                         <li><a href="#">Xin chào @Session["Taikhoan"]</a></li>
                     </ul>
                 </nav>
-                <li>
-                    <form id="demo-2">
-                        <input type="search" placeholder="Search">
-                    </form>
-                </li>
-                <img src="~/Content/Images/cart.png" width="25px" height="25px" />
-                
+                <div>
+                    <li>
+                        <form id="demo-2">
+                            <input type="search" placeholder="Search" style="padding: 0px 10px 5px";>
+                        </form>
+                    </li>
+                        <img src="~/Content/Images/cart.png" width="25px" height="25px" />
+                        <a href="@Url.Action("Dangnhap","Nguoidung")" target="_blank"><img src="~/Content/Images/round-account-button-with-user-inside.png" width="25px" height="25px" /></a>
+                    
+                </div>
+
             </div>
             <!--end logo and menu-->
             <!--Banner-->
 
-            <div class="col-2 img">
-                <img src="~/Content/Images/bia.jpg" style="width:90%;"  />
-            </div>
-
+            
 
 
 
@@ -62,7 +61,7 @@
         <s id="s4"></s>
 
         <div class="slider">
-            <div style="background-image:url(../../Content/Images/all1.jpg);">
+            <div style="background-image:url(../../Content/Images/bia.png">
 
             </div>
             <div style="background-image:url(../../Content/Images/all2.jpg);">
@@ -107,7 +106,7 @@
                     <img src="~/Content/Images/giay-removebg-preview-removebg-preview.png" class="offer-img" />
                 </div>
                 <div class="col-2">
-                    <p style="font-weight:700"><span style="color:white;font-size:28pt">NEW ITEM !!!</span></p>
+                    <p style="font-weight:700"><span style="color:white;font-size:20pt">NEW ITEM !!!</span></p>
                     <h1>Nike Dunk Low</h1>
                     <p>350,000₫</p>
                     <p>Only Size:36-44</p>
