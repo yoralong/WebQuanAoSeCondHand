@@ -24,15 +24,29 @@
                     <ul id="MenuItem" style="font-family: Tahoma">
                         <li><a href="@Url.Action("Index","ShopSecondHand")">TRANG CHỦ</a></li>
                         @Html.Action("BoSuuTap", "ShopSecondHand")
-                        <li><a href="@Url.Action("aboutus","ShopSecondHand")">CALA |About Us</a></li>        
+                        <li><a href="@Url.Action("aboutus","ShopSecondHand")">CALA |About Us</a></li>
+                        <li><a href="@Url.Action("aboutus","ShopSecondHand")">Chính sách đổi trả</a></li>
                         <li><a href="#">Xin chào @Session["Taikhoan"]</a></li>                       
                     </ul>
                 </nav>
                 <div>
                     <li>
-                        <form id="demo-2">
-                            <input type="search" placeholder="Search" style="padding: 0px 10px 5px";>
-                        </form>
+                        <div class="dropdown">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <div class="dropdown-content">
+                                <div class="ct" id="search">
+                                    <form class="search-fr" action="/search">
+                                        <div class="form-input">
+                                            <input name="q" id="search" placeholder="Tìm kiếm..." value="" type="text" required="required">
+                                            <button type="submit">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
                     </li>
                         <img src="~/Content/Images/cart.png" width="25px" height="25px" />
                         <a href="@Url.Action("Dangnhap","Nguoidung")"><img src="~/Content/Images/round-account-button-with-user-inside.png" width="25px" height="25px" /></a>
@@ -62,16 +76,16 @@
         <s id="s4"></s>
 
         <div class="slider">
-            <div style="background-image:url(../../Content/Images/bia.png">
+            <div style="background-image:url(../../Content/Images/bia.jpg">
 
             </div>
             <div style="background-image:url(../../Content/Images/all2.jpg);">
 
             </div>
-            <div style="background-image: url(../../Content/Images/all3.jpg);">
+            <div style="background-image: url(../../Content/Images/alll3.jpg);">
 
             </div>
-            <div style="background-image: url(../../Content/Images/all4.jpg);">
+            <div style="background-image: url(../../Content/Images/alll4.jpg);">
 
             </div>
         </div>
