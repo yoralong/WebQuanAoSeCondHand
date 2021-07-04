@@ -24,34 +24,24 @@
                     <ul id="MenuItem" style="font-family: Tahoma">
                         <li><a href="@Url.Action("Index","ShopSecondHand")">TRANG CHỦ</a></li>
                         @Html.Action("BoSuuTap", "ShopSecondHand")
-                        <li><a href="@Url.Action("aboutus","ShopSecondHand")">CALA |About Us</a></li>
-                        <li><a href="@Url.Action("aboutus","ShopSecondHand")">Chính sách đổi trả</a></li>
+                        <li><a href="@Url.Action("aboutus","ShopSecondHand")">CALA |About Us</a>
+                        </li>                 
                         <li><a href="#">Xin chào @Session["Taikhoan"]</a></li>                       
                     </ul>
-                </nav>
-                <div>
-                    <li>
-                        <div class="dropdown">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                            <div class="dropdown-content">
-                                <div class="ct" id="search">
-                                    <form class="search-fr" action="/search">
-                                        <div class="form-input">
-                                            <input name="q" id="search" placeholder="Tìm kiếm..." value="" type="text" required="required">
-                                            <button type="submit">
-                                                <i class="fa fa-search"></i>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                </nav>               
+                <li>
+                    <img src="~/Content/Images/cart.png" width="25px" height="25px" />
+                    <a href="@Url.Action("Dangnhap","Nguoidung")"><img src="~/Content/Images/round-account-button-with-user-inside.png" width="25px" height="25px" /></a>
+                    <span class="search-box">
+                        <input type="text" name="" value="" placeholder="Tìm Kiếm">
 
-                    </li>
-                        <img src="~/Content/Images/cart.png" width="25px" height="25px" />
-                        <a href="@Url.Action("Dangnhap","Nguoidung")"><img src="~/Content/Images/round-account-button-with-user-inside.png" width="25px" height="25px" /></a>
-                    
-                </div>
+                        <button class="search-button" type="button" name="Tìm Kiếm">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                    </span>
+
+                </li>
+                
 
             </div>
             <!--end logo and menu-->
@@ -206,12 +196,17 @@
             <div class="row">
                 <!--Phần download app-->
                 <div class="footer-col-1">
-                    <h3>Dowload Our App</h3>
-                    <p> Dowload App for Andriod and ios mobile phone.</p>
-                    <div class="app-logo">
-                        <img src="~/Content/Images/play-store.png" alt="Alternate Text" />
-                        <img src="~/Content/Images/app-store.png" alt="Alternate Text" />
-                    </div>
+                    <h3>HỔ TRỢ KHÁCH HÀNG</h3>
+                    <ul class="list-unstyled mb-0">                      
+                        <li><a href="@Url.Action("huongdanmuahang","ShopSecondHand")" title="Hướng dẫn mua hàng" style="color: white; font-family: Tahoma; padding: 0px 15px 10px; ">Hướng dẫn mua hàng</a></li>                       
+                        <p>
+                        <li><a href="/pages/thanh-toan" title="Thanh toán"style="color: white; font-family: Tahoma; padding: 0px 15px 10px; ">Thanh toán & Vận chuyển </a></li>
+                        </p>
+                        <p>
+                        <li><a href="/pages/chinh-sach-bao-hanh" title="Chính sách bảo hành"style="color: white;font-family:Tahoma; padding: 0px 15px 10px;">Chính sách bảo hành & đổi trả</a><br /></li>
+                        </p>
+
+                    </ul>
                 </div>
 
                 

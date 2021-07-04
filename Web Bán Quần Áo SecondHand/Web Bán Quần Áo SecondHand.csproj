@@ -260,6 +260,7 @@
     <Content Include="Views\Nguoidung\Dangky.cshtml" />
     <Content Include="Views\Nguoidung\Dangnhap.cshtml" />
     <Content Include="Views\ShopSecondHand\aboutus.cshtml" />
+    <Content Include="Views\ShopSecondHand\huongdanmuahang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
