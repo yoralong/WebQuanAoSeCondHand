@@ -581,7 +581,7 @@ http://stackoverflow.com/a/34696029/383904
             height: 100%;
             width: 100%;
             background: none 50% no-repeat;
-            object-fit: cover;
+            background-size: auto;
         }
 
     /* PREV/NEXT, CONTAINERS & ANCHORS */
