@@ -344,7 +344,7 @@ p {
 .search-box {
     position: absolute;
     background: #fff;
-    height: 30px;
+    height: 40px;
     padding: 10px;
     border-radius: 40px;
     
@@ -521,11 +521,12 @@ a {
     line-height:60px;
     margin:25px 0;
 }
-.btn {
+.btnpass {
     background-color: #337ab7;
     color: black;
     font-size: 20px;
-    padding: 40px 0px 5px;
+    padding: 0px 0px 0px;  
+    border: none;
 }
 
 
@@ -576,7 +577,7 @@ http://stackoverflow.com/a/34696029/383904
             height: 100%;
             width: 100%;
             background: none 50% no-repeat;
-            background-size: contain;
+            background-size: cover;
         }
 
     /* PREV/NEXT, CONTAINERS & ANCHORS */
@@ -854,7 +855,8 @@ h4 {
 }
 .footer h3{
     color:#fff;
-    margin-bottom:20px
+    margin-bottom:20px;
+    padding: 0px 15px;
 }
 .footer-col-1,
 .footer-col-2,

@@ -24,14 +24,16 @@
                     <ul id="MenuItem" style="font-family: Tahoma">
                         <li><a href="@Url.Action("Index","ShopSecondHand")">TRANG CHỦ</a></li>
                         @Html.Action("BoSuuTap", "ShopSecondHand")
-                        <li><a href="@Url.Action("aboutus","ShopSecondHand")">CALA |About Us</a>
-                        </li>                 
-                        <li><a href="#">Xin chào @Session["Taikhoan"]</a></li>                       
+                        <li>
+                            <a href="@Url.Action("aboutus","ShopSecondHand")">CALA |About Us</a>
+                        </li>
+                        <li><a href="#">Xin chào @Session["Taikhoan"]</a></li>
                     </ul>
-                </nav>               
+                </nav>
                 <li>
                     <img src="~/Content/Images/cart.png" width="25px" height="25px" />
                     <a href="@Url.Action("Dangnhap","Nguoidung")"><img src="~/Content/Images/round-account-button-with-user-inside.png" width="25px" height="25px" /></a>
+                
                     <span class="search-box">
                         <input type="text" name="" value="" placeholder="Tìm Kiếm">
 
@@ -39,9 +41,9 @@
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </button>
                     </span>
-
-                </li>
                 
+                </li>
+
 
             </div>
             <!--end logo and menu-->
@@ -214,6 +216,7 @@
                 <div class="footer-col-3">
                     <h3>Hệ Thống Cửa Hàng</h3>
                     <ul>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
                         <li>Chi nhánh 1:69/7B Nguyễn Gia Trí,Quận Bình Thạnh,TP.HCM</li>
                         
                     </ul>

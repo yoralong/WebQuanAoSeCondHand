@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 @{
     ViewBag.Title = "Dangnhap";
-
+    
 }
 <html>
 <head>
@@ -46,13 +46,12 @@
                         <div class="form-row">
                             <label class="form-row-inner">
                                 <input type="password" name="Matkhau" class="input-text" id="ipnPassword" required size="25" maxlength="25" />
-                                <span class="input-group-append">
-                                    <button class="btn" type="button" id="btnPassword">
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                    </button>
-                                </span>
                                 <span class="label">Password @ViewData["Loi2"]</span>
-                                <span class="border"></span>
+                                <span class="border"></span>                             
+                                    <span class="btnpass" type="button" id="btnPassword">
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                    </span>
+                                
 
                             </label>
                             
