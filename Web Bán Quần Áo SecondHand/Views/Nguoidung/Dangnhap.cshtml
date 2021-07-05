@@ -46,23 +46,25 @@
                         <div class="form-row">
                             <label class="form-row-inner">
                                 <input type="password" name="Matkhau" class="input-text" id="ipnPassword" required size="25" maxlength="25" />
-                                <span class="label">Password @ViewData["Loi2"]</span>
-                                <span class="border"></span>
-                                <div class="input-group-append">
+                                <span class="input-group-append">
                                     <button class="btn" type="button" id="btnPassword">
                                         <i class="fa fa-eye" aria-hidden="true"></i>
                                     </button>
-                                </div>
+                                </span>
+                                <span class="label">Password @ViewData["Loi2"]</span>
+                                <span class="border"></span>
+
                             </label>
                             
                         </div>
                         <div class="form-row-last">
                             <input type="submit" name="submit" class="register" value="Đăng Nhập">
-
                         </div>
                         <div>
-                            <span>Bạn quên mật khẩu ? Lấy lại mật khẩu</span>
-                            <a href="@Url.Action("Dangky","Nguoidung")" style="margin-left: 10px;">Tại đây</a>
+                            <p>
+                                <span>Bạn quên mật khẩu ? Lấy lại mật khẩu</span>
+                                <a href="@Url.Action("Dangky","Nguoidung")" style="margin-left: 10px;">Tại đây</a>
+                            </p>
                             <span>Bạn chưa có tài khoản ?</span>
                             <a href="@Url.Action("Dangky","Nguoidung")" style="margin-left: 10px;">Đăng Kí</a>
                         </div>
