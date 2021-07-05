@@ -1,5 +1,6 @@
 ﻿@model Web_Bán_Quần_Áo_SecondHand.Models.KhachHang
 <link href="~/Content/style.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 @{
     ViewBag.Title = "Dangnhap";
 
@@ -31,29 +32,37 @@
                 <form class="form-detail" action="#" method="post">
                     <div class="tabcontent" id="sign-in">
                         @Html.ValidationSummary(true)
-                        
+
 
                         <div class="form-row">
                             <label class="form-row-inner">
 
                                 <input type="text" name="TenDN" class="input-text" required size="30" maxlength="30" />
                                 <span class="label"><span style="color:red; font-weight: 200 ">@ViewBag.Thongbao</span><p><p style="text-align:left"> Username</p></p> <span style="color:red">@ViewData["Loi1"] </span>  </span>
-                                
+
                             </label>
                         </div>
 
                         <div class="form-row">
                             <label class="form-row-inner">
-                                <input type="password" name="Matkhau" class="input-text" required size="25" maxlength="25" />
+                                <input type="password" name="Matkhau" class="input-text" id="ipnPassword" required size="25" maxlength="25" />
                                 <span class="label">Password @ViewData["Loi2"]</span>
                                 <span class="border"></span>
+                                <div class="input-group-append">
+                                    <button class="btn" type="button" id="btnPassword">
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                    </button>
+                                </div>
                             </label>
+                            
                         </div>
                         <div class="form-row-last">
                             <input type="submit" name="submit" class="register" value="Đăng Nhập">
 
                         </div>
                         <div>
+                            <span>Bạn quên mật khẩu ? Lấy lại mật khẩu</span>
+                            <a href="@Url.Action("Dangky","Nguoidung")" style="margin-left: 10px;">Tại đây</a>
                             <span>Bạn chưa có tài khoản ?</span>
                             <a href="@Url.Action("Dangky","Nguoidung")" style="margin-left: 10px;">Đăng Kí</a>
                         </div>
@@ -78,6 +87,24 @@
             evt.currentTarget.className += " active";
         }
 
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+    <script type="text/javascript">
+        // step 1
+        const ipnElement = document.querySelector('#ipnPassword')
+        const btnElement = document.querySelector('#btnPassword')
+
+        // step 2
+        btnElement.addEventListener('click', function () {
+            // step 3
+            const currentType = ipnElement.getAttribute('type')
+            // step 4
+            ipnElement.setAttribute(
+                'type',
+                currentType === 'password' ? 'text' : 'password'
+            )
+        })
         // Get the element with id="defaultOpen" and click on it
         document.getElementById("defaultOpen").click();
     </script>
