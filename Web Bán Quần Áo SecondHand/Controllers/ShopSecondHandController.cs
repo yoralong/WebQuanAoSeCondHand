@@ -48,5 +48,9 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         {
             return View();
         }
+        public  ActionResult index1()
+        {
+            return View();
+        }
     }
 }

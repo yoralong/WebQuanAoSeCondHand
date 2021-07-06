@@ -135,10 +135,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\aos\aos.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap1.css" />
+    <Content Include="Content\bootstrap\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap\bootstrap.css" />
+    <Content Include="Content\font-awesome\font-awesome.css" />
     <Content Include="Content\Images\1.jpg" />
     <Content Include="Content\Images\10.jpg" />
     <Content Include="Content\Images\11.jpg" />
@@ -169,6 +175,11 @@
     <Content Include="Content\Images\CalaIcon.png" />
     <Content Include="Content\Images\calalogo.png" />
     <Content Include="Content\Images\cart.png" />
+    <Content Include="Content\Images\client1.png" />
+    <Content Include="Content\Images\client2.png" />
+    <Content Include="Content\Images\client3.png" />
+    <Content Include="Content\Images\client4.png" />
+    <Content Include="Content\Images\client5.png" />
     <Content Include="Content\Images\doitra.jpg" />
     <Content Include="Content\Images\donu.jpg" />
     <Content Include="Content\Images\dress1.png" />
@@ -185,6 +196,12 @@
     <Content Include="Content\Images\dress9.png" />
     <Content Include="Content\Images\exclusive Product.png" />
     <Content Include="Content\Images\fb.jpg" />
+    <Content Include="Content\Images\featured-img1.jpg" />
+    <Content Include="Content\Images\featured-img2.jpg" />
+    <Content Include="Content\Images\footer-bg.png" />
+    <Content Include="Content\Images\gallery1.jpg" />
+    <Content Include="Content\Images\gallery2.jpg" />
+    <Content Include="Content\Images\gallery3.jpg" />
     <Content Include="Content\Images\giay-removebg-preview-removebg-preview.png" />
     <Content Include="Content\Images\hd1.jpg" />
     <Content Include="Content\Images\hd10.jpg" />
@@ -198,23 +215,56 @@
     <Content Include="Content\Images\hd7.jpg" />
     <Content Include="Content\Images\hd8.jpg" />
     <Content Include="Content\Images\hd9.jpg" />
+    <Content Include="Content\Images\hero-bg.jpg" />
+    <Content Include="Content\Images\hero-texture.png" />
     <Content Include="Content\Images\insta.jpg" />
     <Content Include="Content\Images\kyduyen.jpg" />
     <Content Include="Content\Images\Lazada.jpg" />
+    <Content Include="Content\Images\loading.gif" />
     <Content Include="Content\Images\logo-paypal.png" />
     <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\logo1.png" />
     <Content Include="Content\Images\menu.png" />
     <Content Include="Content\Images\play-store.png" />
     <Content Include="Content\Images\png-clipart-aspria-fitness-computer-icons-user-my-account-icon-miscellaneous-monochrome.png" />
+    <Content Include="Content\Images\post1.jpg" />
+    <Content Include="Content\Images\post2.jpg" />
+    <Content Include="Content\Images\post3.jpg" />
+    <Content Include="Content\Images\post4.jpg" />
+    <Content Include="Content\Images\pricing.svg" />
+    <Content Include="Content\Images\rcnt-post1.png" />
+    <Content Include="Content\Images\rcnt-post2.png" />
+    <Content Include="Content\Images\rcnt-post3.png" />
+    <Content Include="Content\Images\rcnt-post4.png" />
     <Content Include="Content\Images\round-account-button-with-user-inside.png" />
+    <Content Include="Content\Images\service1.png" />
+    <Content Include="Content\Images\service2.png" />
+    <Content Include="Content\Images\service3.png" />
+    <Content Include="Content\Images\service4.png" />
+    <Content Include="Content\Images\service5.png" />
     <Content Include="Content\Images\shopee.jpg" />
+    <Content Include="Content\Images\test-clients-bg.png" />
+    <Content Include="Content\Images\test1.png" />
     <Content Include="Content\Images\tran-thanh-p-16031678576061691914167.png" />
     <Content Include="Content\Images\unnamed.jpg" />
+    <Content Include="Content\Images\video-play.png" />
+    <Content Include="Content\Images\vimeo-play.png" />
+    <Content Include="Content\Images\youtube-play.png" />
+    <Content Include="Content\lightgallery.min.css" />
+    <Content Include="Content\loader\loaders.css" />
+    <Content Include="Content\responsive.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\style1.css" />
+    <Content Include="Content\swiper\swiper.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\lg.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\aos.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Models\dbQLShopSHData.dbml">
@@ -224,20 +274,37 @@
     </Content>
     <Content Include=".editorconfig" />
     <Content Include="libman.json" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\lg.eot" />
+    <Content Include="fonts\lg.ttf" />
+    <Content Include="fonts\lg.woff" />
     <None Include="Models\dbQLShopSHData.dbml.layout">
       <DependentUpon>dbQLShopSHData.dbml</DependentUpon>
     </None>
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\imagesloaded.pkgd.min.js" />
+    <Content Include="Scripts\isotope.pkgd.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.filterizr.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\lightgallery-all.min.js" />
+    <Content Include="Scripts\loaders.css.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\swiper.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -246,9 +313,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -261,6 +326,7 @@
     <Content Include="Views\Nguoidung\Dangnhap.cshtml" />
     <Content Include="Views\ShopSecondHand\aboutus.cshtml" />
     <Content Include="Views\ShopSecondHand\huongdanmuahang.cshtml" />
+    <Content Include="Views\ShopSecondHand\index1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
