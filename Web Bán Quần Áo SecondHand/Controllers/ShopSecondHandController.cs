@@ -40,6 +40,9 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
                           select s;
             return View(details.Single());
         }
-
+        public ActionResult aboutus()
+        {
+            return View();
+        }
     }
 }

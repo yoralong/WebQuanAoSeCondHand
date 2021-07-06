@@ -33,7 +33,7 @@
             span a:before,
             span a:after {
                 position: absolute;
-                content: "MUA NGAY";
+                content: "Thêm vào giỏ";
                 height: 55px;
                 width: 180px;
                 display: flex;
@@ -58,19 +58,24 @@
             span a:hover {
                 transform: translateZ(-25px) rotateX(-90deg);
             }
-
-    .zoom {
-        padding: 50px;
-        background-color: green;
-        transition: transform .2s; /* Animation */
-        width: 200px;
-        height: 200px;
-        margin: 0 auto;
+            /*zoom image*/
+    figure.zoom {
+        
+        cursor: zoom-in;
     }
 
-    .zoom:hover {
-        transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-    }
+        figure.zoom img:hover {
+            opacity: 0;
+        }
+
+        figure.zoom img {
+            transition: opacity 0.5s;
+            display: block;
+            width: 100%;
+        }
+    /* end zoom image*/
+   
+   
 </style>
 
 <div class="zoom"></div>
@@ -85,11 +90,29 @@
     <div class="row">
         <div>
             <div style="width:40%; float:left;border-left:dotted 1px; border-color:azure">
+                <figure class="zoom" style="background:url(@Model.Image)"onmousemove="zoom(event)" ontouchmove="zoom(event)">
                 <img src="@Model.Image" width="100%" />
+                </figure>
+                <script>
+                    function zoom(e) {
+                        var zoomer = e.currentTarget;
+                        e.offsetX ? offsetX = e.offsetX : offsetX = e.touches[0].pageX
+                        e.offsetY ? offsetY = e.offsetY : offsetX = e.touches[0].pageX
+                        x = (offsetX / zoomer.offsetWidth) * 100
+                        y = (offsetY / zoomer.offsetHeight) * 100
+                        zoomer.style.backgroundPosition = x + "% " + y + "%";
+                    }
+                </script>
             </div>
+
+
+
+            
+
+
             <div style="width:60%;float:left;padding:10px">
                 <h4 style="font-weight: 700; color: black; padding: 0 0 10px; font-size: 30pt; border-bottom: 1px dotted #777;">@Model.TenSP</h4>
-                <h4 style="font-weight: 700; color: black; padding: 0 0 10px; font-size: 28pt; border-bottom: 1px dotted #777;">39,000₫</h4>
+                <h4 style="font-weight: 700; color: black; padding: 0 0 10px; font-size: 28pt; border-bottom: 1px dotted #777;">@Model.DonGia₫</h4>
                 <h4 style="font-weight: 700;color:black; padding: 0 0 10px; font-size: 16pt ">Mô tả: @Model.Details</h4>
                 <p>100% cotton</p>
                 <p>AVAILABLE NOW !!!</p>
@@ -110,10 +133,10 @@
                     <span><a href="@Url.Action("AddToCard", "ShoppingCard", new { id = Model.MaSP })"></a></span>
                 </div>
                 <div id="link">
-                    <p >
-                      <a href="@Url.Action("Index","ShopSecondHand")">
-                          <img src="~/Content/Images/back.jpg" width="175px"height="175px" />
-                      </a>
+                    <p>
+                        <a href="@Url.Action("Index","ShopSecondHand")">
+                            <img src="~/Content/Images/back.jpg" width="175px" height="175px" />
+                        </a>
                     </p>
                 </div>
             </div>

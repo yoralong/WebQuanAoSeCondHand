@@ -7,7 +7,8 @@
 
     <link href="~/Content/style.css" rel="stylesheet" />
     <!---- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"></!-->
-
+   
+          
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
@@ -21,9 +22,9 @@
                 </div>
                 <nav>
                     <ul id="MenuItem" style="font-family: Tahoma">
-                        <li><a href="#home">TRANG CHỦ</a></li>
+                        <li><a href="@Url.Action("Index","ShopSecondHand")">TRANG CHỦ</a></li>
                         @Html.Action("BoSuuTap", "ShopSecondHand")
-                        <li><a href="#home">CALA |About Us</a></li>        
+                        <li><a href="@Url.Action("aboutus","ShopSecondHand")">CALA |About Us</a></li>        
                         <li><a href="#">Xin chào @Session["Taikhoan"]</a></li>                       
                     </ul>
                 </nav>
@@ -98,28 +99,7 @@
 
 
     <!--End sản phẩm nổi bật-->
-    <!--Quảng cáo sản phẩm mới-->
-    <div class="offer">
-        <div class="small-container">
-            <div class="row">
-                <div class="col-2">
-                    <img src="~/Content/Images/giay-removebg-preview-removebg-preview.png" class="offer-img" />
-                </div>
-                <div class="col-2">
-                    <p style="font-weight:700"><span style="color:white;font-size:20pt">NEW ITEM !!!</span></p>
-                    <h1>Nike Dunk Low</h1>
-                    <p>350,000₫</p>
-                    <p>Only Size:36-44</p>
-                    
-                    <div class="button">
-                        <a href="javascript:buyNow()" class="btn">Buy Now &#10132;</a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--END quảng cáo sản phẩm mới-->
+   
     <!--Nhận xét khách hàng-->
     <div class="testimonial">
         <div class="small-container">

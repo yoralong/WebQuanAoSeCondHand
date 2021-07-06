@@ -164,6 +164,7 @@
     <Content Include="Content\Images\CalaIcon.png" />
     <Content Include="Content\Images\calalogo.png" />
     <Content Include="Content\Images\cart.png" />
+    <Content Include="Content\Images\doitra.jpg" />
     <Content Include="Content\Images\donu.jpg" />
     <Content Include="Content\Images\dress1.png" />
     <Content Include="Content\Images\dress10.png" />
@@ -202,7 +203,6 @@
     <Content Include="Content\Images\png-clipart-aspria-fitness-computer-icons-user-my-account-icon-miscellaneous-monochrome.png" />
     <Content Include="Content\Images\round-account-button-with-user-inside.png" />
     <Content Include="Content\Images\shopee.jpg" />
-    <Content Include="Content\Images\style.css" />
     <Content Include="Content\Images\tran-thanh-p-16031678576061691914167.png" />
     <Content Include="Content\Images\unnamed.jpg" />
     <Content Include="Content\style.css" />
@@ -254,6 +254,7 @@
     <Content Include="Views\ShopSecondHand\Details.cshtml" />
     <Content Include="Views\Nguoidung\Dangky.cshtml" />
     <Content Include="Views\Nguoidung\Dangnhap.cshtml" />
+    <Content Include="Views\ShopSecondHand\aboutus.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
