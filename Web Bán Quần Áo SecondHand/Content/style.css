@@ -340,56 +340,61 @@ p {
     margin: 0 0 20px;
 }
 
-
-input {
-    outline: none;
+/*tim kiem*/
+.search-box {
+    position: absolute;
+    background: #fff;
+    height: 40px;
+    padding: 10px;
+    border-radius: 40px;
+    
 }
 
-    input[type=search] {
-        -webkit-appearance: textfield;
-        -webkit-box-sizing: content-box;
-        font-family: inherit;
-        font-size: 100%;
+
+    .search-box input {
+        background: none;
+        border: none;
+        outline: none;
+        float: left;
+        padding: 0;
+        font-size: 20px;
+        line-height: 20px;
+        width: 0px;
+        transition: all 0.9s;
+       
     }
 
-    input::-webkit-search-decoration,
-    input::-webkit-search-cancel-button {
-        display: none;
+    .search-box:hover input {
+        width: 120px;
+        padding: 0 6px;
     }
 
-
-    input[type=search] {
-        background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
-        border: solid 1px #ccc;
-        padding: 9px 10px 9px 32px;
-        width: 55px;
-        -webkit-border-radius: 10em;
-        -moz-border-radius: 10em;
-        border-radius: 10em;
-        -webkit-transition: all .5s;
-        -moz-transition: all .5s;
-        transition: all .5s;
+    .search-box input:focus {
+        width: 120px;
+        padding: 0 6px;
     }
 
-        input[type=search]:focus {
-            width: 130px;
-            background-color: #fff;
-            border-color: #66CC75;
-            -webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
-            -moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
-            box-shadow: 0 0 5px rgba(109,207,246,.5);
-        }
+.search-button {
+    background: none;
+    outline: none;
+    border: none;
+    width: 25px;
+    margin-top: -19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
 
-
-    input:-moz-placeholder {
-        color: #999;
+    .search-button i {
+        background: white;
+        z-index: 1;
+        font-size: 23px;
+        color: black;
+        padding: 13px 15px 5px 0px;
+        border-radius: 50px;
     }
-
-    input::-webkit-input-placeholder {
-        color: #999;
-    }
-
-
+/*end tim kiem*/
 /* Demo 2 */
 #demo-2 input[type=search] {
     width: 15px;
@@ -516,23 +521,14 @@ a {
     line-height:60px;
     margin:25px 0;
 }
-.btn {
-    padding: 20px ;
-    margin: 20px;
-    text-align: center;
-    display: inline-block;
-    color: yellow;
+.btnpass {
+    background-color: #337ab7;
+    color: black;
     font-size: 20px;
-    border: 2px solid yellow;
+    padding: 0px 0px 0px;  
+    border: none;
 }
 
- .btn:hover {
-        -webkit-box-shadow: rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-      
-        -moz-box-shadow: rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-       
-        box-shadow: rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
- }
 
 
 /*Categories*/
@@ -581,7 +577,7 @@ http://stackoverflow.com/a/34696029/383904
             height: 100%;
             width: 100%;
             background: none 50% no-repeat;
-            object-fit: cover;
+            background-size: cover;
         }
 
     /* PREV/NEXT, CONTAINERS & ANCHORS */
@@ -770,11 +766,10 @@ http://stackoverflow.com/a/34696029/383904
     transition: transform 0.6s;
     
 }
-
-    .col-4 img {
-        width: 300px;
-        height:300px;
-    }
+.col-4 img {
+    width: 300px;
+    height: 300px;
+}
 .col-4:hover{
     transform:translateY(-5px);
 }
@@ -796,21 +791,7 @@ h4 {
     left:50%;
     transform:translateX(-50%);
 }
-/*Quáº£ng cÃ¡o sáº£n pháº©m má»›i*/
-.offer {
-    background-image: -webkit-linear-gradient( 136deg, rgb(0,158,253) 0%, rgb(42,245,152) 100%);
-    margin-top: 10px;
-    padding: 10px 0;
-}
-.col-2 .offer-img {
-    
-    padding: 50px;
-    border-radius: 50%;
-}
-.small{
-    color:#fff;
-}
-/*End - quáº£ng cÃ¡o sáº£n pháº©m*/
+
 /*Nháº­n xÃ©t khÃ¡ch hÃ ng*/
 .testimonial{
     padding-top:100px;
@@ -874,7 +855,8 @@ h4 {
 }
 .footer h3{
     color:#fff;
-    margin-bottom:20px
+    margin-bottom:20px;
+    padding: 0px 15px;
 }
 .footer-col-1,
 .footer-col-2,

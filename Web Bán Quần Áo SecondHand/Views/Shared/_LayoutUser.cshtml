@@ -24,21 +24,26 @@
                     <ul id="MenuItem" style="font-family: Tahoma">
                         <li><a href="@Url.Action("Index","ShopSecondHand")">TRANG CHỦ</a></li>
                         @Html.Action("BoSuuTap", "ShopSecondHand")
-                        <li><a href="@Url.Action("aboutus","ShopSecondHand")">CALA |About Us</a></li>        
-                        <li><a href="#">Xin chào @Session["Taikhoan"]</a></li>    
-                        
+                        <li>
+                            <a href="@Url.Action("aboutus","ShopSecondHand")">CALA |About Us</a>
+                        </li>
+                        <li><a href="#">Xin chào @Session["Taikhoan"]</a></li>
                     </ul>
                 </nav>
-                <div>
-                    <li>
-                        <form id="demo-2">
-                            <input type="search" placeholder="Search" style="padding: 0px 10px 5px";>
-                        </form>
-                    </li>
-                        <img src="~/Content/Images/cart.png" width="25px" height="25px" />
-                        <a href="@Url.Action("Dangnhap","Nguoidung")" ><img src="~/Content/Images/round-account-button-with-user-inside.png" width="25px" height="25px" /></a>
-                    
-                </div>
+                <li>
+                    <img src="~/Content/Images/cart.png" width="25px" height="25px" />
+                    <a href="@Url.Action("Dangnhap","Nguoidung")"><img src="~/Content/Images/round-account-button-with-user-inside.png" width="25px" height="25px" /></a>
+                
+                    <span class="search-box">
+                        <input type="text" name="" value="" placeholder="Tìm Kiếm">
+
+                        <button class="search-button" type="button" name="Tìm Kiếm">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                    </span>
+                
+                </li>
+
 
             </div>
             <!--end logo and menu-->
@@ -69,10 +74,10 @@
             <div style="background-image:url(../../Content/Images/all2.jpg);">
 
             </div>
-            <div style="background-image: url(../../Content/Images/all3.jpg);">
+            <div style="background-image: url(../../Content/Images/alll3.jpg);">
 
             </div>
-            <div style="background-image: url(../../Content/Images/all4.jpg);">
+            <div style="background-image: url(../../Content/Images/alll4.jpg);">
 
             </div>
         </div>
@@ -193,12 +198,17 @@
             <div class="row">
                 <!--Phần download app-->
                 <div class="footer-col-1">
-                    <h3>Dowload Our App</h3>
-                    <p> Dowload App for Andriod and ios mobile phone.</p>
-                    <div class="app-logo">
-                        <img src="~/Content/Images/play-store.png" alt="Alternate Text" />
-                        <img src="~/Content/Images/app-store.png" alt="Alternate Text" />
-                    </div>
+                    <h3>HỔ TRỢ KHÁCH HÀNG</h3>
+                    <ul class="list-unstyled mb-0">                      
+                        <li><a href="@Url.Action("huongdanmuahang","ShopSecondHand")" title="Hướng dẫn mua hàng" style="color: white; font-family: Tahoma; padding: 0px 15px 10px; ">Hướng dẫn mua hàng</a></li>                       
+                        <p>
+                        <li><a href="/pages/thanh-toan" title="Thanh toán"style="color: white; font-family: Tahoma; padding: 0px 15px 10px; ">Thanh toán & Vận chuyển </a></li>
+                        </p>
+                        <p>
+                        <li><a href="/pages/chinh-sach-bao-hanh" title="Chính sách bảo hành"style="color: white;font-family:Tahoma; padding: 0px 15px 10px;">Chính sách bảo hành & đổi trả</a><br /></li>
+                        </p>
+
+                    </ul>
                 </div>
 
                 
@@ -206,6 +216,7 @@
                 <div class="footer-col-3">
                     <h3>Hệ Thống Cửa Hàng</h3>
                     <ul>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
                         <li>Chi nhánh 1:69/7B Nguyễn Gia Trí,Quận Bình Thạnh,TP.HCM</li>
                         
                     </ul>
