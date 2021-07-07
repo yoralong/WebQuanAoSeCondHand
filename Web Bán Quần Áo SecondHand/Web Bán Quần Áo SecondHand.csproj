@@ -258,6 +258,7 @@
     <Content Include="Content\Images\youtube-play.png" />
     <Content Include="Content\lightgallery.min.css" />
     <Content Include="Content\loader\loaders.css" />
+    <Content Include="Content\material-design-iconic-font.min.css" />
     <Content Include="Content\responsive.css" />
     <Content Include="Content\select2.min.css" />
     <Content Include="Content\style.css" />
@@ -309,6 +310,7 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.filterizr.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />

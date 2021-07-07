@@ -27,6 +27,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
             var nhaplaimatkhau = collection["NhaplaiMatkhau"];
             var email = collection["Email"];
             var dienthoai = collection["Dienthoai"];
+            var diachi = collection["Diachi"];
 			
             var ngaysinh = String.Format("{0:MM/dd/yyyy}", collection["Ngaysinh"]);
             KhachHang tempt = db.KhachHangs.SingleOrDefault(n => n.TaiKhoan.Trim() == tendn.Trim());
@@ -42,6 +43,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
                 kh.TaiKhoan = tendn;
                 kh.Email = email;
                 kh.Sdt = dienthoai;
+                kh.DiaChi = diachi;
                 kh.NgaySinh = DateTime.Parse(ngaysinh);
                 
                 db.KhachHangs.InsertOnSubmit(kh);

@@ -5,110 +5,90 @@
 
 }
 
-    <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Form-v8 by Colorlib</title>
-        <!-- Mobile Specific Metas -->
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <!-- Font-->
-        <link rel="stylesheet" type="text/css" href="css/sourcesanspro-font.css">
-        <!-- Main Style Css -->
-        <link rel="stylesheet" href="css/style.css" />
-    </head>
-    <body class="form-v8">
-        <div class="page-content">
-            <div class="form-v8-content">
-                <div class="form-left1">
-                    <img src="~/Content/Images/calalogo.png" alt="form">
-                </div>
-                <div class="form-right">
-                    <div class="tab">
-                        <div class="tab-inner">
-                            <button class="tablinks" onclick="openCity(event, 'sign-up')" id="defaultOpen">Đăng Kí</button>
-                        </div>
-                        
-                    </div>
-                    <form class="form-detail" action="#" method="post">
-                        <div class="tabcontent" id="sign-up">
-                            @Html.ValidationSummary(true)
-                            <div class="form-row">
-                                <label class="form-row-inner">
-                                    <input type="text" name="HotenKH" class="input-text" required size="30" maxlength="30" />
-                                    <span class="label">Họ Và Tên @ViewData["Loi1"] </span>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
 
-                                </label>
-                            </div>
-                            <div class="form-row">
-                                <label class="form-row-inner">
-                                    <input type="text" name="TenDN" class="input-text" required size="30" maxlength="30" />
-                                    <span class="label"><span style="color:red">@ViewData["Loi2"] </span> <p style="text-align:left">Username</p> </span>
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="~/Content/material-design-iconic-font.min.css">
 
-                                </label>
-                            </div>
-                            <div class="form-row">
-                                <label class="form-row-inner">
-                                    <input type="email" name="Email" class="input-text" required size="30" maxlength="30" />
-                                    <span class="label">Email @ViewData["Loi5"]</span>
-                                </label>
-                            </div>
-                            <div class="form-row">
-                                <label class="form-row-inner">
-                                    <input type="text" name="Dienthoai" class="input-text" required size="12" maxlength="12" />
-                                    <span class="label">SĐT @ViewData["Loi6"] </span>
-                                    <span class="border"></span>
-                                </label>
-                            </div>
-                            <div class="form-row">
-                                <label class="form-row-inner">
-                                    <input type="password" name="Matkhau" class="input-text" required size="25" maxlength="25" />
-                                    <span class="label">Password @ViewData["Loi3"]</span>
-                                    <span class="border"></span>
-                                </label>
-                            </div>
-                            <div class="form-row">
-                                <label class="form-row-inner">
-                                    <input type="password" name="NhaplaiMatkhau" class="input-text" required size="25" maxlength="25">
-                                    <span class="label">Comfirm Password @ViewData["Loi4"]</span>
-                                    <span class="border"></span>
-                                </label>
-                            </div>
-                            <div class="form-row">
-                                <label class="form-row-inner">
-                                    <input type="date" name="NgaySinh" class="input-text" required>
-                                    <span class="label">Ngày sinh @ViewData["Loi4"]</span>
-                                    <span class="border"></span>
-                                </label>
-                            </div>
-                            <div class="form-row-last">
-                                <input type="submit" name="submit" class="register" value="Đăng Kí">
-                            </div>
+    <!-- Main css -->
+    <link rel="stylesheet" href="~/Content/style.css">
+</head>
+<body1>
+    
+    <div class="main">
+
+        <section class="signup">
+            
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" id="signup-form" class="signup-form">
+                        <h2 class="form-title">Đăng Kí</h2>
+                        @Html.ValidationSummary(true)
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="HotenKH" id="name" placeholder="Họ Tên Khách Hàng" required />
                         </div>
-                    </form>
-                    
+                        <span class="label">
+                            <span style="color:red; padding-left:10px">@ViewData["Loi2"] </span>
+                            <div class="form-group">
+                                <input type="text" class="form-input" name="TenDN" id="username" placeholder="Tên Đăng Nhập" required />
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-input" name="Matkhau" id="password" placeholder="Mật khẩu" required />
+                                <span toggle="#password"></span>
+                            </div>
+                            <span style="color:red; padding-left:10px">@ViewData["Loi4"] </span>
+                            <div class="form-group">
+                                <input type="password" class="form-input" name="NhaplaiMatkhau" id="re_password" placeholder="Nhập lại mật khẩu" required />
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" class="form-input" name="email" placeholder="Email" required />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-input" name="Dienthoai" placeholder="Số điện thoại" required size="12" maxlength="12" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-input" name="DiaChi" placeholder="Địa chỉ" required />
+                            </div>
+                            <div class="form-group">
+                                <input type="date" class="form-input" name="NgaySinh" id="NgaySinh" placeholder="Ngày Sinh" required />
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="submit" id="submit" class="form-submit" value="Đăng Kí" required />
+                            </div>
+</form>
+                    <p class="loginhere">
+                        Have already an account ? <a href="@Url.Action("Dangnhap","Nguoidung")" class="loginhere-link">Login here</a>
+                    </p>
                 </div>
             </div>
-        </div>
-        <script type="text/javascript">
-            function openCity(evt, cityName) {
-                var i, tabcontent, tablinks;
-                tabcontent = document.getElementsByClassName("tabcontent");
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
-                }
-                tablinks = document.getElementsByClassName("tablinks");
-                for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(" active", "");
-                }
-                document.getElementById(cityName).style.display = "block";
-                evt.currentTarget.className += " active";
-            }
+        </section>
 
-            // Get the element with id="defaultOpen" and click on it
-            document.getElementById("defaultOpen").click();
-        </script>
-    </body>
+    </div>
+
+    <!-- JS -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script type="text/javascript">
+        (function ($) {
+
+            $(".toggle-password").click(function () {
+
+                $(this).toggleClass("zmdi-eye zmdi-eye-off");
+                var input = $($(this).attr("toggle"));
+                if (input.attr("type") == "password") {
+                    input.attr("type", "text");
+                } else {
+                    input.attr("type", "password");
+                }
+            });
+
+        })(jQuery);
+    </script>
+</body1><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
-
-
 

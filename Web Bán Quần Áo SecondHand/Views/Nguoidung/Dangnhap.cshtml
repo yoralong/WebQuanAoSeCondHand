@@ -1,6 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Dangnhap";
+    
 }
 
 <!DOCTYPE html>
@@ -19,7 +20,7 @@
     <!-- =============================================================================================== -->
     <link rel="stylesheet" type="text/css" href="~/Content/font-awesome.min.css">
     <!-- =============================================================================================== -->
-    <link rel="stylesheet" type="text/css" href="~/Content/swiper/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/material-design-iconic-font.min.css">
     <!-- =============================================================================================== -->
     <link rel="stylesheet" type="text/css" href="~/Content/animate.css">
     <!-- =============================================================================================== -->
@@ -35,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="~/Content/style.css">
     <!-- =============================================================================================== -->
 </head>
-<body>
+<body1>
     @using (Html.BeginForm())
     {
         @Html.ValidationSummary(true)
@@ -43,20 +44,20 @@
             <div class="container-login100">
                 <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
                     <form class="login100-form validate-form">
-                        <span class="login100-form-title p-b-49">
-                            Login
+                        <span class="login100-form-title p-b-49" style="font-size:24pt" >
+                            ĐĂNG NHẬP
                         </span>
-
+                        <span style="color:red;padding:10px;">@ViewBag.Thongbao</span>
                         <div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
-                            <span class="label-input100"> Username</span>
+                            <span class="label-input100" style="font-size:15pt"> Tên tài khoản</span>
                             <input class="input100" type="text" name="TenDN" placeholder="Type your username">
-                            <span class="focus-input100" data-symbol="&#xf206;"> </span>
+                            <span class="focus-input100" > </span>
                         </div>
 
                         <div class="wrap-input100 validate-input" data-validate="Password is required">
-                            <span class="label-input100"> Password</span>
+                            <span class="label-input100" style=" font-size: 15pt"> Mật khẩu </span>
                             <input class="input100" type="password" name="Matkhau" placeholder="Type your password">
-                            <span class="focus-input100" data-symbol="&#xf190;"> </span>
+                            <span class="focus-input100" > </span>
                         </div>
 
                         <div class="text-right p-t-8 p-b-31">
@@ -74,9 +75,9 @@
                             </div>
                         </div>
 
-                        <div class="txt1 text-center p-t-54 p-b-20">
+                        <div class="txt1 text-center p-t-10 p-b-20">
                             <span>
-                                Or Sign Up Using
+                                Hoặc đăng nhập bằng
                             </span>
                         </div>
 
@@ -94,8 +95,8 @@
                             </a>
                         </div>
 
-                        <div class="flex-col-c p-t-155">
-                            <a href="@Url.Action("Dangky","Nguoidung")"class="txt2">
+                        <div class="flex-col-c p-t-30">
+                            <a href="@Url.Action("Dangky","Nguoidung")" class="txt2">
                                 Sign Up
                             </a>
                         </div>
@@ -125,5 +126,5 @@
     <!-- =============================================================================================== -->
     <script src="~/Scripts/main.js"></script>
 
-</body>
+</body1>
 </html>
