@@ -1,17 +1,18 @@
 ﻿@model Web_Bán_Quần_Áo_SecondHand.Models.KhachHang
-<link href="~/Content/style.css" rel="stylesheet" />
+
 @{
     ViewBag.Title = "Dangky";
 
 }
 
-<html lang="en">
+<html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign Up Form by Colorlib</title>
-
+    
     <!-- Font Icon -->
     <link rel="stylesheet" href="~/Content/material-design-iconic-font.min.css">
 
@@ -19,11 +20,11 @@
     <link rel="stylesheet" href="~/Content/style.css">
 </head>
 <body1>
-    
+
     <div class="main">
 
         <section class="signup">
-            
+
             <div class="container">
                 <div class="signup-content">
                     <form method="POST" id="signup-form" class="signup-form">
@@ -61,7 +62,7 @@
                             <div class="form-group">
                                 <input type="submit" name="submit" id="submit" class="form-submit" value="Đăng Kí" required />
                             </div>
-</form>
+                    </form>
                     <p class="loginhere">
                         Have already an account ? <a href="@Url.Action("Dangnhap","Nguoidung")" class="loginhere-link">Login here</a>
                     </p>
@@ -72,23 +73,25 @@
     </div>
 
     <!-- JS -->
-    <script src="~/Scripts/jquery.min.js"></script>
-    <script type="text/javascript">
-        (function ($) {
 
-            $(".toggle-password").click(function () {
-
-                $(this).toggleClass("zmdi-eye zmdi-eye-off");
-                var input = $($(this).attr("toggle"));
-                if (input.attr("type") == "password") {
-                    input.attr("type", "text");
-                } else {
-                    input.attr("type", "password");
-                }
-            });
-
-        })(jQuery);
-    </script>
-</body1><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body1>
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
 
+<script src="~/Scripts/jquery.min.js"></script>
+<script type="text/javascript">
+    (function ($) {
+
+        $(".toggle-password").click(function () {
+
+            $(this).toggleClass("zmdi-eye zmdi-eye-off");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+
+    })(jQuery);
+</script>
