@@ -135,6 +135,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\animate.css" />
+    <Content Include="Content\animsition.min.css" />
     <Content Include="Content\aos\aos.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -144,7 +146,10 @@
     <Content Include="Content\bootstrap\bootstrap-grid.css" />
     <Content Include="Content\bootstrap\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap\bootstrap.css" />
+    <Content Include="Content\daterangepicker.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\font-awesome\font-awesome.css" />
+    <Content Include="Content\hamburgers.min.css" />
     <Content Include="Content\Images\1.jpg" />
     <Content Include="Content\Images\10.jpg" />
     <Content Include="Content\Images\11.jpg" />
@@ -171,6 +176,7 @@
     <Content Include="Content\Images\anh.jpg" />
     <Content Include="Content\Images\app-store.png" />
     <Content Include="Content\Images\back.jpg" />
+    <Content Include="Content\Images\bg-01.jpg" />
     <Content Include="Content\Images\bia.png" />
     <Content Include="Content\Images\CalaIcon.png" />
     <Content Include="Content\Images\calalogo.png" />
@@ -253,15 +259,19 @@
     <Content Include="Content\lightgallery.min.css" />
     <Content Include="Content\loader\loaders.css" />
     <Content Include="Content\responsive.css" />
+    <Content Include="Content\select2.min.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\style1.css" />
+    <Content Include="Content\swiper\material-design-iconic-font.min.css" />
     <Content Include="Content\swiper\swiper.css" />
+    <Content Include="Content\util.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\lg.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\animsition.min.js" />
     <Content Include="Scripts\aos.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -287,8 +297,11 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\countdowntime.js" />
+    <Content Include="Scripts\daterangepicker.js" />
     <Content Include="Scripts\imagesloaded.pkgd.min.js" />
     <Content Include="Scripts\isotope.pkgd.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -304,7 +317,11 @@
     <Content Include="Scripts\loaders.css.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\select2.min.js" />
     <Content Include="Scripts\swiper.min.js" />
+    <Content Include="Views\Nguoidung\bg-01.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

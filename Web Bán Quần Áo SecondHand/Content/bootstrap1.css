@@ -409,7 +409,7 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
 }
 
 @media (max-width: 1200px) {
@@ -713,13 +713,17 @@ pre code {
 }
 
 .col-4 {
-  flex: 0 0 33.33333%;
-  max-width: 33.33333%;
+    text-align: center;
+    font-size: 22px;
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.6s;
 }
 
 .col-5 {
-  flex: 0 0 41.66667%;
-  max-width: 41.66667%;
+    width: 160px;
 }
 
 .col-6 {
@@ -2954,12 +2958,7 @@ input[type="button"].btn-block {
   }
 }
 
-.dropup,
-.dropright,
-.dropdown,
-.dropleft {
-  position: relative;
-}
+
 
 .dropdown-toggle {
   white-space: nowrap;
@@ -3958,13 +3957,7 @@ input[type="button"].btn-block {
   }
 }
 
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
-}
+
 
 .nav-link {
   display: block;
