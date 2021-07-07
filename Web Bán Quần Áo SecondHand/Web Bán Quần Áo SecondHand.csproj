@@ -340,10 +340,10 @@
     <Content Include="Views\ShopSecondHand\SPTheoMaLoai.cshtml" />
     <Content Include="Views\ShopSecondHand\Details.cshtml" />
     <Content Include="Views\Nguoidung\Dangky.cshtml" />
-    <Content Include="Views\Nguoidung\Dangnhap.cshtml" />
     <Content Include="Views\ShopSecondHand\aboutus.cshtml" />
     <Content Include="Views\ShopSecondHand\huongdanmuahang.cshtml" />
     <Content Include="Views\ShopSecondHand\index1.cshtml" />
+    <Content Include="Views\Nguoidung\Dangnhap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
