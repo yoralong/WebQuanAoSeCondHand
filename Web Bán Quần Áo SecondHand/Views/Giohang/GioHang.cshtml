@@ -1,0 +1,59 @@
+﻿@using Web_Bán_Quần_Áo_SecondHand.Models
+@model List<Giohang>
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+
+}
+
+
+<h2 style="text-align:center;font-weight:bold">THÔNG TIN GIỎ HÀNG</h2>
+<table align="center"  border="1" >
+    <tr style="text-align:center;font-weight:bold">
+        <td>Mã sản phẩm</td>
+        <td>Tên sản phẩm</td>
+        <td width="250px">Ảnh sản phẩm</td>
+        <td>Số lượng</td>
+        <td>Đơn giá</td>
+        <td>Thành tiền</td>
+        <td width="70px"></td>
+        <td width="70px"></td>
+        <td width="70px"></td>
+
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr style="text-align:center;font-weight:bold">
+            <td>@item.MaSP </td>
+            <td>@item.TenSP</td>
+            <td><img src="@item.Image"></td>
+            @using (Html.BeginForm("CapnhapGiohang", "Giohang", new { @masp = item.MaSP }))
+            {
+                <td >
+                    <input type="number" min="1" name="txtSoluong" value="@item.Soluong" style="background-color:antiquewhite;border:double" />
+                </td>
+                <td>@String.Format("{0:0,0}", item.DonGia)</td>
+                <td>@String.Format("{0:0,0}", item.ThanhTien)</td>
+                <td width="70px"><a href="@Url.Action("Details","ShopSecondHand", new { id = item.MaSP})">Chi tiết</a></td>
+                <td width="70px" > @Html.ActionLink("Xóa", "XoaGiohang", new { @masp = item.MaSP }) </td>
+                <td width="70px"><input type="submit" value="Cập nhập" border="1" style="background-color:antiquewhite;border:double" /></td>
+            }
+
+        </tr>
+    }
+    <tr style="font-weight:bold;text-align:center;color:red">
+        <td colspan="4"> Số lượng sản phẩm: @ViewBag.Tongsoluong</td>
+        <td colspan="5"> Tổng tiền: @String.Format("{0:0,0}", @ViewBag.Tongtien)</td>
+    </tr>
+    <tr style="font-weight:bold;text-align:right;color:blue">
+        <td colspan="9"> 
+            @Html.ActionLink("Xóa tất cả giỏ hàng", "XoatatcaGiohang")
+        </td>
+    </tr>
+    <tr style="font-weight:bold;text-align:right;color:red">
+        <td colspan="9"> Đặt hàng</td>
+
+    </tr>
+</table>
+

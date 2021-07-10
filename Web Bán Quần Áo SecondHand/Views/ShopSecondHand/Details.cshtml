@@ -130,7 +130,7 @@
             <div>
                 <div id="datmua">
 
-                    <span><a href="@Url.Action("AddToCard", "ShoppingCard", new { id = Model.MaSP })"></a></span>
+                    <span><a href="@Url.Action("ThemGiohang", "Giohang", new { @masp = @Model.MaSP,@strURL = Request.Url.ToString() })"></a></span>
                 </div>
                 <div id="link">
                     <p>

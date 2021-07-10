@@ -121,6 +121,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GiohangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NguoidungController.cs" />
     <Compile Include="Controllers\ShopSecondHandController.cs" />
@@ -132,6 +133,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbQLShopSHData.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Giohang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -180,7 +182,6 @@
     <Content Include="Content\Images\bia.png" />
     <Content Include="Content\Images\CalaIcon.png" />
     <Content Include="Content\Images\calalogo.png" />
-    <Content Include="Content\Images\cart.png" />
     <Content Include="Content\Images\client1.png" />
     <Content Include="Content\Images\client2.png" />
     <Content Include="Content\Images\client3.png" />
@@ -344,8 +345,9 @@
     <Content Include="Views\Nguoidung\Dangky.cshtml" />
     <Content Include="Views\ShopSecondHand\aboutus.cshtml" />
     <Content Include="Views\ShopSecondHand\huongdanmuahang.cshtml" />
-    <Content Include="Views\ShopSecondHand\index1.cshtml" />
     <Content Include="Views\Nguoidung\Dangnhap.cshtml" />
+    <Content Include="Views\Giohang\GioHang.cshtml" />
+    <Content Include="Views\Giohang\GiohangPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
