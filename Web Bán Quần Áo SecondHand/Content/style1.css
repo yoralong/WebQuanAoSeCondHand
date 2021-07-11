@@ -22,8 +22,10 @@
 13 - Foot Note
 --------------------------------------------------------------------*/
 /*-----------------------------------
+
     1 - Header
 ------------------------------------*/
+
 header {
   background-color: rgba(26, 10, 56, 0.53);
   color: #fff;
@@ -743,23 +745,6 @@ form button.btn-primary:hover {
   margin: 50px 0 -30px;
 }
 
-/*-----------------------------------
-    1 - Footer
-------------------------------------*/
-footer {
-  background: url(../images/footer-bg.png) center center/cover no-repeat #26264b;
-}
-
-/*-----------------------------------
-    1 - Footer Widgets
-------------------------------------*/
-.footer-widgets {
-  padding: 100px 0;
-}
-
-.footer-widgets .col-md-6 .single-widget:not(:first-child) .widget-tiltle {
-  margin: 40px 0 30px;
-}
 
 .single-widget {
   color: #aaa;
