@@ -56,7 +56,7 @@
                 </nav>
             </div>
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="Multipurpose"></a>
+                <a class="navbar-brand" href="index.html"><img src="#" alt="Multipurpose"></a>
                 <div class="group d-flex align-items-center">
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -64,7 +64,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     
-                    <a class="cart" ><i class="fa fa-shopping-cart">@Html.Action("GiohangPartial", "Giohang")</i></a>
+                    <a class="cart" href="@Url.Action("GioHang","GioHang")"><i class="fa fa-shopping-cart" aria-hidden="true"></i>@Html.Action("GiohangPartial", "Giohang")</a>
                 </div>
                 <a class="search-icon d-none d-md-block" href="#"><i class="fa fa-search"></i></a>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
@@ -248,8 +248,7 @@
                 <div class="footer-col-3">
                     <h3>Hệ Thống Cửa Hàng</h3>
                     <ul>
-                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                        <li>Chi nhánh 1:69/7B Nguyễn Gia Trí,Quận Bình Thạnh,TP.HCM</li>
+                        <li><i class="fa fa-map-marker" aria-hidden="true" style="padding-right:10px"></i>Chi nhánh 1:69/7B Nguyễn Gia Trí,Quận Bình Thạnh,TP.HCM</li>
 
                     </ul>
                 </div>
@@ -273,14 +272,7 @@
 </body>
 </html>
 
-<script type="text/javascript">
-    function buyNow() {
-        question = confirm("Bạn muốn mua sản phẩm này ? ");
-        if (question != false) {
-            alert('Cảm ơn bạn đã mua sản phẩm');
-        }
-    }
-</script>
+
 <script src="~/Scripts/jquery-3.3.1.js"></script>
 <!--Plugins-->
 <script src="~/Scripts/bootstrap.bundle.js"></script>
