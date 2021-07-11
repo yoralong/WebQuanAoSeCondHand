@@ -80,7 +80,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
                     Session["Taikhoan"] = kh;
                     Session["Taikhoandn"] = kh.TenKH;
                     
-                    return RedirectToAction("index", "ShopSecondHand");
+                    return RedirectToAction("GioHang", "Giohang");
                 }
                 else
                     ViewBag.Thongbao = "Tên đăng nhập hoặc mật khẩu không đúng";
