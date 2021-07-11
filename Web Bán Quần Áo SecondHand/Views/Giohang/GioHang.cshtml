@@ -111,8 +111,6 @@
                 <td width="70px"></td>
                 <td width="70px"></td>
                 <td width="70px"></td>
-
-
             </tr>
             @foreach (var item in Model)
             {
@@ -144,7 +142,9 @@
                 </td>
             </tr>
             <tr style="font-weight:bold;text-align:right;color:red">
-                <td colspan="9"> Đặt hàng</td>
+                <td colspan="9">
+                    @Html.ActionLink("ĐẶT HÀNG","Dathang","Giohang")
+                </td>
 
             </tr>
         </table>
@@ -152,12 +152,13 @@
     </div>
 
     <!-- Gio hang -->
-        <!--footer-->
-        <div class="footer">
-            <div class="container">
-                <div class="row">
+    <div style="padding-top:100px"></div>
+     <!--footer-->
+      <div class="footer" style="padding:20px">
+           <div class="container">
+               <div class="row">
                     <!--Phần download app-->
-                    <div class="footer-col-1">
+                  <div class="footer-col-1">
                         <h3>HỔ TRỢ KHÁCH HÀNG</h3>
                         <ul class="list-unstyled mb-0">
                             <li><a href="@Url.Action("huongdanmuahang","ShopSecondHand")" title="Hướng dẫn mua hàng" style="color: white; font-family: Tahoma; padding: 0px 15px 10px; ">Hướng dẫn mua hàng</a></li>

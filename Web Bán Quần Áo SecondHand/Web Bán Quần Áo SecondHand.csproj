@@ -347,6 +347,8 @@
     <Content Include="Views\Nguoidung\Dangnhap.cshtml" />
     <Content Include="Views\Giohang\GioHang.cshtml" />
     <Content Include="Views\Giohang\GiohangPartial.cshtml" />
+    <Content Include="Views\Giohang\Dathang.cshtml" />
+    <Content Include="Views\Giohang\XacnhanDonhang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,4 +1,5 @@
-﻿
+﻿@using Web_Bán_Quần_Áo_SecondHand.Models
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
 
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-   
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,7 +47,7 @@
                     </a>
                 </div>
                 <nav class="d-flex aic">
-                    <a href="@Url.Action("Dangnhap","Nguoidung")"" class="login"><i class="fa fa-user" aria-hidden="true"></i>Login</a>
+                    <a href="@Url.Action("Dangnhap","Nguoidung")" " class="login"><i class="fa fa-user" aria-hidden="true"></i>Login</a>
                     <ul class="nav social d-none d-md-flex">
                         <li><a href="https://www.facebook.com/CALA-Ti%E1%BB%87m-2hand-104941784794471" target="_blank"><i class="fa fa-facebook"></i></a></li>
 
@@ -63,18 +64,22 @@
                             aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    
+
                     <a class="cart" href="@Url.Action("GioHang","GioHang")"><i class="fa fa-shopping-cart" aria-hidden="true"></i>@Html.Action("GiohangPartial", "Giohang")</a>
                 </div>
                 <a class="search-icon d-none d-md-block" href="#"><i class="fa fa-search"></i></a>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","ShopSecondHand")">Home</a></li>
-                        
-                        <li >@Html.Action("BoSuuTap", "ShopSecondHand")</li>
-                        
+
+                        <li>@Html.Action("BoSuuTap", "ShopSecondHand")</li>
+
                         <li class="nav-item"><a class="nav-link" href="@Url.Action("aboutus","ShopSecondHand")">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Xin Chào @Session["Taikhoan"]</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Xin Chào @Session["Taikhoandn"]
+                            </a>
+                        </li>
 
                     </ul>
                     <form class="bg-white search-form" method="get" id="searchform">

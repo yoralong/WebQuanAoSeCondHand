@@ -77,7 +77,8 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
                 if (kh != null)
                 {
                     ViewBag.Thongbao = "Chúc mừng đăng nhập thành công";
-                    Session["Taikhoan"] = kh.TenKH;
+                    Session["Taikhoan"] = kh;
+                    Session["Taikhoandn"] = kh.TenKH;
                     
                     return RedirectToAction("index", "ShopSecondHand");
                 }
