@@ -1,34 +1,47 @@
-﻿@model IEnumerable<Web_Bán_Quần_Áo_SecondHand.Models.SanPham>
+﻿@using Web_Bán_Quần_Áo_SecondHand.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<SanPham>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 <!--Sản phẩm nổi bật-->
 <div class="small-container">
-    <h2 class="title"style="font-family:Tahoma">Sản phẩm bán chạy</h2>
+    <h2 class="title" style="font-family:Tahoma">Sản phẩm bán chạy</h2>
     <div class="row">
 
         @foreach (var sanpham in Model)
         {
-        <div class="col-4">
-            <a href="@Url.Action("Details","ShopSecondHand",new { id = sanpham.MaSP})">
-                <img src="@sanpham.Image" />
-                <h4>@sanpham.TenSP</h4>
-                <p class="price ">
-                    @String.Format("{0:0,0}", sanpham.DonGia)đ
-                    <span class="price-del"></span>
-                </p>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-            </a>
-        </div>
+            <div class="col-4">
+                <a href="@Url.Action("Details","ShopSecondHand",new { id = sanpham.MaSP})">
+                    <img src="@sanpham.Image" />
+                    <h4>@sanpham.TenSP</h4>
+                    <p class="price ">
+                        @String.Format("{0:0,0}", sanpham.DonGia)đ
+                        <span class="price-del"></span>
+                    </p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                </a>
+            </div>
         }
-    
+
+    </div>
 </div>
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
 </div>
+<style>
+    .MenuTrang * {
+        display: flex;
+        color: black;
+        justify-content: center;
+        font-size:16pt;
+    }
+</style>
 <!--End sản phẩm nổi bật-->

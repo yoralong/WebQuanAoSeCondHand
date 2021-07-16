@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Web_Bán_Quần_Áo_SecondHand.Models;
-
+using PagedList;
+using PagedList.Mvc;
 namespace Web_Bán_Quần_Áo_SecondHand.Controllers
 {
     public class ShopSecondHandController : Controller
@@ -22,10 +23,15 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
             var sanphamtheoloai = from cd in data.SanPhams where cd.MaLoai.Trim() == id.Trim() select cd;
             return View(sanphamtheoloai);
         }
-        public ActionResult Index()
+        public ActionResult Index(int ? page)
         {
-            var sanphammoi = laysanpham(12);
-            return View(sanphammoi);
+            // tao bien quy dinh so san pham moi tren trang
+            int pageSize = 12;
+            // tao bien so trang
+            int pageNum = (page ?? 1);
+            //lấy top sản phẩm bán chạy nhất
+            var sanphammoi = laysanpham(36);
+            return View(sanphammoi.ToPagedList(pageNum,pageSize));
         }
 
         public ActionResult BoSuuTap()
