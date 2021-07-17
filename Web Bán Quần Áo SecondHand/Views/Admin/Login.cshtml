@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    
+}
+<!DOCTYPE html>
+<html lang="vi">
+<link href="~/Content/style.css" rel="stylesheet" />
+
+
+<head>
+    <title> Đăng nhập</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- =============================================================================================== -->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css">
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="~/Content/font-awesome.min.css">
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="~/Content/material-design-iconic-font.min.css">
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="~/Content/animate.css">
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="~/Content/hamburgers.min.css">
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="~/Content/animsition.min.css">
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="~/Content/select2.min.css">
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="~/Content/daterangepicker.css">
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="~/Content/util.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css">
+    <!-- =============================================================================================== -->
+</head>
+<body1>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <div class="limiter">
+            <div class="container-login100">
+                <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                    <form class="login100-form validate-form">
+                        <span class="login100-form-title p-b-49" style="font-size:24pt">
+                            ĐĂNG NHẬP
+                        </span>
+                        <span style="color:red;padding:10px;">@ViewBag.Thongbao</span>
+                        <div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
+                            <span class="label-input100" style="font-size:15pt"> Tên tài khoản</span>
+                            <input class="input100" type="text" name="TenDN" placeholder="Type your username"required>
+                            <span class="focus-input100"> </span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="Password is required">
+                            <span class="label-input100" style=" font-size: 15pt"> Mật khẩu </span>
+                            <input class="input100" type="password" name="Matkhau" placeholder="Type your password"required>
+                            <span class="focus-input100"> </span>
+                        </div>
+
+                        <div class="text-right p-t-8 p-b-31">
+                            <a href="#">
+                                Quên mật khẩu
+                            </a>
+                        </div>
+
+                        <div class="container-login100-form-btn">
+                            <div class="wrap-login100-form-btn">
+                                <div class="login100-form-bgbtn"></div>
+                                <button class="login100-form-btn" type="submit">
+                                    Đăng nhập
+                                </button>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+
+
+
+    <div id="dropDownSelect1"> </div>
+    <!-- =============================================================================================== -->
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <!-- =============================================================================================== -->
+    <script src="~/Scripts/animsition.min.js"></script>
+    <!-- =============================================================================================== -->
+    <script src="~/Scripts/popper.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- =============================================================================================== -->
+    <script src="~/Scripts/select2.min.js"></script>
+    <!-- =============================================================================================== -->
+    <script src="~/Scripts/moment.min.js"></script>
+    <script src="~/Scripts/daterangepicker.js"></script>
+    <!-- =============================================================================================== -->
+    <script src="~/Scripts/countdowntime.js"></script>
+    <!-- =============================================================================================== -->
+    <script src="~/Scripts/main.js"></script>
+
+</body1>
+</html>

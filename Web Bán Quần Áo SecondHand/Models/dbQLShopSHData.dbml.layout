@@ -58,21 +58,21 @@
         <elementListCompartment Id="89aa8a53-b5b4-49f9-a4ba-64d41b1ededf" absoluteBounds="3.89, 1.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 5.63544840494792); (3.57291666666667 : 5.63544840494792 : JumpStart); (3.73958333333333 : 5.63544840494792 : JumpEnd); (4.26041416666667 : 5.63544840494792 : JumpStart); (4.42708083333333 : 5.63544840494792 : JumpEnd); (4.875 : 5.63544840494792); (4.875 : 4.0401025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 5.63544840494792); (4.26041416666667 : 5.63544840494792 : JumpStart); (4.42708083333333 : 5.63544840494792 : JumpEnd); (4.875 : 5.63544840494792); (4.875 : 4.0401025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbQLShopSHDataDataContext/CongTy_VanChuyen/CongTy_VanChuyen_HoaDon" />
       <nodes>
         <classShapeMoniker Id="f031d0b1-1b51-4526-81c2-74d4d542cbee" />
         <classShapeMoniker Id="b4dc0fa7-c35d-478b-9d6a-e7902153f703" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 8.52005126953125); (3.57291666666667 : 8.52005126953125 : JumpStart); (3.73958333333333 : 8.52005126953125 : JumpEnd); (4.3437475 : 8.52005126953125); (4.3437475 : 4.0401025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 8.52005126953125); (4.3437475 : 8.52005126953125); (4.3437475 : 4.0401025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbQLShopSHDataDataContext/KhachHang/KhachHang_HoaDon" />
       <nodes>
         <classShapeMoniker Id="294fbe4e-9948-46ce-81a2-5b8cbf323494" />
         <classShapeMoniker Id="b4dc0fa7-c35d-478b-9d6a-e7902153f703" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.19314697265625); (3.57291666666667 : 2.19314697265625 : JumpStart); (3.73958333333333 : 2.19314697265625 : JumpEnd); (3.875 : 2.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 2.19314697265625); (3.875 : 2.19314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbQLShopSHDataDataContext/Voucher/Voucher_HoaDon" />
       <nodes>
         <classShapeMoniker Id="78fbe609-70a8-4719-8de8-ab4b27f6b925" />
@@ -85,19 +85,25 @@
         <elementListCompartment Id="b9079614-78d9-4c66-a36e-fd19c5d81fe7" absoluteBounds="6.14, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.875 : 2.03929768880208); (6.125 : 2.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.875 : 2.03929768880208); (6.125 : 2.03929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbQLShopSHDataDataContext/HoaDon/HoaDon_CTHD" />
       <nodes>
         <classShapeMoniker Id="b4dc0fa7-c35d-478b-9d6a-e7902153f703" />
         <classShapeMoniker Id="519473e7-3c42-4bcb-a3c3-9b8a3e5ffa8e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3.65625 : 12); (3.65625 : 1.21875); (6.125 : 1.21875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 13.2700512695312); (7.125 : 13.2700512695312); (7.125 : 2.57859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbQLShopSHDataDataContext/SanPham/SanPham_CTHD" />
       <nodes>
         <classShapeMoniker Id="ecbd999c-5283-4035-ae05-3365409722dd" />
         <classShapeMoniker Id="519473e7-3c42-4bcb-a3c3-9b8a3e5ffa8e" />
       </nodes>
     </associationConnector>
+    <classShape Id="a187633b-dd29-4dc0-a0b8-3ac95febbd88" absoluteBounds="8.5, 3.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/dbQLShopSHDataDataContext/Admin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a0603ebd-9153-47a4-b74b-68babd9f553c" absoluteBounds="8.515, 3.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

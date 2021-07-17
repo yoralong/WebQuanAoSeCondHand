@@ -1,0 +1,91 @@
+﻿@using Web_Bán_Quần_Áo_SecondHand.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<Web_Bán_Quần_Áo_SecondHand.Models.SanPham>
+
+
+@{
+    ViewBag.Title = "Sanpham";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Quản Lý Sản Phẩm</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" border="1">
+    <tr>
+        <th>
+            MaLoai
+        </th>
+        <th>
+            MaTH
+        </th>
+        <th>
+            TenSP
+        </th>
+        <th>
+            DonGia
+        </th>
+        <th>
+            NgayNhap
+        </th>
+        <th>
+           Image
+        </th>
+        <th>
+           Details
+        </th>
+        <th>
+            SoLuongTon
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaLoai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaTH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonGia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayNhap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Details)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuongTon)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaSP }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaSP }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaSP })
+            </td>
+        </tr>
+    }
+
+</table>
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Sanpham", new { page = page }))
+</div>
+<style>
+    .MenuTrang * {
+        display: flex;
+        color: black;
+        justify-content: center;
+        font-size: 16pt;
+    }
+</style>

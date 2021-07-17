@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <!---- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"></!-->
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Document title -->
+    <title>Multipurpose</title>    <!-- Stylesheets & Fonts -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i%7CRajdhani:400,600,700"
+          rel="stylesheet">
+    <!-- Plugins Stylesheets -->
+    <link href="~/Content/loader/loaders.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap1.css" rel="stylesheet" />
+    <link href="~/Content/aos/aos.css" rel="stylesheet" />
+    <link href="~/Content/swiper/swiper.css" rel="stylesheet" />
+    <link href="~/Content/lightgallery.min.css" rel="stylesheet" />
+    <!-- Template Stylesheet -->
+    <link href="~/Content/style1.css" rel="stylesheet" />
+    <!-- Responsive Stylesheet -->
+    <link href="~/Content/responsive.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0" nonce="DRnzoawa"></script>
+    <!-- Header Start -->
+    <header class="position-absolute w-100">
+        <div class="container">
+            <div class="top-header d-none d-sm-flex justify-content-between align-items-center">
+                <div class="contact">
+                    <a href="tel:+1234567890" class="tel"><i class="fa fa-phone" aria-hidden="true"></i>+0586051405</a>
+                    <a href="mailto:info@yourmail.com">
+                        <i class="fa fa-envelope"
+                           aria-hidden="true"></i>calashopsh@gmail.com
+                    </a>
+                </div>
+                <nav class="d-flex aic">
+                    <a href="@Url.Action("Login","Admin")" " class="login"><i class="fa fa-user" aria-hidden="true"></i>Login</a>
+                    <ul class="nav social d-none d-md-flex">
+                        <li><a href="https://www.facebook.com/CALA-Ti%E1%BB%87m-2hand-104941784794471" target="_blank"><i class="fa fa-facebook"></i></a></li>
+
+                        <li><a href="https://www.instagram.com/_cala.2hand/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" href="index.html"><img src="~/Content/Images/1-removebg-preview.png" style="width:30%" alt="CALA"></a>
+                <div class="group d-flex align-items-center">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    
+                </div>
+                <a class="search-icon d-none d-md-block" href="#"><i class="fa fa-search"></i></a>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("IndexAdmin","Admin")">Home</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Sanpham","Admin")">Quản lý hàng hóa</a></li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Xin Chào @Session["Taikhoandn"]
+                            </a>
+                        </li>
+
+                    </ul>
+                    <form class="bg-white search-form" method="get" id="searchform">
+                        <div class="input-group">
+                            <input class="field form-control" id="s" name="s" type="text" placeholder="Search">
+                            <span class="input-group-btn">
+                                <input class="submit btn btn-primary" id="searchsubmit" name="submit" type="submit"
+                                       value="Search">
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Header End -->
+    <div style="color:black;font-size:18px;padding-top:200px">
+
+        @RenderBody()
+    </div>
+</body>
+</html>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<!--Plugins-->
+<script src="~/Scripts/bootstrap.bundle.js"></script>
+<script src="~/Scripts/loaders.css.js"></script>
+<script src="~/Scripts/aos.js"></script>
+<script src="~/Scripts/swiper.min.js"></script>
+<script src="~/Scripts/lightgallery-all.min.js"></script>
+<!--Template Script-->
+
+<script src="~/Scripts/main.js"></script>
