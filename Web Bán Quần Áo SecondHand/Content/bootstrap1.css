@@ -264,6 +264,7 @@ textarea {
 button,
 input {
   overflow: visible;
+  text-align:center;
 }
 
 button,

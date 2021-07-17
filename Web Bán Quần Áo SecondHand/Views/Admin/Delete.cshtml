@@ -1,0 +1,92 @@
+﻿@model Web_Bán_Quần_Áo_SecondHand.Models.SanPham
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Xác nhận thông tin sản phẩm cần xóa</h2>
+
+<h2>Bạn quyết định xóa sản phẩm này ?</h2>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal" style="text-align:center">
+        <dt>
+            Mã Loại:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaLoai)
+        </dd>
+
+        <dt>
+            Mã Thương Hiệu:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaTH)
+        </dd>
+
+        <dt>
+            Mã Sản Phẩm:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSP)
+        </dd>
+
+        <dt>
+            Đơn Giá:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonGia)
+        </dd>
+
+        <dt>
+            Ngày Nhập:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayNhap)
+        </dd>
+
+        <dt>
+            Hình Ảnh:
+        </dt>
+
+        <dd>
+            <img src="@Url.Content( Model.Image)" width="120px" />
+        </dd>
+
+        <dt>
+            Chi Tiết:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Details)
+        </dd>
+
+        <dt>
+            Số Lượng Tồn:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongTon)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color" style="text-align:center">
+    <button class="btn btn-primary" type="submit" value="Delete">Xóa</button>
+    <a href="@Url.Action("IndexAdmin","Admin")">
+        <img src="~/Content/Images/back.jpg" width="175px" height="175px" />
+    </a>
+   
+</div>
+    }
+</div>

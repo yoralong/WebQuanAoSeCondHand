@@ -5,7 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Web_Bán_Quần_Áo_SecondHand.Models;
 using PagedList.Mvc;
-using PagedList; 
+using PagedList;
+using System.IO;
 namespace Web_Bán_Quần_Áo_SecondHand.Controllers
 {
     public class AdminController : Controller       
@@ -26,17 +27,56 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
            
             return View(db.SanPhams.ToList().OrderBy(n => n.MaSP).ToPagedList(pageNum, pageSize));
         }
-        public ActionResult Edit()
+        [HttpGet]
+        public ActionResult Delete(int id)
         {
-            return View();
+            SanPham sanPham = db.SanPhams.SingleOrDefault(n => n.MaSP == id);
+            ViewBag.MaSP = sanPham.MaSP;
+            if(sanPham == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(sanPham);
         }
+        [HttpPost,ActionName("Delete")]
+        public ActionResult Xacnhanxoa(int id)
+        {
+            SanPham sanPham = db.SanPhams.SingleOrDefault(n => n.MaSP == id);
+            ViewBag.MaSP = sanPham.MaSP;
+            if (sanPham == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            db.SanPhams.DeleteOnSubmit(sanPham);
+            db.SubmitChanges();
+            return RedirectToAction("Sanpham");
+        }
+        
         [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Create(SanPham sanPham,HttpPostedFileBase fileupload)
+        {
+            var fileName = Path.GetFileName(fileupload.FileName);
+            var path = Path.Combine(Server.MapPath("~/Content/Images/"), fileName);
+            if(System.IO.File.Exists(path))
+            {
+                ViewBag.Thongbao = "Hình ảnh đã tồn tại";
+            }
+            else
+            {
+                fileupload.SaveAs(path);
+            }
+            
+            return View();
+        }
+
         [HttpGet]
-       
         public ActionResult Login()
         {
             return View();
@@ -69,6 +109,17 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
                     ViewBag.Thongbao = "Tên đăng nhập hoặc mật khẩu không đúng";
             }
             return View();
+        }
+        public ActionResult Details(int id)
+        {
+            SanPham sanPham = db.SanPhams.SingleOrDefault(n => n.MaSP == id);
+            ViewBag.MaSP = sanPham.MaSP;
+            if(sanPham == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(sanPham);        
         }
     }
 }
