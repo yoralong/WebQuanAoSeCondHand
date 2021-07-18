@@ -57,13 +57,15 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            ViewBag.MaLoai = new SelectList(db.LoaiSPs.ToList().OrderBy(n => n.MaLoai), "Maloai", "TenLoai");
+            ViewBag.MaTH = new SelectList(db.ThuongHieus.ToList().OrderBy(n => n.MaTH), "MaTH", "TenTH");
             return View();
         }
         [HttpPost]
         public ActionResult Create(SanPham sanPham,HttpPostedFileBase fileupload)
         {
             var fileName = Path.GetFileName(fileupload.FileName);
-            var path = Path.Combine(Server.MapPath("~/Content/Images/"), fileName);
+            var path = Path.Combine(Server.MapPath("~/Content/Images"), fileName);
             if(System.IO.File.Exists(path))
             {
                 ViewBag.Thongbao = "Hình ảnh đã tồn tại";
@@ -72,7 +74,8 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
             {
                 fileupload.SaveAs(path);
             }
-            
+            ViewBag.MaLoai = new SelectList(db.LoaiSPs.ToList().OrderBy(n => n.MaLoai), "Maloai", "TenLoai");
+            ViewBag.MaTH = new SelectList(db.ThuongHieus.ToList().OrderBy(n => n.MaTH), "MaTH", "TenTH");
             return View();
         }
 

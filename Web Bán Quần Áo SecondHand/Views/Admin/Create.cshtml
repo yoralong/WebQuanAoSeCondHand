@@ -17,16 +17,15 @@
     <div class="form-group">
         Mã Loại:
         <div class="col-md-5">
-            @Html.EditorFor(model => model.MaLoai, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.MaLoai, "", new { @class = "text-danger" })
+            @Html.DropDownList("MaLoai")
         </div>
     </div>
 
         <div class="form-group">
             Mã Thương Hiệu:
             <div class="col-md-5">
-                @Html.EditorFor(model => model.MaTH, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MaTH, "", new { @class = "text-danger" })
+                
+                @Html.DropDownList("MaTH")
             </div>
         </div>
 
@@ -50,7 +49,7 @@
             Ngày Nhập:
             <div class="col-md-5">
                 <input type="date" name="NgayNhap" />
-                @Html.ValidationMessageFor(model => model.NgayNhap, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.NgayNhap)
             </div>
         </div>
 
@@ -87,5 +86,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "IndexAdmin", "Admin")
+    @Html.ActionLink("Back to List", "Sanpham", "Admin")
 </div>
