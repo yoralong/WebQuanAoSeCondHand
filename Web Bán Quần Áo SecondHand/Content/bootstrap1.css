@@ -1008,7 +1008,7 @@ pre code {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .col-md {
     flex-basis: 0;
     flex-grow: 1;
@@ -1023,11 +1023,9 @@ pre code {
     flex: 0 0 8.33333%;
     max-width: 8.33333%;
   }
-  .col-md-2 {
-    flex: 0 0 16.66667%;
-    max-width: 16.66667%;
-    
-  }
+    .col-md-2 {
+        width: 16.66666667%;
+    }
   .col-md-3 {
     flex: 0 0 25%;
     max-width: 25%;
@@ -1058,10 +1056,9 @@ pre code {
     flex: 0 0 75%;
     max-width: 75%;
   }
-  .col-md-10 {
-    flex: 0 0 83.33333%;
-    max-width: 83.33333%;
-  }
+    .col-md-10 {
+        width: 83.33333333%;
+    }
   .col-md-11 {
     flex: 0 0 91.66667%;
     max-width: 91.66667%;

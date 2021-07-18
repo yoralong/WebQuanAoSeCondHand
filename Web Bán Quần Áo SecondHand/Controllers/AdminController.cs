@@ -62,21 +62,36 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Create(SanPham sanPham,HttpPostedFileBase fileupload)
         {
-            var fileName = Path.GetFileName(fileupload.FileName);
-            var path = Path.Combine(Server.MapPath("~/Content/Images"), fileName);
-            if(System.IO.File.Exists(path))
+            ViewBag.MaLoai = new SelectList(db.LoaiSPs.ToList().OrderBy(n => n.MaLoai), "Maloai", "TenLoai");
+            ViewBag.MaTH = new SelectList(db.ThuongHieus.ToList().OrderBy(n => n.MaTH), "MaTH", "TenTH");
+            if (fileupload == null)
             {
-                ViewBag.Thongbao = "Hình ảnh đã tồn tại";
+                ViewBag.Thongbao = "Vui lòng chọn ảnh bìa";
+                return View();
             }
             else
             {
-                fileupload.SaveAs(path);
-            }
-            ViewBag.MaLoai = new SelectList(db.LoaiSPs.ToList().OrderBy(n => n.MaLoai), "Maloai", "TenLoai");
-            ViewBag.MaTH = new SelectList(db.ThuongHieus.ToList().OrderBy(n => n.MaTH), "MaTH", "TenTH");
-            return View();
+                if(ModelState.IsValid)
+                {
+                    var fileName = Path.GetFileName(fileupload.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Content/Images"), fileName);
+                    if (System.IO.File.Exists(path))
+                    {
+                        ViewBag.Thongbao = "Hình ảnh đã tồn tại";
+                    }
+                    else
+                    {
+                        fileupload.SaveAs(path);
+                    }
+                    sanPham.Image ="~/Content/Images/"+ fileName;
+                    db.SanPhams.InsertOnSubmit(sanPham);
+                    db.SubmitChanges();
+                }
+                return RedirectToAction("Sanpham","Admin");
+            }          
         }
 
         [HttpGet]
@@ -123,6 +138,63 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
                 return null;
             }
             return View(sanPham);        
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            //Lay ra doi tuong sach theo ma
+            SanPham sanpham = db.SanPhams.SingleOrDefault(n => n.MaSP == id);
+            ViewBag.Masach = sanpham.MaSP;
+            if (sanpham == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            //Dua du lieu vao dropdownList
+            //Lay ds tu tabke chu de, sắp xep tang dan trheo ten chu de, chon lay gia tri Ma CD, hien thi thi Tenchude
+            ViewBag.MaLoai = new SelectList(db.LoaiSPs.ToList().OrderBy(n => n.TenLoai), "MaLoai", "TenLoai", sanpham.MaLoai);
+            ViewBag.MaTH = new SelectList(db.ThuongHieus.ToList().OrderBy(n => n.TenTH), "MaTH", "TenTH", sanpham.MaTH);
+            return View(sanpham);
+        }
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult Edit(SanPham sanpham, HttpPostedFileBase fileUpload)
+        {
+            //Dua du lieu vao dropdownload
+            SanPham dbUpdate = db.SanPhams.FirstOrDefault(p => p.MaSP == sanpham.MaSP);
+            ViewBag.MaLoai = new SelectList(db.LoaiSPs.ToList().OrderBy(n => n.TenLoai), "MaLoai", "TenLoai", sanpham.MaLoai);
+            ViewBag.MaTH = new SelectList(db.ThuongHieus.ToList().OrderBy(n => n.TenTH), "MaTH", "TenTH", sanpham.MaTH);
+            //Kiem tra duong dan file
+            if (fileUpload == null)
+            {
+                ViewBag.Thongbao = "Vui lòng chọn ảnh bìa";
+                return View();
+            }
+            //Them vao CSDL
+            else
+            {
+                if (ModelState.IsValid)
+                {
+                    //Luu ten fie, luu y bo sung thu vien using System.IO;
+                    var fileName = Path.GetFileName(fileUpload.FileName);
+                    //Luu duong dan cua file
+                    var path = Path.Combine(Server.MapPath("~/Content/Images"), fileName);
+                    //Kiem tra hình anh ton tai chua?
+                    if (System.IO.File.Exists(path))
+                        ViewBag.Thongbao = "Hình ảnh đã tồn tại";
+                    else
+                    {
+                        //Luu hinh anh vao duong dan
+                        fileUpload.SaveAs(path);
+                    }
+                    sanpham.Image = "~/Content/Images/" + fileName;
+                    //Luu vao CSDL       
+                    UpdateModel(dbUpdate);
+                    db.SubmitChanges();
+                }
+                return RedirectToAction("Sanpham","Admin");
+            }
         }
     }
 }
