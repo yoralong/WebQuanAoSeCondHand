@@ -82,12 +82,13 @@
                         <li class="nav-item"><a class="nav-link" href="#"> Xin Chào @Session["Taikhoandn"]</a></li>
 
                     </ul>
-                    <form class="bg-white search-form" method="get" id="searchform">
+                    <form class="bg-white search-form" method="post" action="/ShopSecondHand/Search">
                         <div class="input-group">
-                            <input class="field form-control" id="s" name="s" type="text" placeholder="Search">
+                            <input class="field form-control" name="keyword" type="text" placeholder="Search">
                             <span class="input-group-btn">
                                 <input class="submit btn btn-primary" id="searchsubmit" name="submit" type="submit"
-                                       value="Search">
+                                       value="Search"> </input>
+
                             </span>
                         </div>
                     </form>

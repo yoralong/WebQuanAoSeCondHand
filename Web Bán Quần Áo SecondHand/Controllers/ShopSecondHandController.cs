@@ -62,5 +62,13 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Search(string keyword)
+        {
+
+            var all = data.SanPhams.Where(x => x.TenSP.Contains(keyword));
+
+            return View(all);
+        }
     }
 }

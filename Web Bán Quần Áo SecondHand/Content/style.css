@@ -1361,6 +1361,7 @@ http://stackoverflow.com/a/34696029/383904
     position: relative;
     line-height:60px;
     color:black;
+    padding-top:50px;
 }
 .col-4{
     text-align:center;
