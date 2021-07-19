@@ -16,63 +16,63 @@
     <div style="padding-left:15px"><i class="fas fa-plus"></i> @Html.ActionLink("Thêm sản phẩm", "Create")</div>
 
 </p>
-<table class="table" border="1">
+<table class="table" >
     <tr>
-        <th>
+        <th style="border:double">
             MaLoai
         </th>
-        <th>
+        <th style="border:double">
             MaTH
         </th>
-        <th>
+        <th style="border:double">
             TenSP
         </th>
-        <th>
+        <th style="border:double">
             DonGia
         </th>
-        <th>
+        <th style="border:double">
             NgayNhap
         </th>
-        <th>
+        <th style="border:double">
             Image
         </th>
-        <th>
+        <th style="border:double">
             Details
         </th>
-        <th>
+        <th style="border:double">
             SoLuongTon
         </th>
-        <th></th>
+        <th style="border:double"></th>
     </tr>
 
     @foreach (var item in Model)
     {
         <tr>
-            <td>
+            <td style="border:double">
                 @Html.DisplayFor(modelItem => item.MaLoai)
             </td>
-            <td>
+            <td style="border:double">
                 @Html.DisplayFor(modelItem => item.MaTH)
             </td>
-            <td>
+            <td style="border:double">
                 @Html.DisplayFor(modelItem => item.TenSP)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DonGia)
+            <td style="border:double">
+                @String.Format("{0:0,0}₫", item.DonGia)
             </td>
-            <td>
+            <td style="border:double">
                 @Html.DisplayFor(modelItem => item.NgayNhap)
             </td>
-            <td>
-                <img src="@item.Image" style="width:120px; height: 120px;" />
+            <td style="border:double">
+                <img src="@item.Image" style="width:180px; height: 180px;" />
             </td>
-            <td>
+            <td style="border:double">
                 @Html.DisplayFor(modelItem => item.Details)
             </td>
-            <td>
+            <td style="border:double">
                 @Html.DisplayFor(modelItem => item.SoLuongTon)
             </td>
-            <td>
+            <td style="border:double">
                 @Html.ActionLink("Edit", "Edit", new { id = item.MaSP }) |
                 @Html.ActionLink("Details", "Details", new { id = item.MaSP }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.MaSP })
@@ -90,5 +90,6 @@
         color: black;
         justify-content: center;
         font-size: 16pt;
+        padding:5px;
     }
 </style>

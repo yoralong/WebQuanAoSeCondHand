@@ -4,51 +4,54 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+
     <div class="card">
-        <h5 class="card-header">Chi tiết</h5>
-        <div class="card-body">
+        <p><h3 style="font-size:26pt;font-family:Tahoma;text-align:center">Chi tiết</h3></p>
+        
+        <div class="card-body"style="text-align:center";font-size:24pt">
             <form action="#" id="basicform" data-parsley-validate="" novalidate="">
 
-                <div class="form-group">
-
+                <div class="form-group" style="font-size:24pt;>
+                    <label for="inputPassword">Mã Loại:</label>
                     @Html.DisplayFor(model => model.MaLoai)
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="font-size:24pt;>
+                    <label for="inputPassword">Mã Thương Hiệu:</label>
                     @Html.DisplayFor(model => model.MaTH)
                 </div>
-                <div class="form-group">
+                <div class="form-group"style="font-size:24pt;>
                     <label for="inputPassword">Tên Sản Phẩm:</label>
                     @Html.DisplayFor(model => model.TenSP)
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="font-size:24pt;>
                     <label for="inputRepeatPassword">Đơn Giá:</label>
-                    @Html.DisplayFor(model => model.DonGia)
+                    @String.Format("{0:0,0}₫", Model.DonGia)
                 </div>
-                <div class="form-group">
+                <div class="form-group"style="font-size:24pt;>
                     <label for="inputRepeatPassword">Ngày Nhập:</label>
                     @Html.DisplayFor(model => model.NgayNhap)
                 </div>
-                <div class="form-group">
-                    <label for="inputRepeatPassword">Hình Ảnh:</label>
-                    <img src="@Url.Content( Model.Image)" width="120px" />
+                <div class="form-group"style="font-size:24pt;>
+                    <p><label for="inputRepeatPassword">Hình Ảnh:</label></p>
+                    
+                    <img src="@Url.Content( Model.Image)" width="300px" />
                 </div>
-                <div class="form-group">
+                <div class="form-group"style="font-size:24pt;>
                     <label for="inputRepeatPassword">Chi tiết:</label>
                     @Html.DisplayFor(model => model.Details)
                 </div>
-                <div class="form-group">
+                <div class="form-group"style="font-size:24pt;>
                     <label for="inputRepeatPassword">Số lượng tồn:</label>
                     @Html.DisplayFor(model => model.SoLuongTon)
                 </div>
-                <div class="col-sm-6 pl-0">
-                    <p class="text-right">
+                
+                    <div> 
                         <a href="@Url.Action("Edit", "Admin", new { id = Model.MaSP })" button type="submit" class="btn btn-space btn-primary">
                             Edit</button>
 
                             <a href="@Url.Action("Sanpham","Admin")" button class="btn btn-space btn-secondary">Cancel</a>
-                    </p>
-                </div>
+                    </div>
+               
         </div>
     </div>
-</div>
+

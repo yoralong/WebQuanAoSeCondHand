@@ -30,8 +30,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputRepeatPassword">Đơn Giá</label>
-                            @Html.EditorFor(model => model.DonGia)
-                            @Html.ValidationMessageFor(model => model.DonGia)
+                            @String.Format("{0:0,0}₫", Model.DonGia)
                         </div>
                         <div class="form-group">
                             <label for="inputRepeatPassword">Ngày Nhập</label>

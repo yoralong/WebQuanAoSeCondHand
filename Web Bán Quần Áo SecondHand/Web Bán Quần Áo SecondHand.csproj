@@ -129,7 +129,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\GiohangController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NguoidungController.cs" />
     <Compile Include="Controllers\ShopSecondHandController.cs" />
     <Compile Include="Global.asax.cs">
@@ -761,10 +760,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
     <Content Include="Views\ShopSecondHand\Index.cshtml" />
     <Content Include="Views\ShopSecondHand\BoSuuTap.cshtml" />
@@ -785,7 +780,6 @@
     <Content Include="Views\Admin\Details.cshtml" />
     <Content Include="Views\Admin\Delete.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Admin\Sanpham.cshtml" />
     <Content Include="Views\Admin\Create.cshtml" />
     <Content Include="Views\Admin\Edit.cshtml" />

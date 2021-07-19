@@ -10,9 +10,9 @@
 
     <hr />
     <dl class="dl-horizontal">
-        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+        
             <div class="card">
-                <h5 class="card-header">Thêm sản phẩm</h5>
+                <h5 class="card-header">Xóa sản phẩm</h5>
                 <div class="card-body">
                     
         <dt>
@@ -44,7 +44,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DonGia)
+            @String.Format("{0:0,0}₫", Model.DonGia)
         </dd>
 
         <dt>
@@ -60,7 +60,7 @@
         </dt>
 
         <dd>
-            <img src="@Url.Content( Model.Image)" width="120px" />
+            <img src="@Url.Content( Model.Image)" width="300px" />
         </dd>
 
         <dt>
@@ -95,4 +95,3 @@
 </div>
 </div>
 
-</div>

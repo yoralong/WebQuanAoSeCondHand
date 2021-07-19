@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="~/Content/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="~/Content/assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="~/Content/assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
-    <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
+    <title>Admin - Cala Shop Secondhand Fashion</title>
 </head>
 
 <body>
@@ -158,25 +158,42 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav flex-column">
                                 <li class="nav-divider">
-                                    Menu
+                                     Menu
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Quản lý hàng hóa <span class="badge badge-success">6</span></a>
-                                    <div id="submenu-1" class="collapse submenu" style="">
+                                    <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fas fa-warehouse"></i>Quản lý Sản phẩm</a>
+                                    <div id="submenu-4" class="collapse submenu" style="">
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2">Create</a>
-                                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2">Edit</a>
-                                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2">Delete</a>
-                                            </li>                                                                     
-                                
-                                
-                                
-                               
-                                
-                            </ul>
-                        </div>
-                    </nav>
+                                                <a class="nav-link" href="@Url.Action("Sanpham","Admin")"><i class="fab fa-fw fa-wpforms"></i>Quản lý chi tiết sản phẩm</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="pages/form-validation.html"><i class="far fa-star"></i>Quản lý loại thương hiệu</a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-table"></i>Quản lý hóa đơn</a>
+                                    <div id="submenu-5" class="collapse submenu" style="">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="pages/general-table.html"><i class="fas fa-search"></i>Quản lý chi tiết hóa đơn</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="pages/data-tables.html"><i class="fas fa-shipping-fast"></i>Quản lý công ty vận chuyển</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+
+
+
+
+
+</nav>
                 </div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 937px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
             </div>
         </div>
@@ -187,15 +204,14 @@
         <!-- wrapper  -->
         <!-- ============================================================== -->
         <div class="dashboard-wrapper">
-            <div class="dashboard-ecommerce">
-                @RenderBody()
-                <!-- ============================================================== -->
-                <!-- footer -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- end footer -->
-                <!-- ============================================================== -->
-            </div>
+
+            @RenderBody()
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- end footer -->
+            <!-- ============================================================== -->
             <!-- ============================================================== -->
             <!-- end wrapper  -->
             <!-- ============================================================== -->
