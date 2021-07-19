@@ -9,10 +9,12 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Quản Lý Sản Phẩm</h2>
+
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <h3 style="font-size:26pt;font-family:Tahoma">Quản Lý Sản Phẩm</h3>
+    <div style="padding-left:15px"><i class="fas fa-plus"></i> @Html.ActionLink("Thêm sản phẩm", "Create")</div>
+
 </p>
 <table class="table" border="1">
     <tr>
@@ -62,7 +64,7 @@
                 @Html.DisplayFor(modelItem => item.NgayNhap)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Image)
+                <img src="@item.Image" style="width:120px; height: 120px;" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Details)

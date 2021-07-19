@@ -20,7 +20,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         public ActionResult Sanpham(int? page)
         {
             // tao bien quy dinh so san pham moi tren trang
-            int pageSize = 12;
+            int pageSize = 7;
             // tao bien so trang
             int pageNum = (page ?? 1);
             //lấy top sản phẩm bán chạy nhất

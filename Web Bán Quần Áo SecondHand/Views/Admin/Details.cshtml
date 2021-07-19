@@ -1,90 +1,54 @@
 ﻿@model Web_Bán_Quần_Áo_SecondHand.Models.SanPham
-
+@using Web_Bán_Quần_Áo_SecondHand.Models
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+    <div class="card">
+        <h5 class="card-header">Chi tiết</h5>
+        <div class="card-body">
+            <form action="#" id="basicform" data-parsley-validate="" novalidate="">
 
-<h2>Thông tin chi tiết sản phẩm</h2>
+                <div class="form-group">
 
-<div>
-    
-    <hr />
-    <dl class="dl-horizontal"style="text-align:center">
-        <dt >
-            Mã Loại:
-        </dt>
+                    @Html.DisplayFor(model => model.MaLoai)
+                </div>
+                <div class="form-group">
+                    @Html.DisplayFor(model => model.MaTH)
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Tên Sản Phẩm:</label>
+                    @Html.DisplayFor(model => model.TenSP)
+                </div>
+                <div class="form-group">
+                    <label for="inputRepeatPassword">Đơn Giá:</label>
+                    @Html.DisplayFor(model => model.DonGia)
+                </div>
+                <div class="form-group">
+                    <label for="inputRepeatPassword">Ngày Nhập:</label>
+                    @Html.DisplayFor(model => model.NgayNhap)
+                </div>
+                <div class="form-group">
+                    <label for="inputRepeatPassword">Hình Ảnh:</label>
+                    <img src="@Url.Content( Model.Image)" width="120px" />
+                </div>
+                <div class="form-group">
+                    <label for="inputRepeatPassword">Chi tiết:</label>
+                    @Html.DisplayFor(model => model.Details)
+                </div>
+                <div class="form-group">
+                    <label for="inputRepeatPassword">Số lượng tồn:</label>
+                    @Html.DisplayFor(model => model.SoLuongTon)
+                </div>
+                <div class="col-sm-6 pl-0">
+                    <p class="text-right">
+                        <a href="@Url.Action("Edit", "Admin", new { id = Model.MaSP })" button type="submit" class="btn btn-space btn-primary">
+                            Edit</button>
 
-        <dd >
-            @Html.DisplayFor(model => model.MaLoai)
-        </dd>
-
-        <dt >
-            Mã Thương Hiệu:
-        </dt>
-
-        <dd >
-            @Html.DisplayFor(model => model.MaTH)
-        </dd>
-
-        <dt>
-            Mã Sản Phẩm:
-        </dt>
-
-        <dd >
-            @Html.DisplayFor(model => model.TenSP)
-        </dd>
-
-        <dt>
-            Đơn Giá:
-        </dt>
-
-        <dd >
-            @Html.DisplayFor(model => model.DonGia)
-        </dd>
-
-        <dt>
-            Ngày Nhập:
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NgayNhap)
-        </dd>
-
-        <dt>
-            Hình Ảnh:
-        </dt>
-
-        <dd>
-            <img src="@Url.Content( Model.Image)" width="120px" />
-        </dd>
-
-        <dt>
-            Chi Tiết:
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Details)
-        </dd>
-
-        <dt>
-            Số Lượng Tồn:
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SoLuongTon)
-        </dd>
-
-    </dl>
+                            <a href="@Url.Action("Sanpham","Admin")" button class="btn btn-space btn-secondary">Cancel</a>
+                    </p>
+                </div>
+        </div>
+    </div>
 </div>
-<div class="form-actions no-color" style="text-align:center">
-    <a class="btn btn-primary" href=" @Url.Action("Edit", "Edit", new { id = Model.MaSP })" role="button">Edit</a>
-    <a href="@Url.Action("Sanpham","Admin")">
-        <img src="~/Content/Images/back.jpg" width="175px" height="175px" />
-    </a>
-
-</div>
-
-     |
-    
-
