@@ -160,7 +160,7 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav flex-column">
                                 <li class="nav-divider">
-                                     Menu
+                                    Menu
                                 </li>
                                 <li class="nav-item ">
                                     <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fas fa-warehouse"></i>Quản lý Sản phẩm</a>
@@ -170,9 +170,9 @@
                                                 <a class="nav-link" href="@Url.Action("Sanpham","Admin")"><i class="fab fa-fw fa-wpforms"></i>Quản lý chi tiết sản phẩm</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="pages/form-validation.html"><i class="far fa-star"></i>Quản lý loại thương hiệu</a>
+                                                <a class="nav-link" href="@Url.Action("thuonghieu","Admin")"><i class="far fa-star"></i>Quản lý loại thương hiệu</a>
                                             </li>
-                                            
+
                                         </ul>
                                     </div>
                                 </li>
@@ -181,17 +181,30 @@
                                     <div id="submenu-5" class="collapse submenu" style="">
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
-                                                <a class="nav-link" href="pages/general-table.html"><i class="fas fa-search"></i>Quản lý chi tiết hóa đơn</a>
+                                                <a class="nav-link" href="@Url.Action("CTHD","Admin")"><i class="fas fa-search"></i>Quản lý chi tiết hóa đơn</a>
                                             </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="pages/data-tables.html"><i class="fas fa-shipping-fast"></i>Quản lý công ty vận chuyển</a>
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-7" aria-controls="submenu-7"><i class="fas fa-user"></i> Quản lý tài khoản <span class="badge badge-secondary">New</span></a>
+                                    <div id="submenu-7" class="collapse submenu" style="">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="@Url.Action("QLTKKhachhang","Admin")"><i class="fas fa-user-circle"></i>Tài khoản khách hàng</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="@Url.Action("tkadmin","Admin")"><i class="far fa-gem"></i>Tài khoản Admin</a>
+                                            </li>
 
-
-
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("vanchuyen","Admin")"><i class="fas fa-shipping-fast"></i>Quản lý công ty vận chuyển</a>
+                                    
+                                </li>
 
 
 

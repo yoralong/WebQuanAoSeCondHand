@@ -17,37 +17,37 @@
 
 </p>
 <table class="table" >
-    <tr>
+    <tr class="table-primary">
         <th style="border:double">
-            MaLoai
+            Mã Loại
         </th>
         <th style="border:double">
-            MaTH
+            Mã Thương Hiệu
         </th>
         <th style="border:double">
-            TenSP
+            Tên Sản Phẩm
         </th>
         <th style="border:double">
-            DonGia
+            Đơn Giá
         </th>
         <th style="border:double">
-            NgayNhap
+            Ngày Nhập
         </th>
         <th style="border:double">
-            Image
+            Hình Ảnh
         </th>
         <th style="border:double">
-            Details
+            Chi tiết
         </th>
         <th style="border:double">
-            SoLuongTon
+            Số Lượng Tồn
         </th>
         <th style="border:double"></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
+        <tr >
             <td style="border:double">
                 @Html.DisplayFor(modelItem => item.MaLoai)
             </td>

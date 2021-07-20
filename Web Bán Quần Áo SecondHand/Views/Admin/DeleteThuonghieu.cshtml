@@ -1,0 +1,67 @@
+﻿@model Web_Bán_Quần_Áo_SecondHand.Models.ThuongHieu
+
+@{
+    ViewBag.Title = "DeleteThuonghieu";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<p>
+    <h3 style="font-size:26pt;font-family:Tahoma">Thương hiệu</h3>
+
+
+</p>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+
+        <div class="card">
+            <h5 class="card-header">Xóa sản phẩm</h5>
+            <div class="card-body">
+
+        <dt>
+            Mã Thương Hiệu
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.MaTH)
+        </dt>
+        <dt>
+            Tên Thương Hiệu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenTH)
+        </dd>
+
+        <dt>
+            Địa chỉ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+        <dt>
+            SĐT
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="col-sm-6 pl-0">
+            <p class="text-right">
+                <button type="submit" class="btn btn-space btn-primary">Xóa</button>
+                <a href="@Url.Action("thuonghieu", "Admin")" button class="btn btn-space btn-secondary">Cancel</a>
+            </p>
+        </div>
+    }
+</div>
+</div>
+</div>

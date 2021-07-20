@@ -1,0 +1,67 @@
+﻿@using Web_Bán_Quần_Áo_SecondHand.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<Web_Bán_Quần_Áo_SecondHand.Models.CTHD>
+@{
+    ViewBag.Title = "CTHD";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<p>
+    <h3 style="font-size:26pt;font-family:Tahoma">Chi tiết hóa đơn</h3>
+
+
+</p>
+
+<table class="table">
+    <tr class="table-primary">
+        <th>
+            Mã hóa đơn
+        </th>
+        <th>
+           Mã sản phẩm
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Đơn giá
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr class="table-success">
+    <td>
+        @Html.DisplayFor(modelItem => item.MaHD)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaSP)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SL)
+    </td>
+    <td>
+        @String.Format("{0:0,0}₫", item.DonGia)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.MaHD })
+        
+        @Html.ActionLink("Delete", "Delete", new { id = item.MaHD })
+    </td>
+</tr>
+    }
+
+</table>
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("vanchuyen", new { page = page }))
+</div>
+<style>
+    .MenuTrang * {
+        display: flex;
+        color: black;
+        justify-content: center;
+        font-size: 16pt;
+        padding: 5px;
+    }
+</style>

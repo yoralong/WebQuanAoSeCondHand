@@ -1,0 +1,62 @@
+﻿@model Web_Bán_Quần_Áo_SecondHand.Models.ThuongHieu
+
+@{
+    ViewBag.Title = "CreateThuonghieu";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<p>
+    <h3 style="font-size:26pt;font-family:Tahoma">Thương hiệu</h3>
+    
+
+</p>
+@using (Html.BeginForm("CreateThuonghieu", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <div class="control-label col-md-2">Mã Thương Hiệu</div>
+        <div class="col-md-10">
+            <input type="text" class="form-control" required name="MaTH" />
+            @Html.ValidationMessageFor(model => model.MaTH, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="control-label col-md-2">Tên Thương Hiệu</div>
+        
+        <div class="col-md-10">
+            <input type="text" class="form-control" required name="TenTH" />
+            @Html.ValidationMessageFor(model => model.TenTH, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2">Địa chỉ</div>
+        <div class="col-md-10">
+            <input type="text" class = "form-control"required name="DiaChi"  />
+            @Html.ValidationMessageFor(model => model.DiaChi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class = "control-label col-md-2" >SĐT</div>
+        <div class="col-md-10">
+            <input type="text" class="form-control" required name="SDT" maxlength="11" />
+            @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="col-sm-6 pl-0">
+        <p class="text-right">
+            <button type="submit" class="btn btn-space btn-primary">Create</button>
+            <a href="@Url.Action("thuonghieu", "Admin")" button class="btn btn-space btn-secondary">Cancel</a>
+        </p>
+    </div>
+</div>
+}
+
+

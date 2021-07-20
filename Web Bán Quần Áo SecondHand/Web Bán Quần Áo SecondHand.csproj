@@ -870,6 +870,13 @@
     <Content Include="Scripts\tinymce\tinymce\js\tinymce\skins\lightgray\fonts\tinymce.ttf" />
     <Content Include="Scripts\tinymce\tinymce\js\tinymce\skins\lightgray\fonts\tinymce.woff" />
     <Content Include="Views\ShopSecondHand\Search.cshtml" />
+    <Content Include="Views\Admin\QLTKKhachhang.cshtml" />
+    <Content Include="Views\Admin\vanchuyen.cshtml" />
+    <Content Include="Views\Admin\thuonghieu.cshtml" />
+    <Content Include="Views\Admin\CTHD.cshtml" />
+    <Content Include="Views\Admin\tkadmin.cshtml" />
+    <Content Include="Views\Admin\CreateThuonghieu.cshtml" />
+    <Content Include="Views\Admin\DeleteThuonghieu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

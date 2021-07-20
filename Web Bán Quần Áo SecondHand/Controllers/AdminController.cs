@@ -9,7 +9,7 @@ using PagedList;
 using System.IO;
 namespace Web_Bán_Quần_Áo_SecondHand.Controllers
 {
-    public class AdminController : Controller       
+    public class AdminController : Controller
     {
         dbQLShopSHDataDataContext db = new dbQLShopSHDataDataContext();
         // GET: Admin
@@ -23,7 +23,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
             {
                 return View();
             }
-            
+
         }
         [HttpGet]
         public ActionResult Login()
@@ -75,7 +75,78 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
 
                 return View(db.SanPhams.ToList().OrderBy(n => n.MaSP).ToPagedList(pageNum, pageSize));
             }
-            
+
+        }
+        public ActionResult QLTKKhachhang(int? page)
+        {
+            if (Session["Taikhoan"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            else
+            {
+                // tao bien quy dinh so san pham moi tren trang
+                int pageSize = 6;
+                // tao bien so trang
+                int pageNum = (page ?? 1);
+                //lấy top sản phẩm bán chạy nhất
+
+                return View(db.KhachHangs.ToList().OrderBy(n => n.MaKH).ToPagedList(pageNum, pageSize));
+            }
+
+        }
+        public ActionResult vanchuyen(int? page)
+        {
+            if (Session["Taikhoan"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            else
+            {
+                // tao bien quy dinh so san pham moi tren trang
+                int pageSize = 6;
+                // tao bien so trang
+                int pageNum = (page ?? 1);
+                //lấy top sản phẩm bán chạy nhất
+
+                return View(db.CongTy_VanChuyens.ToList().OrderBy(n => n.MaCT).ToPagedList(pageNum, pageSize));
+            }
+
+        }
+
+        public ActionResult CTHD(int? page)
+        {
+            if (Session["Taikhoan"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            else
+            {
+                // tao bien quy dinh so san pham moi tren trang
+                int pageSize = 6;
+                // tao bien so trang
+                int pageNum = (page ?? 1);
+                //lấy top sản phẩm bán chạy nhất
+
+                return View(db.CTHDs.ToList().OrderBy(n => n.MaHD).ToPagedList(pageNum, pageSize));
+            }
+        }
+        public ActionResult tkadmin(int? page)
+        {
+            if (Session["Taikhoan"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            else
+            {
+                // tao bien quy dinh so san pham moi tren trang
+                int pageSize = 6;
+                // tao bien so trang
+                int pageNum = (page ?? 1);
+                //lấy top sản phẩm bán chạy nhất
+
+                return View(db.Admins.ToList().OrderBy(n => n.UserAdmin).ToPagedList(pageNum, pageSize));
+            }
         }
         [HttpGet]
         public ActionResult Delete(int id)
@@ -95,9 +166,9 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
                 }
                 return View(sanPham);
             }
-                
+
         }
-        [HttpPost,ActionName("Delete")]
+        [HttpPost, ActionName("Delete")]
         public ActionResult Xacnhanxoa(int id)
         {
             SanPham sanPham = db.SanPhams.SingleOrDefault(n => n.MaSP == id);
@@ -111,7 +182,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
             db.SubmitChanges();
             return RedirectToAction("Sanpham");
         }
-        
+
         [HttpGet]
         public ActionResult Create()
         {
@@ -126,11 +197,11 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
                 ViewBag.MaTH = new SelectList(db.ThuongHieus.ToList().OrderBy(n => n.MaTH), "MaTH", "TenTH");
                 return View();
             }
-                
+
         }
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Create(SanPham sanPham,HttpPostedFileBase fileupload)
+        public ActionResult Create(SanPham sanPham, HttpPostedFileBase fileupload)
         {
             ViewBag.MaLoai = new SelectList(db.LoaiSPs.ToList().OrderBy(n => n.MaLoai), "Maloai", "TenLoai");
             ViewBag.MaTH = new SelectList(db.ThuongHieus.ToList().OrderBy(n => n.MaTH), "MaTH", "TenTH");
@@ -141,7 +212,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
             }
             else
             {
-                if(ModelState.IsValid)
+                if (ModelState.IsValid)
                 {
                     var fileName = Path.GetFileName(fileupload.FileName);
                     var path = Path.Combine(Server.MapPath("~/Content/Images"), fileName);
@@ -153,15 +224,15 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
                     {
                         fileupload.SaveAs(path);
                     }
-                    sanPham.Image ="/Content/Images/"+ fileName;
+                    sanPham.Image = "/Content/Images/" + fileName;
                     db.SanPhams.InsertOnSubmit(sanPham);
                     db.SubmitChanges();
                 }
-                return RedirectToAction("Sanpham","Admin");
-            }          
+                return RedirectToAction("Sanpham", "Admin");
+            }
         }
 
-        
+
         public ActionResult Details(int id)
         {
             if (Session["Taikhoan"] == null)
@@ -179,7 +250,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
                 }
                 return View(sanPham);
             }
-                     
+
         }
 
         [HttpGet]
@@ -243,8 +314,93 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
                     UpdateModel(dbUpdate);
                     db.SubmitChanges();
                 }
-                return RedirectToAction("Sanpham","Admin");
+                return RedirectToAction("Sanpham", "Admin");
             }
+        }
+
+
+
+        //thuong hiệu
+        public ActionResult thuonghieu(int? page)
+        {
+            if (Session["Taikhoan"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            else
+            {
+                // tao bien quy dinh so san pham moi tren trang
+                int pageSize = 6;
+                // tao bien so trang
+                int pageNum = (page ?? 1);
+                //lấy top sản phẩm bán chạy nhất
+
+                return View(db.ThuongHieus.ToList().OrderBy(n => n.MaTH).ToPagedList(pageNum, pageSize));
+            }
+
+        }
+        [HttpGet]
+        public ActionResult CreateThuonghieu()
+        {
+
+            if (Session["Taikhoan"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            else
+            {
+                return View();
+            }
+
+        }
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult CreateThuonghieu(ThuongHieu thuonghieu)
+        {
+
+            if (ModelState.IsValid)
+            {
+
+                db.ThuongHieus.InsertOnSubmit(thuonghieu);
+                db.SubmitChanges();
+            }
+            return RedirectToAction("thuonghieu", "Admin");
+        }
+        [HttpGet]
+        public ActionResult DeleteThuonghieu(string id)
+        {
+            if (Session["Taikhoan"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            else
+            {
+               ThuongHieu thuonghieu = db.ThuongHieus.SingleOrDefault(n => n.MaTH.Trim() == id.Trim());
+                ViewBag.MaTH = thuonghieu.MaTH;
+                if (thuonghieu == null)
+                {
+                    Response.StatusCode = 404;
+                    return null;
+                }
+                return View(thuonghieu);
+            }
+
+        }
+        [HttpPost, ActionName("DeleteThuonghieu")]
+        public ActionResult xoaThuonghieu(string id)
+        {
+            ThuongHieu thuonghieu = db.ThuongHieus.SingleOrDefault(n => n.MaTH.Trim() == id.Trim());
+            ViewBag.MaTH = thuonghieu.MaTH;
+            if (thuonghieu == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            db.ThuongHieus.DeleteOnSubmit(thuonghieu);
+            db.SubmitChanges();
+            return RedirectToAction("thuonghieu","Admin");
         }
     }
 }
+
+

@@ -1,0 +1,96 @@
+﻿@using Web_Bán_Quần_Áo_SecondHand.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<Web_Bán_Quần_Áo_SecondHand.Models.KhachHang>
+@{
+    ViewBag.Title = "QLTKKhachhang";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<p>
+    <h3 style="font-size:26pt;font-family:Tahoma">Tài khoản Khách Hàng</h3>
+    
+
+</p>
+
+<table class="table">
+    <tr class="table-primary">
+        <th>
+            Mã Khách hàng
+        </th>
+        <th>
+            Tên Khách Hàng
+        </th>
+        <th>
+            Địa chỉ
+        </th>
+        <th>
+            Số điện thoại
+        </th>
+        <th>
+            Email
+        </th>
+        <th >
+            Tài khoản
+        </th>
+        <th>
+            Mật khẩu
+        </th>
+        <th>
+            Giới tính
+        </th>
+        <th>
+            Ngày sinh
+        </th>
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr class="table-success">
+    <td >
+        @Html.DisplayFor(modelItem => item.MaKH)
+        
+    </td>
+    <td >
+        @Html.DisplayFor(modelItem => item.TenKH)
+        
+    </td>
+    <td >
+       @Html.DisplayFor(modelItem => item.DiaChi)
+        
+    </td>
+    <td >
+        @Html.DisplayFor(modelItem => item.Sdt)
+    </td>
+    <td >
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td >
+        @Html.DisplayFor(modelItem => item.TaiKhoan)
+    </td>
+    <td >
+        @Html.DisplayFor(modelItem => item.MatKhau)
+    </td>
+    <td >
+        @Html.DisplayFor(modelItem => item.GioiTinh)
+    </td>
+    <td >
+        @Html.DisplayFor(modelItem => item.NgaySinh)
+    </td>
+
+</tr>
+    }
+
+</table>
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("QLTKKhachhang", new { page = page }))
+</div>
+<style>
+    .MenuTrang * {
+        display: flex;
+        color: black;
+        justify-content: center;
+        font-size: 16pt;
+        padding: 5px;
+    }
+</style>

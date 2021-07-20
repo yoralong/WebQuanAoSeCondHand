@@ -1,0 +1,60 @@
+﻿@using Web_Bán_Quần_Áo_SecondHand.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<Web_Bán_Quần_Áo_SecondHand.Models.Admin>
+@{
+    ViewBag.Title = "tkadmin";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<p>
+    <h3 style="font-size:26pt;font-family:Tahoma">Tài khoản Admin</h3>
+
+
+</p>
+<table class="table">
+    <tr class="table-primary">
+        <th>
+            Tài khoản 
+        </th>
+        <th>
+           Mật khẩu
+        </th>
+        <th>
+           Họ và Tên
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class="table-success">
+            <td>
+                @Html.DisplayFor(modelItem => item.UserAdmin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PassAdmin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hoten)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("vanchuyen", new { page = page }))
+</div>
+<style>
+    .MenuTrang * {
+        display: flex;
+        color: black;
+        justify-content: center;
+        font-size: 16pt;
+        padding: 5px;
+    }
+</style>
