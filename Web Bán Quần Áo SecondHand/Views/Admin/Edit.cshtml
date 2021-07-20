@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -13,12 +13,6 @@
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.MaSP)
 
-    <div class="form-group">
-        <b class="control-label col-md-2">Mã sản phẩm:</b>
-        <div class="col-md-10">
-            <div style="font:18px; padding:5px 0 0 5px;">@Model.MaSP</div>
-        </div>
-    </div>
     <div class="form-group">
         <b class="control-label col-md-2">Mã Loại:</b>
         <div class="col-md-10">
@@ -43,31 +37,40 @@
     <div class="form-group">
         <b class="control-label col-md-2">Giá bán</b>
         <div class="col-md-10">
-            
+
             @Html.EditorFor(model => model.DonGia, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.DonGia, "", new { @class = "text-danger" })
         </div>
     </div>
 
+
     <div class="form-group">
-        <b class="control-label col-md-2">Hình ảnh</b>
-        <div class="col-md-10">
+        <b>Ảnh bìa:</b>
+        <div class=" col-md-10">
             Chọn ảnh mới
             <input type="file" name="fileupload" />
-            <img src="@Url.Content(Model.Image)" width="300px" />(Ảnh hiện tại)
-            @*Thong bao trung*@
-            @ViewBag.Thongbao
+            <div class="col-md-10">
+
+                <img src="@Url.Content(Model.Image)" width="300px" /> (Ảnh hiện tại)
+                @*Thong bao trung*@
+                @ViewBag.Thongbao
+            </div>
+
         </div>
     </div>
-
     <div class="form-group">
         <b class="control-label col-md-2">Ngày cập nhật</b>
         <div class="col-md-10">
-            @Html.EditorFor(model => model.NgayNhap, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.NgayNhap, "", new { @class = "text-danger" })
+            @String.Format("{0:dd/MM/yyyy}", Model.NgayNhap)
+            <input type="date" name="NgayNhap" />
         </div>
     </div>
+    <div class="form-group">
 
+        <b> Mô tả:</b>
+        <div class="col-md-10"><textarea name="Details">@Model.Details</textarea></div>
+
+    </div>
     <div class="form-group">
         <b class="control-label col-md-2">Số lượng tồn</b>
         <div class="col-md-10">

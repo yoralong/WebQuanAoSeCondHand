@@ -114,23 +114,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
 
         }
 
-        public ActionResult CTHD(int? page)
-        {
-            if (Session["Taikhoan"] == null)
-            {
-                return RedirectToAction("Login", "Admin");
-            }
-            else
-            {
-                // tao bien quy dinh so san pham moi tren trang
-                int pageSize = 6;
-                // tao bien so trang
-                int pageNum = (page ?? 1);
-                //lấy top sản phẩm bán chạy nhất
 
-                return View(db.CTHDs.ToList().OrderBy(n => n.MaHD).ToPagedList(pageNum, pageSize));
-            }
-        }
         public ActionResult tkadmin(int? page)
         {
             if (Session["Taikhoan"] == null)
@@ -252,72 +236,60 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
             }
 
         }
-
-        [HttpGet]
         public ActionResult Edit(int id)
         {
-
             if (Session["Taikhoan"] == null)
-            {
                 return RedirectToAction("Login", "Admin");
-            }
             else
             {
-                //Lay ra doi tuong sach theo ma
-                SanPham sanpham = db.SanPhams.SingleOrDefault(n => n.MaSP == id);
-                ViewBag.Masach = sanpham.MaSP;
-                if (sanpham == null)
-                {
-                    Response.StatusCode = 404;
-                    return null;
-                }
-                //Dua du lieu vao dropdownList
-                //Lay ds tu tabke chu de, sắp xep tang dan trheo ten chu de, chon lay gia tri Ma CD, hien thi thi Tenchude
-                ViewBag.MaLoai = new SelectList(db.LoaiSPs.ToList().OrderBy(n => n.TenLoai), "MaLoai", "TenLoai", sanpham.MaLoai);
-                ViewBag.MaTH = new SelectList(db.ThuongHieus.ToList().OrderBy(n => n.TenTH), "MaTH", "TenTH", sanpham.MaTH);
-                return View(sanpham);
+                SanPham sanPham = db.SanPhams.SingleOrDefault(n => n.MaSP == id);
+                //Lay du liệu tư table Chude để đổ vào Dropdownlist, kèm theo chọn MaCD tương tưng 
+                ViewBag.MaLoai = new SelectList(db.LoaiSPs.ToList().OrderBy(n => n.TenLoai), "MaLoai", "TenLoai", sanPham.MaLoai);
+                ViewBag.MaTH = new SelectList(db.ThuongHieus.ToList().OrderBy(n => n.TenTH), "MaTH", "TenTH", sanPham.MaTH);
+                return View(sanPham);
             }
         }
-        [HttpPost]
-        [ValidateInput(false)]
-        public ActionResult Edit(SanPham sanpham, HttpPostedFileBase fileUpload)
+        [HttpPost, ActionName("Edit")]
+        public ActionResult XacnhanEdit(int id, HttpPostedFileBase fileUpload)
         {
-            //Dua du lieu vao dropdownload
-            SanPham dbUpdate = db.SanPhams.FirstOrDefault(p => p.MaSP == sanpham.MaSP);
-            ViewBag.MaLoai = new SelectList(db.LoaiSPs.ToList().OrderBy(n => n.TenLoai), "MaLoai", "TenLoai", sanpham.MaLoai);
-            ViewBag.MaTH = new SelectList(db.ThuongHieus.ToList().OrderBy(n => n.TenTH), "MaTH", "TenTH", sanpham.MaTH);
-            //Kiem tra duong dan file
-            if (fileUpload == null)
-            {
-                ViewBag.Thongbao = "Vui lòng chọn ảnh bìa";
-                return View();
-            }
-            //Them vao CSDL
+            if (Session["Taikhoan"] == null)
+                return RedirectToAction("Login", "Admin");
             else
             {
-                if (ModelState.IsValid)
+                SanPham sanPham = db.SanPhams.SingleOrDefault(n => n.MaSP == id);
+                if (fileUpload == null)
                 {
-                    //Luu ten fie, luu y bo sung thu vien using System.IO;
-                    var fileName = Path.GetFileName(fileUpload.FileName);
-                    //Luu duong dan cua file
-                    var path = Path.Combine(Server.MapPath("~/Content/Images"), fileName);
-                    //Kiem tra hình anh ton tai chua?
-                    if (System.IO.File.Exists(path))
-                        ViewBag.Thongbao = "Hình ảnh đã tồn tại";
-                    else
-                    {
-                        //Luu hinh anh vao duong dan
-                        fileUpload.SaveAs(path);
-                    }
-                    sanpham.Image = "~/Content/Images/" + fileName;
-                    //Luu vao CSDL       
-                    UpdateModel(dbUpdate);
-                    db.SubmitChanges();
+                    ViewBag.Thongbao = "Vui lòng chọn ảnh bìa";
+                    return View();
                 }
-                return RedirectToAction("Sanpham", "Admin");
+                //Them vao CSDL
+                else
+                {
+                    if (ModelState.IsValid)
+                    {
+                        //Luu ten fie, luu y bo sung thu vien using System.IO;
+                        var fileName = Path.GetFileName(fileUpload.FileName);
+                        //Luu duong dan cua file
+                        var path = Path.Combine(Server.MapPath("~/Content/Images"), fileName);
+                        //Kiem tra hình anh ton tai chua?
+                        if (System.IO.File.Exists(path))
+                        {
+                            ViewBag.Thongbao = "Hình này đã tồn tại";
+
+                        }
+                        else
+                            //úp hình lên server
+                            fileUpload.SaveAs(path);
+                        sanPham.Image = "/Content/Images/" + fileName;
+                        UpdateModel(sanPham);
+                        db.SubmitChanges();
+                    }
+                    return RedirectToAction("SanPham", "Admin");
+                }
+
+
             }
         }
-
 
 
         //thuong hiệu
@@ -366,6 +338,36 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
             }
             return RedirectToAction("thuonghieu", "Admin");
         }
+        public ActionResult SuaThuonghieu(string id)
+        {
+            if (Session["Taikhoan"] == null)
+                return RedirectToAction("Login", "Admin");
+            else
+            {
+                ThuongHieu thuonghieu = db.ThuongHieus.SingleOrDefault(n => n.MaTH.Trim() == id.Trim());
+                ViewBag.MaTH = thuonghieu.MaTH;
+                if (thuonghieu == null)
+                {
+                    Response.StatusCode = 404;
+                    return null;
+                }
+                return View(thuonghieu);
+            }
+        }
+        [HttpPost, ActionName("SuaThuonghieu")]
+        public ActionResult XacnhansuaTH(string id)
+        {
+            if (Session["Taikhoan"] == null)
+                return RedirectToAction("Login", "Admin");
+            else
+            {
+
+                ThuongHieu thuonghieu = db.ThuongHieus.SingleOrDefault(n => n.MaTH.Trim() == id.Trim());
+                UpdateModel(thuonghieu);
+                db.SubmitChanges();
+                return RedirectToAction("thuonghieu", "Admin");
+            }
+        }
         [HttpGet]
         public ActionResult DeleteThuonghieu(string id)
         {
@@ -375,7 +377,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
             }
             else
             {
-               ThuongHieu thuonghieu = db.ThuongHieus.SingleOrDefault(n => n.MaTH.Trim() == id.Trim());
+                ThuongHieu thuonghieu = db.ThuongHieus.SingleOrDefault(n => n.MaTH.Trim() == id.Trim());
                 ViewBag.MaTH = thuonghieu.MaTH;
                 if (thuonghieu == null)
                 {
@@ -398,9 +400,27 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
             }
             db.ThuongHieus.DeleteOnSubmit(thuonghieu);
             db.SubmitChanges();
-            return RedirectToAction("thuonghieu","Admin");
+            return RedirectToAction("thuonghieu", "Admin");
         }
+        //CTHD
+        public ActionResult CTHD(int? page)
+        {
+            if (Session["Taikhoan"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            else
+            {
+                // tao bien quy dinh so san pham moi tren trang
+                int pageSize = 6;
+                // tao bien so trang
+                int pageNum = (page ?? 1);
+                //lấy top sản phẩm bán chạy nhất
+
+                return View(db.CTHDs.ToList().OrderBy(n => n.MaHD).ToPagedList(pageNum, pageSize));
+            }
+        }
+        
     }
 }
-
 

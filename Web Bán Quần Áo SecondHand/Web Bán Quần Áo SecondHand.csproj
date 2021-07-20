@@ -877,6 +877,7 @@
     <Content Include="Views\Admin\tkadmin.cshtml" />
     <Content Include="Views\Admin\CreateThuonghieu.cshtml" />
     <Content Include="Views\Admin\DeleteThuonghieu.cshtml" />
+    <Content Include="Views\Admin\SuaThuonghieu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

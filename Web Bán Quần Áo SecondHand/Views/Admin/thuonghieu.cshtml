@@ -16,6 +16,9 @@
 <table class="table">
     <tr class="table-primary">
         <th>
+            Mã Thương Hiệu
+        </th>
+        <th>
             Tên Thương Hiệu
         </th>
         <th>
@@ -31,6 +34,9 @@
     {
         <tr class="table-success">
             <td>
+                @Html.DisplayFor(modelItem => item.MaTH)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.TenTH)
             </td>
             <td>
@@ -40,7 +46,7 @@
                 @Html.DisplayFor(modelItem => item.SDT)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.MaTH }) |               
+                @Html.ActionLink("Edit", "SuaThuonghieu", new { id = item.MaTH.Trim() }) |               
                 @Html.ActionLink("Delete", "DeleteThuonghieu", new { id = item.MaTH.Trim() })
             </td>
         </tr>
