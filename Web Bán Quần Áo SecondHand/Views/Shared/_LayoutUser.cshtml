@@ -33,6 +33,33 @@
     <link href="~/Content/responsive.css" rel="stylesheet" />
 </head>
 <body>
+    <!-- Messenger Plugin chat Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Plugin chat code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "110672616981089");
+        chatbox.setAttribute("attribution", "biz_inbox");
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v11.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0" nonce="DRnzoawa"></script>
     <!-- Header Start -->
@@ -57,7 +84,7 @@
                 </nav>
             </div>
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="index.html"><img src="~/Content/Images/1-removebg-preview.png"style="width:30%" alt="CALA"></a>
+                <a class="navbar-brand" href="index.html"><img src="~/Content/Images/1-removebg-preview.png" style="width:30%" alt="CALA"></a>
                 <div class="group d-flex align-items-center">
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -84,11 +111,11 @@
                     </ul>
                     <form class="bg-white search-form" method="post" action="/ShopSecondHand/Search">
                         <div class="input-group">
-                            <input class="field form-control"  name="keyword" type="text" placeholder="Search">
+                            <input class="field form-control" name="keyword" type="text" placeholder="Search">
                             <span class="input-group-btn">
                                 <input class="submit btn btn-primary" id="searchsubmit" name="submit" type="submit"
-                                        value="Search"> </input>
-                                
+                                       value="Search"> </input>
+
                             </span>
                         </div>
                     </form>
@@ -140,6 +167,7 @@
     <div style="color:black;font-size:18px">
 
         @RenderBody()
+
     </div>
     <!--End sản phẩm nổi bật-->
     <!--Nhận xét khách hàng-->
