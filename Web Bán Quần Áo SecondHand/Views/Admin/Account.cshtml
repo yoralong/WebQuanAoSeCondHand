@@ -1,0 +1,96 @@
+﻿@model Web_Bán_Quần_Áo_SecondHand.Models.Admin
+
+@{
+    ViewBag.Title = "Account";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<p>
+    <h3 style="font-size:26pt;font-family:Tahoma">Thông tin Admin</h3>
+
+
+</p>
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="card influencer-profile-data">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-xl-2 col-lg-4 col-md-4 col-sm-4 col-12">
+                        <div class="text-center">
+                            <img src="@Model.Image" alt="User Avatar" class="rounded-circle user-avatar-xxl">
+                        </div>
+                    </div>
+                    <div class="col-xl-10 col-lg-8 col-md-8 col-sm-8 col-12">
+                        <div class="user-avatar-info">
+                            <div class="m-b-20">
+                                <div class="user-avatar-name">
+                                    <h2 class="mb-1">@Model.Hoten</h2>
+                                </div>
+                                <div class="rating-star  d-inline-block">
+                                    <i class="fa fa-fw fa-star"></i>
+                                    <i class="fa fa-fw fa-star"></i>
+                                    <i class="fa fa-fw fa-star"></i>
+                                    <i class="fa fa-fw fa-star"></i>
+                                    <i class="fa fa-fw fa-star"></i>
+                                    <p class="d-inline-block text-dark"> </p>
+                                </div>
+                            </div>
+                            <!--  <div class="float-right"><a href="#" class="user-avatar-email text-secondary">www.henrybarbara.com</a></div> -->
+                            <div class="user-avatar-address">
+                                <p class="border-bottom pb-3">
+                                    <span class="d-xl-inline-block d-block mb-2"><i class="fa fa-map-marker-alt mr-2 text-primary "></i>@Model.DiaChi</span>
+                                    <span class="mb-2 ml-xl-4 d-xl-inline-block d-block"> @String.Format("{0:dd/MM/yyyy}", Model.NgaySinh) </span>
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+    <div class="card">
+        <h5 class="card-header">Thông tin chi tiết</h5>
+        <div class="card-body">
+            <form action="#" id="basicform" data-parsley-validate="" novalidate="">
+                <div class="form-group">
+                    <label for="inputUserName">User Name</label></br>
+                    @Model.UserAdmin
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Password</label></br>
+                    @Model.PassAdmin
+                </div>
+                <div class="form-group">
+                    <label for="inputUserName">Họ tên</label></br>
+                    @Model.Hoten
+                </div>
+                <div class="form-group">
+                    <label for="inputUserName">Hình ảnh</label></br>
+                    <img src="@Model.Image" style="width:180px; height: 180px;" />
+                </div>
+                <div class="custom-file mb-3">
+                    <label for="inputUserName">SĐT</label></br>
+                    @Model.SDT
+                </div>
+                <div class="form-group">
+                    <label for="inputUserName">Email</label></br>
+                    @Model.Email
+                </div>
+                <div class="custom-file mb-3">
+                    <label for="inputUserName">Địa chỉ</label></br>
+                    @Model.DiaChi
+                </div>
+                <div class="custom-file mb-3">
+                    <label for="inputUserName">Ngày sinh</label></br>
+                    @Model.NgaySinh
+                </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+                        </div>

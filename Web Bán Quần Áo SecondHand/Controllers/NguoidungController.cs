@@ -87,6 +87,13 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
 			}
             return View();
 		}
-        
+        public ActionResult Logout()
+        {
+
+            Session["Taikhoan"] = "";
+            Session["Taikhoandn"] = "";
+
+            return RedirectToAction("Index", "ShopSecondHand");
+        }
     }
 }

@@ -51,6 +51,9 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
                     ViewBag.Thongbao = "Chúc mừng đăng nhập thành công";
                     Session["Taikhoan"] = ad;
                     Session["Taikhoandn"] = ad.Hoten;
+                    Session["TaikhoanImage"] = ad.Image;
+                    Session["UserName"] = ad.UserAdmin;
+
 
                     return RedirectToAction("IndexAdmin", "Admin");
                 }
@@ -58,6 +61,17 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
                     ViewBag.Thongbao = "Tên đăng nhập hoặc mật khẩu không đúng";
             }
             return View();
+        }
+        
+        public ActionResult Logout()
+        {
+           
+                    Session["Taikhoan"] = "";
+                    Session["Taikhoandn"] = "";
+                    Session["TaikhoanImage"] = "";
+                     Session["UserName"] = "";
+
+            return RedirectToAction("Login", "Admin");
         }
         public ActionResult Sanpham(int? page)
         {
@@ -420,7 +434,154 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
                 return View(db.CTHDs.ToList().OrderBy(n => n.MaHD).ToPagedList(pageNum, pageSize));
             }
         }
-        
+        //Account
+        public ActionResult Account()
+        {
+            var admin = Session["Taikhoan"];
+            return View(admin);
+        }
+        [HttpGet]
+        public ActionResult CreateAdmin()
+        {
+
+            if (Session["Taikhoan"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            else
+            {
+                
+                return View();
+            }
+
+        }
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult CreateAdmin(Admin admin, HttpPostedFileBase fileupload)
+        {
+            
+            if (fileupload == null)
+            {
+                ViewBag.Thongbao = "Vui lòng chọn ảnh bìa";
+                return View();
+            }
+            else
+            {
+                if (ModelState.IsValid)
+                {
+                    var fileName = Path.GetFileName(fileupload.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Content/Images"), fileName);
+                    if (System.IO.File.Exists(path))
+                    {
+                        ViewBag.Thongbao = "Hình ảnh đã tồn tại";
+                    }
+                    else
+                    {
+                        fileupload.SaveAs(path);
+                    }
+                    admin.Image = "/Content/Images/" + fileName;
+                    db.Admins.InsertOnSubmit(admin);
+                    db.SubmitChanges();
+                }
+                return RedirectToAction("tkadmin", "Admin");
+            }
+        }
+
+        public ActionResult SuaAccount(string id)
+        {
+            if (Session["Taikhoan"] == null)
+                return RedirectToAction("Login", "Admin");
+            else
+            {
+                Admin admin = db.Admins.SingleOrDefault(n => n.UserAdmin.Trim() == id.Trim());
+                
+                return View(admin);
+            }
+        }
+        [HttpPost, ActionName("SuaAccount")]
+        public ActionResult XacnhansuaAccount(string id, HttpPostedFileBase fileUpload)
+        {
+            if (Session["Taikhoan"] == null)
+                return RedirectToAction("Login", "Admin");
+            else
+            {
+                Admin admin = db.Admins.SingleOrDefault(n => n.UserAdmin.Trim() == id.Trim());
+                if (fileUpload == null)
+                {
+                    ViewBag.Thongbao = "Vui lòng chọn ảnh bìa";
+                    return View();
+                }
+                //Them vao CSDL
+                else
+                {
+                    if (ModelState.IsValid)
+                    {
+                        //Luu ten fie, luu y bo sung thu vien using System.IO;
+                        var fileName = Path.GetFileName(fileUpload.FileName);
+                        //Luu duong dan cua file
+                        var path = Path.Combine(Server.MapPath("~/Content/Images"), fileName);
+                        //Kiem tra hình anh ton tai chua?
+                        if (System.IO.File.Exists(path))
+                        {
+                            ViewBag.Thongbao = "Hình này đã tồn tại";
+
+                        }
+                        else
+                            //úp hình lên server
+                            fileUpload.SaveAs(path);
+                        admin.Image = "/Content/Images/" + fileName;
+                        // cap nhat lai session khi sua du lieu 
+                        if (admin.UserAdmin.Trim() == Session["UserName"].ToString())
+                        {
+                            Session["Taikhoan"] = admin;
+                            Session["Taikhoandn"] = admin.Hoten;
+                            Session["TaikhoanImage"] = admin.Image;
+                            Session["UserName"] = admin.UserAdmin;
+                        }
+                        UpdateModel(admin);                     
+                        db.SubmitChanges();
+                       
+                    }
+                    return RedirectToAction("tkadmin", "Admin");
+                }
+
+
+            }
+        }
+        [HttpGet]
+        public ActionResult DeleteAdmin(string id)
+        {
+            if (Session["Taikhoan"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            else
+            {
+                Admin admin = db.Admins.SingleOrDefault(n => n.UserAdmin == id);
+                ViewBag.UserAdmin = admin.UserAdmin;
+                if (admin == null)
+                {
+                    Response.StatusCode = 404;
+                    return null;
+                }
+                return View(admin);
+            }
+
+        }
+        [HttpPost, ActionName("DeleteAdmin")]
+        public ActionResult XacnhanxoaAdmin(string id)
+        {
+            Admin admin = db.Admins.SingleOrDefault(n => n.UserAdmin == id);
+            ViewBag.UserAdmin = admin.UserAdmin;
+            if (admin == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            db.Admins.DeleteOnSubmit(admin);
+            db.SubmitChanges();
+            return RedirectToAction("tkadmin");
+        }
     }
 }
 

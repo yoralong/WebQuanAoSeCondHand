@@ -16,6 +16,7 @@
     <div class="form-group">
         <b class="control-label col-md-2">Mã Loại:</b>
         <div class="col-md-10">
+
             @Html.DropDownList("MaLoai")
         </div>
     </div>
@@ -45,13 +46,15 @@
 
 
     <div class="form-group">
-        <b>Ảnh bìa:</b>
+        <b class="control-label col-md-2">Ảnh bìa:</b>
+        
         <div class=" col-md-10">
             Chọn ảnh mới
             <input type="file" name="fileupload" />
+            
             <div class="col-md-10">
 
-                <img src="@Url.Content(Model.Image)" width="300px" /> (Ảnh hiện tại)
+                <img src="@Url.Content(Model.Image)" width="300px" />(Ảnh hiện tại)
                 @*Thong bao trung*@
                 @ViewBag.Thongbao
             </div>
@@ -67,7 +70,8 @@
     </div>
     <div class="form-group">
 
-        <b> Mô tả:</b>
+        <b class="control-label col-md-2">Mô tả:</b>
+
         <div class="col-md-10"><textarea name="Details">@Model.Details</textarea></div>
 
     </div>

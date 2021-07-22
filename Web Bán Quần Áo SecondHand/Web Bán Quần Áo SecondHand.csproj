@@ -878,6 +878,10 @@
     <Content Include="Views\Admin\CreateThuonghieu.cshtml" />
     <Content Include="Views\Admin\DeleteThuonghieu.cshtml" />
     <Content Include="Views\Admin\SuaThuonghieu.cshtml" />
+    <Content Include="Views\Admin\Account.cshtml" />
+    <Content Include="Views\Admin\SuaAccount.cshtml" />
+    <Content Include="Views\Admin\CreateAdmin.cshtml" />
+    <Content Include="Views\Admin\DeleteAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,90 @@
+﻿@model Web_Bán_Quần_Áo_SecondHand.Models.Admin
+
+@{
+    ViewBag.Title = "CreateAdmin";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<p>
+    <h3 style="font-size:26pt;font-family:Tahoma">Sửa tài khoản Admin</h3>
+
+
+</p>
+
+@using (Html.BeginForm("CreateAdmin", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        Tài khoản
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.UserAdmin, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.UserAdmin, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        Mật khẩu
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PassAdmin, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PassAdmin, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Họ Tên
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Hoten, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Hoten, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputRepeatPassword">Hình Ảnh:</label>
+        <input type="file" name="fileUpload" />
+        @*thong bao trung*@
+        @ViewBag.Thongbao
+    </div>
+
+    <div class="form-group">
+        SĐT
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Email
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Địa chỉ
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DiaChi, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DiaChi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputRepeatPassword">Ngày Nhập:</label>
+        <input type="date" name="NgaySinh" />
+        @Html.ValidationMessageFor(model => model.NgaySinh)
+    </div>
+
+    <div class="col-sm-6 pl-0">
+        <p class="text-right">
+            <button type="submit" class="btn btn-space btn-primary">Create</button>
+            <a href="@Url.Action("Sanpham", "Admin")" button class="btn btn-space btn-secondary">Cancel</a>
+        </p>
+    </div>
+</div>
+}
+

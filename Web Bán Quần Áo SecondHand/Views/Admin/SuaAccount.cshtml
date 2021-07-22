@@ -1,0 +1,98 @@
+﻿@model Web_Bán_Quần_Áo_SecondHand.Models.Admin
+
+@{
+    ViewBag.Title = "SuaAccount";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<p>
+    <h3 style="font-size:26pt;font-family:Tahoma">Sửa tài khoản Admin</h3>
+
+
+</p>
+
+
+@using (Html.BeginForm("SuaAccount", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.UserAdmin)
+
+    <div class="form-group">
+       Mật khẩu
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PassAdmin, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PassAdmin, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Họ Tên
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Hoten, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Hoten, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Hình ảnh
+        <div class=" col-md-10">
+            Chọn ảnh mới
+            <input type="file" name="fileupload" />
+
+            <div class="col-md-10">
+
+                <img src="@Url.Content(Model.Image)" width="300px" />(Ảnh hiện tại)
+                @*Thong bao trung*@
+                @ViewBag.Thongbao
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        SĐT
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+       Email
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Địa chỉ
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DiaChi, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DiaChi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Ngày sinh
+        <div class="col-md-10">
+            @String.Format("{0:dd/MM/yyyy}", Model.NgaySinh)
+            <input type="date" name="NgaySinh" />
+        </div>
+    </div>
+
+    <div class="col-sm-6 pl-0">
+        <p class="text-right">
+            <button type="submit" class="btn btn-space btn-primary">Save</button>
+
+            <a href="@Url.Action("tkadmin","Admin")" button class="btn btn-space btn-secondary">Cancel</a>
+        </p>
+    </div>
+</div>
+}
+

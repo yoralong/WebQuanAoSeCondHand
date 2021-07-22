@@ -8,46 +8,76 @@
 
 <p>
     <h3 style="font-size:26pt;font-family:Tahoma">Tài khoản Admin</h3>
+    <div style="padding-left:15px"><i class="fas fa-plus"></i> @Html.ActionLink("Thêm Admin", "CreateAdmin")</div>
 
 
 </p>
 <table class="table">
     <tr class="table-primary">
         <th>
-            Tài khoản 
+            Tài khoản
         </th>
         <th>
-           Mật khẩu
+            Mật khẩu
         </th>
         <th>
-           Họ và Tên
+            Họ và Tên
+        </th>
+        <th>
+            Image
+        </th>
+        <th>
+            SĐT
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Địa chỉ
+        </th>
+        <th>
+            Ngày Sinh
         </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr class="table-success">
-            <td>
-                @Html.DisplayFor(modelItem => item.UserAdmin)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PassAdmin)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hoten)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
+<tr class="table-success">
+    <td>
+        @Html.DisplayFor(modelItem => item.UserAdmin)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PassAdmin)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Hoten)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Image)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SDT)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DiaChi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NgaySinh)
+    </td>
+    <td >
+        @Html.ActionLink("Edit", "SuaAccount", new { id = item.UserAdmin.Trim() }) |      
+        @Html.ActionLink("Delete", "DeleteAdmin", new { id = item.UserAdmin.Trim() })
+    </td>
+</tr>
     }
 
 </table>
 <div class="MenuTrang">
-    @Html.PagedListPager(Model, page => Url.Action("vanchuyen", new { page = page }))
+    @Html.PagedListPager(Model, page => Url.Action("tkadmin", new { page = page }))
 </div>
 <style>
     .MenuTrang * {

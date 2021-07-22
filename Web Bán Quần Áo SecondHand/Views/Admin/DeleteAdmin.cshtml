@@ -1,0 +1,97 @@
+﻿@model Web_Bán_Quần_Áo_SecondHand.Models.Admin
+
+@{
+    ViewBag.Title = "DeleteAdmin";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<p>
+    <h3 style="font-size:26pt;font-family:Tahoma">Xóa tài khoản Admin</h3>
+
+
+</p>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <div class="card">
+            <h5 class="card-header">Xóa sản phẩm</h5>
+            <div class="card-body">
+        <dt>
+            Tài khoản
+        </dt>
+        <dd>
+            @Html.DisplayNameFor(model => model.UserAdmin)
+        </dd>
+        <dt>
+            Mật khẩu
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PassAdmin)
+        </dd>
+
+        <dt>
+            Họ Tên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hoten)
+        </dd>
+
+        <dt>
+            Hình
+        </dt>
+
+        <dd>
+            <img src="@Url.Content( Model.Image)" width="300px" />
+        </dd>
+
+        <dt>
+            SĐT
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+        <dt>
+            Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            Địa chỉ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+        <dt>
+            Ngày Sinh
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgaySinh)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="col-sm-6 pl-0">
+            <p class="text-right">
+                <button type="submit" class="btn btn-space btn-primary">Xóa</button>
+                <a href="@Url.Action("tkadmin", "Admin")" button class="btn btn-space btn-secondary">Cancel</a>
+            </p>
+        </div>
+    }
+</div>
+</div
+</div>

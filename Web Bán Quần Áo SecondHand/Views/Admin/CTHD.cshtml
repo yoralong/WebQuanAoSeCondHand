@@ -26,7 +26,7 @@
         <th>
             Đơn giá
         </th>
-        <th></th>
+        
     </tr>
 
     @foreach (var item in Model)
@@ -43,12 +43,7 @@
     </td>
     <td>
         @String.Format("{0:0,0}₫", item.DonGia)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.MaHD })
-        
-        @Html.ActionLink("Delete", "Delete", new { id = item.MaHD })
-    </td>
+    </td>  
 </tr>
     }
 
