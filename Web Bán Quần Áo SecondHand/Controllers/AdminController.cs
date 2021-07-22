@@ -87,7 +87,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
                 int pageNum = (page ?? 1);
                 //lấy top sản phẩm bán chạy nhất
 
-                return View(db.SanPhams.ToList().OrderBy(n => n.MaSP).ToPagedList(pageNum, pageSize));
+                return View(db.SanPhams.ToList().OrderByDescending(n => n.MaSP).ToPagedList(pageNum, pageSize));
             }
 
         }
@@ -214,6 +214,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
                 {
                     var fileName = Path.GetFileName(fileupload.FileName);
                     var path = Path.Combine(Server.MapPath("~/Content/Images"), fileName);
+                    
                     if (System.IO.File.Exists(path))
                     {
                         ViewBag.Thongbao = "Hình ảnh đã tồn tại";
@@ -223,6 +224,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
                         fileupload.SaveAs(path);
                     }
                     sanPham.Image = "/Content/Images/" + fileName;
+                    sanPham.NgayNhap = DateTime.Now;
                     db.SanPhams.InsertOnSubmit(sanPham);
                     db.SubmitChanges();
                 }

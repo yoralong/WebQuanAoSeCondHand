@@ -12,8 +12,8 @@
 
 
 </p>
-<table class="table">
-    <tr class="table-primary">
+<table class="table" border="1">
+    <tr class="table-primary" >
         <th>
             Tài khoản
         </th>
@@ -43,7 +43,7 @@
 
     @foreach (var item in Model)
     {
-<tr class="table-success">
+<tr class="table-success" >
     <td>
         @Html.DisplayFor(modelItem => item.UserAdmin)
     </td>
@@ -53,8 +53,8 @@
     <td>
         @Html.DisplayFor(modelItem => item.Hoten)
     </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Image)
+    <td >
+        <img src="@item.Image" style="width:180px; height: 180px;" />
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.SDT)

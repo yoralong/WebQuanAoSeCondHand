@@ -36,8 +36,18 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
             {
                 ViewData["Loi2"] = "Username đã tồn tại";
             }
+            if (matkhau != nhaplaimatkhau)
+            {
+                ViewData["Loi1"] = "Nhập lại mật khẩu không đúng";
+            }
             else
-			{
+			{   
+                //so sánh ngày hiện tại và ngày sinh
+                if(DateTime.Compare(DateTime.Now, DateTime.Parse(collection["Ngaysinh"]))==-1)
+                {
+                    ViewData["Loi3"] = "Ngày sinh không được lớn hơn hiện tại";
+                    
+                }
                 kh.TenKH = hoten;
                 kh.MatKhau = matkhau;
                 kh.TaiKhoan = tendn;
