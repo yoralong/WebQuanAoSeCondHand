@@ -15,7 +15,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         // GET: Admin
         public ActionResult IndexAdmin()
         {
-            if (Session["Taikhoan"] == null)
+            if (Session["TaikhoanAD"] == null)
             {
                 return RedirectToAction("Login", "Admin");
             }
@@ -49,9 +49,9 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
                 if (ad != null)
                 {
                     ViewBag.Thongbao = "Chúc mừng đăng nhập thành công";
-                    Session["Taikhoan"] = ad;
-                    Session["Taikhoandn"] = ad.Hoten;
-                    Session["TaikhoanImage"] = ad.Image;
+                    Session["TaikhoanAD"] = ad;
+                    Session["TaikhoanADdn"] = ad.Hoten;
+                    Session["TaikhoanADImage"] = ad.Image;
                     Session["UserName"] = ad.UserAdmin;
 
 
@@ -66,9 +66,9 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         public ActionResult Logout()
         {
            
-                    Session["Taikhoan"] = "";
-                    Session["Taikhoandn"] = "";
-                    Session["TaikhoanImage"] = "";
+                    Session["TaikhoanAD"] = "";
+                    Session["TaikhoanADdn"] = "";
+                    Session["TaikhoanADImage"] = "";
                      Session["UserName"] = "";
 
             return RedirectToAction("Login", "Admin");
@@ -93,7 +93,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         }
         public ActionResult QLTKKhachhang(int? page)
         {
-            if (Session["Taikhoan"] == null)
+            if (Session["TaikhoanAD"] == null)
             {
                 return RedirectToAction("Login", "Admin");
             }
@@ -111,7 +111,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         }
         public ActionResult vanchuyen(int? page)
         {
-            if (Session["Taikhoan"] == null)
+            if (Session["TaikhoanAD"] == null)
             {
                 return RedirectToAction("Login", "Admin");
             }
@@ -131,7 +131,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
 
         public ActionResult tkadmin(int? page)
         {
-            if (Session["Taikhoan"] == null)
+            if (Session["TaikhoanAD"] == null)
             {
                 return RedirectToAction("Login", "Admin");
             }
@@ -149,7 +149,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         [HttpGet]
         public ActionResult Delete(int id)
         {
-            if (Session["Taikhoan"] == null)
+            if (Session["TaikhoanAD"] == null)
             {
                 return RedirectToAction("Login", "Admin");
             }
@@ -185,7 +185,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         public ActionResult Create()
         {
 
-            if (Session["Taikhoan"] == null)
+            if (Session["TaikhoanAD"] == null)
             {
                 return RedirectToAction("Login", "Admin");
             }
@@ -235,7 +235,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
 
         public ActionResult Details(int id)
         {
-            if (Session["Taikhoan"] == null)
+            if (Session["TaikhoanAD"] == null)
             {
                 return RedirectToAction("Login", "Admin");
             }
@@ -254,7 +254,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         }
         public ActionResult Edit(int id)
         {
-            if (Session["Taikhoan"] == null)
+            if (Session["TaikhoanAD"] == null)
                 return RedirectToAction("Login", "Admin");
             else
             {
@@ -268,7 +268,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         [HttpPost, ActionName("Edit")]
         public ActionResult XacnhanEdit(int id, HttpPostedFileBase fileUpload)
         {
-            if (Session["Taikhoan"] == null)
+            if (Session["TaikhoanAD"] == null)
                 return RedirectToAction("Login", "Admin");
             else
             {
@@ -311,7 +311,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         //thuong hiệu
         public ActionResult thuonghieu(int? page)
         {
-            if (Session["Taikhoan"] == null)
+            if (Session["TaikhoanAD"] == null)
             {
                 return RedirectToAction("Login", "Admin");
             }
@@ -331,7 +331,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         public ActionResult CreateThuonghieu()
         {
 
-            if (Session["Taikhoan"] == null)
+            if (Session["TaikhoanAD"] == null)
             {
                 return RedirectToAction("Login", "Admin");
             }
@@ -356,7 +356,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         }
         public ActionResult SuaThuonghieu(string id)
         {
-            if (Session["Taikhoan"] == null)
+            if (Session["TaikhoanAD"] == null)
                 return RedirectToAction("Login", "Admin");
             else
             {
@@ -373,7 +373,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         [HttpPost, ActionName("SuaThuonghieu")]
         public ActionResult XacnhansuaTH(string id)
         {
-            if (Session["Taikhoan"] == null)
+            if (Session["TaikhoanAD"] == null)
                 return RedirectToAction("Login", "Admin");
             else
             {
@@ -387,7 +387,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         [HttpGet]
         public ActionResult DeleteThuonghieu(string id)
         {
-            if (Session["Taikhoan"] == null)
+            if (Session["TaikhoanAD"] == null)
             {
                 return RedirectToAction("Login", "Admin");
             }
@@ -421,7 +421,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         //CTHD
         public ActionResult CTHD(int? page)
         {
-            if (Session["Taikhoan"] == null)
+            if (Session["TaikhoanAD"] == null)
             {
                 return RedirectToAction("Login", "Admin");
             }
@@ -439,14 +439,14 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         //Account
         public ActionResult Account()
         {
-            var admin = Session["Taikhoan"];
+            var admin = Session["TaikhoanAD"];
             return View(admin);
         }
         [HttpGet]
         public ActionResult CreateAdmin()
         {
 
-            if (Session["Taikhoan"] == null)
+            if (Session["TaikhoanAD"] == null)
             {
                 return RedirectToAction("Login", "Admin");
             }
@@ -491,7 +491,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
 
         public ActionResult SuaAccount(string id)
         {
-            if (Session["Taikhoan"] == null)
+            if (Session["TaikhoanAD"] == null)
                 return RedirectToAction("Login", "Admin");
             else
             {
@@ -503,7 +503,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         [HttpPost, ActionName("SuaAccount")]
         public ActionResult XacnhansuaAccount(string id, HttpPostedFileBase fileUpload)
         {
-            if (Session["Taikhoan"] == null)
+            if (Session["TaikhoanAD"] == null)
                 return RedirectToAction("Login", "Admin");
             else
             {
@@ -535,9 +535,9 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
                         // cap nhat lai session khi sua du lieu 
                         if (admin.UserAdmin.Trim() == Session["UserName"].ToString())
                         {
-                            Session["Taikhoan"] = admin;
-                            Session["Taikhoandn"] = admin.Hoten;
-                            Session["TaikhoanImage"] = admin.Image;
+                            Session["TaikhoanAD"] = admin;
+                            Session["TaikhoanADdn"] = admin.Hoten;
+                            Session["TaikhoanADImage"] = admin.Image;
                             Session["UserName"] = admin.UserAdmin;
                         }
                         UpdateModel(admin);                     
@@ -553,7 +553,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         [HttpGet]
         public ActionResult DeleteAdmin(string id)
         {
-            if (Session["Taikhoan"] == null)
+            if (Session["TaikhoanAD"] == null)
             {
                 return RedirectToAction("Login", "Admin");
             }
