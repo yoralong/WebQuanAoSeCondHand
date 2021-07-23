@@ -75,7 +75,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         }
         public ActionResult Sanpham(int? page)
         {
-            if (Session["Taikhoan"] == null)
+            if (Session["TaikhoanAD"] == null)
             {
                 return RedirectToAction("Login", "Admin");
             }
