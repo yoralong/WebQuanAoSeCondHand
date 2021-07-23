@@ -68,9 +68,18 @@
     <td>
         @Html.DisplayFor(modelItem => item.NgaySinh)
     </td>
-    <td >
-        @Html.ActionLink("Edit", "SuaAccount", new { id = item.UserAdmin.Trim() }) |      
-        @Html.ActionLink("Delete", "DeleteAdmin", new { id = item.UserAdmin.Trim() })
+    <td>
+        <button class="btn btn-sm btn-outline-light">
+            <i class="fas fa-edit"></i>
+            @Html.ActionLink("Edit", "SuaAccount", new { id = item.UserAdmin.Trim() })
+        </button>
+
+        <button class="btn btn-sm btn-outline-light">
+            <i class="far fa-trash-alt"></i>
+            @Html.ActionLink("Delete", "DeleteAdmin", new { id = item.UserAdmin.Trim() })
+        </button>
+         
+        
     </td>
 </tr>
     }

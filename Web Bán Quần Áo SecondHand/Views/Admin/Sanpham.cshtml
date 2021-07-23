@@ -72,9 +72,19 @@
                 @Html.DisplayFor(modelItem => item.SoLuongTon)
             </td>
             <td style="border:double">
-                @Html.ActionLink("Edit", "Edit", new { id = item.MaSP }) |
-                @Html.ActionLink("Details", "Details", new { id = item.MaSP }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.MaSP })
+                <button class="btn btn-sm btn-outline-light">
+                    <i class="fas fa-edit"></i>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.MaSP }) 
+                </button>
+                <button class="btn btn-sm btn-outline-light">
+                    <i class="fas fa-search-plus"></i>
+                    @Html.ActionLink("Details", "Details", new { id = item.MaSP }) 
+                </button>
+                    <button class="btn btn-sm btn-outline-light">
+                        <i class="far fa-trash-alt"></i>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.MaSP })
+                    </button>
+
             </td>
         </tr>
     }

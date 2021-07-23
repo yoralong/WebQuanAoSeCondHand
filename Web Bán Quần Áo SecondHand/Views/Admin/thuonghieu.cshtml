@@ -46,8 +46,16 @@
                 @Html.DisplayFor(modelItem => item.SDT)
             </td>
             <td>
-                @Html.ActionLink("Edit", "SuaThuonghieu", new { id = item.MaTH.Trim() }) |               
-                @Html.ActionLink("Delete", "DeleteThuonghieu", new { id = item.MaTH.Trim() })
+                <button class="btn btn-sm btn-outline-light">
+                    <i class="fas fa-edit"></i>
+                    @Html.ActionLink("Edit", "SuaThuonghieu", new { id = item.MaTH.Trim() })
+                </button>
+                
+                <button class="btn btn-sm btn-outline-light">
+                    <i class="far fa-trash-alt"></i>
+                    @Html.ActionLink("Delete", "DeleteThuonghieu", new { id = item.MaTH.Trim() })
+                </button>
+               
             </td>
         </tr>
     }

@@ -29,7 +29,7 @@
         <th>
             Cước phí
         </th>
-        <th></th>
+        
     </tr>
 
     @foreach (var item in Model)
@@ -47,11 +47,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CuocPhi)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.MaCT }) |
-                @Html.ActionLink("Details", "Details", new { id = item.MaCT }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.MaCT })
-            </td>
+            
         </tr>
     }
 
