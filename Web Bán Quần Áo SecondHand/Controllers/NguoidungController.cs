@@ -107,9 +107,50 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         }
         public ActionResult Quenmatkhau()
         {
+           
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Quenmatkhau(FormCollection collection)
+        {
+            var tendn = collection["TenDN"];  
+            var email = collection["Email"];
+            var dienthoai = collection["Dienthoai"];
+            var matkhau = collection["Matkhau"];
+            var nhaplaimatkhau = collection["NhaplaiMatkhau"];
+
+            KhachHang kh = db.KhachHangs.SingleOrDefault(n => n.TaiKhoan.Trim() == tendn.Trim());
+            if (kh != null)
+            {
+                if(kh.Sdt.Trim()==dienthoai.Trim() && kh.Email.Trim() == email.Trim())
+                {
+                    if (matkhau != nhaplaimatkhau)
+                    {
+                        ViewData["Loi1"] = "Nhập lại mật khẩu không đúng";
+                        return View();
+                    }
+                    else
+                    if (matkhau.Trim() == nhaplaimatkhau.Trim())
+                    {
+                        
+                        kh.MatKhau = matkhau; 
+                        db.SubmitChanges();
+                        return RedirectToAction("Dangnhap", "Nguoidung");
+                    }
+                    
+                }
+                ViewData["Loi"] = "Nhập thông tin SĐT hoặc Email sai vui lòng nhập lại!!";
+            }
+            else
+            {
+                ViewData["Loi"] = "Tên đăng nhập đã đăng ký không tồn tại";
+            }
             
             return View();
         }
-        
+     
+       
+
+
     }
 }

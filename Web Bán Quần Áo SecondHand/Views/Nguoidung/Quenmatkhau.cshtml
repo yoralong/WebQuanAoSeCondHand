@@ -31,32 +31,32 @@
                         <h2 class="form-title">Quên mật khẩu</h2>
                         @Html.ValidationSummary(true)
                         
-                        <span class="label">
-                            <span style="color:red; padding-left:10px">@ViewData["Loi2"] </span>
-                            <div class="form-group">
-                                <input type="text" class="form-input" name="TenDN" id="username" placeholder="Tên Đăng Nhập" required />
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-input" name="Matkhau" id="password" placeholder="Mật khẩu" required />
-                                <span toggle="#password"></span>
-                            </div>
-                            <span style="color:red; padding-left:10px">@ViewData["Loi4"] </span>
-                            <span style="color:red; padding-left:10px">@ViewData["Loi1"] </span>
-                            <div class="form-group">
-                                <input type="password" class="form-input" name="NhaplaiMatkhau" id="re_password" placeholder="Nhập lại mật khẩu" required />
-                            </div>
+                    <span class="label">
+                        <span style="color:red; padding-left:10px">@ViewData["Loi"] </span>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="TenDN" id="username" placeholder="Tên Đăng Nhập đã đăng ký" required />
+                        </div>
 
-                            <div class="form-group">
-                                <input type="email" class="form-input" name="email" placeholder="Email" required />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-input" name="Dienthoai" placeholder="Số điện thoại" required size="12" maxlength="12" />
-                            </div>
-                            
-                            
-                            <div class="form-group">
-                                <input type="submit" name="submit" id="submit" class="form-submit" value="Đồng ý" required />
-                            </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-input" name="email" placeholder="Email đã đăng ký" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="Dienthoai" placeholder="Số điện thoại đã đăng ký" required size="12" maxlength="12" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-input" name="Matkhau" id="password" placeholder="Mật khẩu mới" required />
+                            <span toggle="#password"></span>
+                        </div>
+                        
+                        <span style="color:red; padding-left:10px">@ViewData["Loi1"] </span>
+                        <div class="form-group">
+                            <input type="password" class="form-input" name="NhaplaiMatkhau" id="re_password" placeholder="Nhập lại mật khẩu mới" required />
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Đồng ý" required />
+                        </div>
                     </form>
                    
                 </div>
