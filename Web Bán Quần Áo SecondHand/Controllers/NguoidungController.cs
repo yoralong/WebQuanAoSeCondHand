@@ -100,8 +100,8 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
         public ActionResult Logout()
         {
 
-            Session["Taikhoan"] = "";
-            Session["Taikhoandn"] = "";
+            Session["Taikhoan"] = null;
+            Session["Taikhoandn"] = null;
 
             return RedirectToAction("Index", "ShopSecondHand");
         }
