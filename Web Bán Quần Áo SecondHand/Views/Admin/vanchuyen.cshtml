@@ -11,12 +11,15 @@
 
 <p>
     <h3 style="font-size:26pt;font-family:Tahoma">Công ty vận chuyển</h3>
-
+    <div style="padding-left:15px"><i class="fas fa-plus"></i> @Html.ActionLink("Thêm Công ty vận chuyển", "CreateVanchuyen")</div>
 
 </p>
 
 <table class="table">
     <tr class="table-primary">
+        <th>
+            Mã Công Ty
+        </th>
         <th>
             Tên Công Ty
         </th>
@@ -29,26 +32,40 @@
         <th>
             Cước phí
         </th>
-        
+        <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr class="table-success">
-            <td >
-                @Html.DisplayFor(modelItem => item.TenCT)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SDT)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DiaChi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CuocPhi)
-            </td>
-            
-        </tr>
+<tr class="table-success">
+    <td>
+        @Html.DisplayFor(modelItem => item.MaCT)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenCT)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SDT)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DiaChi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CuocPhi)
+    </td>
+    <td>
+        <button class="btn btn-sm btn-outline-light">
+            <i class="fas fa-edit"></i>
+            @Html.ActionLink("Edit", "SuaVanchuyen", new { id = item.MaCT.Trim() })
+        </button>
+
+        <button class="btn btn-sm btn-outline-light">
+            <i class="far fa-trash-alt"></i>
+            @Html.ActionLink("Delete", "DeleteVanchuyen", new { id = item.MaCT.Trim() })
+        </button>
+
+    </td>
+</tr>
     }
 
 </table>

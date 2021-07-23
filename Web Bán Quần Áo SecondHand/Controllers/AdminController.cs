@@ -73,7 +73,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
 
             return RedirectToAction("Login", "Admin");
         }
-        public ActionResult Sanpham(int? page)
+        public ActionResult Sanpham(int? page, string keyword)
         {
             if (Session["TaikhoanAD"] == null)
             {
@@ -86,11 +86,36 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
                 // tao bien so trang
                 int pageNum = (page ?? 1);
                 //lấy top sản phẩm bán chạy nhất
-
+                if (!string.IsNullOrEmpty(keyword))
+                {
+                    TempData["kwd"] = keyword;
+                    List<SanPham> lstCus = db.SanPhams.Where(n => n.TenSP.ToLower().Contains(keyword.ToLower())).ToList();
+                    return View(lstCus.OrderByDescending(n => n.MaSP).ToPagedList(pageNum, pageSize));
+                }
                 return View(db.SanPhams.ToList().OrderByDescending(n => n.MaSP).ToPagedList(pageNum, pageSize));
             }
 
         }
+        [HttpPost]
+        public ActionResult TimKiem(string keyword)
+        {
+            if (Session["TaikhoanAD"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            else
+            {
+                int pageSize = 4;
+                int pageNum = 1;
+
+                TempData["kwd"] = keyword;
+                List<SanPham> lstCus = db.SanPhams.Where(n => n.TenSP.ToLower().Contains(keyword.ToLower())).ToList();
+                return View("Sanpham", lstCus.OrderByDescending(n => n.MaSP).ToPagedList(pageNum, pageSize));
+            }
+        }
+
+
+
         public ActionResult QLTKKhachhang(int? page)
         {
             if (Session["TaikhoanAD"] == null)
@@ -109,24 +134,7 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
             }
 
         }
-        public ActionResult vanchuyen(int? page)
-        {
-            if (Session["TaikhoanAD"] == null)
-            {
-                return RedirectToAction("Login", "Admin");
-            }
-            else
-            {
-                // tao bien quy dinh so san pham moi tren trang
-                int pageSize = 6;
-                // tao bien so trang
-                int pageNum = (page ?? 1);
-                //lấy top sản phẩm bán chạy nhất
-
-                return View(db.CongTy_VanChuyens.ToList().OrderBy(n => n.MaCT).ToPagedList(pageNum, pageSize));
-            }
-
-        }
+        
 
 
         public ActionResult tkadmin(int? page)
@@ -306,8 +314,116 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
 
             }
         }
+        //vanchuyen
+        public ActionResult vanchuyen(int? page)
+        {
+            if (Session["TaikhoanAD"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            else
+            {
+                // tao bien quy dinh so san pham moi tren trang
+                int pageSize = 6;
+                // tao bien so trang
+                int pageNum = (page ?? 1);
+                //lấy top sản phẩm bán chạy nhất
 
+                return View(db.CongTy_VanChuyens.ToList().OrderBy(n => n.MaCT).ToPagedList(pageNum, pageSize));
+            }
 
+        }
+        [HttpGet]
+        public ActionResult CreateVanchuyen()
+        {
+
+            if (Session["TaikhoanAD"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            else
+            {
+                return View();
+            }
+
+        }
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult CreateVanchuyen(CongTy_VanChuyen vanchuyen)
+        {
+
+            if (ModelState.IsValid)
+            {
+
+                db.CongTy_VanChuyens.InsertOnSubmit(vanchuyen);
+                db.SubmitChanges();
+            }
+            return RedirectToAction("vanchuyen", "Admin");
+        }
+        public ActionResult SuaVanchuyen(string id)
+        {
+            if (Session["TaikhoanAD"] == null)
+                return RedirectToAction("Login", "Admin");
+            else
+            {
+                CongTy_VanChuyen vanchuyen = db.CongTy_VanChuyens.SingleOrDefault(n => n.MaCT.Trim() == id.Trim());
+                ViewBag.MaTH = vanchuyen.MaCT;
+                if (vanchuyen == null)
+                {
+                    Response.StatusCode = 404;
+                    return null;
+                }
+                return View(vanchuyen);
+            }
+        }
+        [HttpPost, ActionName("SuaVanchuyen")]
+        public ActionResult XacnhansuaVanchuyen(string id)
+        {
+            if (Session["TaikhoanAD"] == null)
+                return RedirectToAction("Login", "Admin");
+            else
+            {
+
+                CongTy_VanChuyen vanchuyen = db.CongTy_VanChuyens.SingleOrDefault(n => n.MaCT.Trim() == id.Trim());
+                UpdateModel(vanchuyen);
+                db.SubmitChanges();
+                return RedirectToAction("vanchuyen", "Admin");
+            }
+        }
+        [HttpGet]
+        public ActionResult DeleteVanchuyen(string id)
+        {
+            if (Session["TaikhoanAD"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            else
+            {
+                CongTy_VanChuyen vanchuyen = db.CongTy_VanChuyens.SingleOrDefault(n => n.MaCT.Trim() == id.Trim());
+                ViewBag.MaCT = vanchuyen.MaCT;
+                if (vanchuyen == null)
+                {
+                    Response.StatusCode = 404;
+                    return null;
+                }
+                return View(vanchuyen);
+            }
+
+        }
+        [HttpPost, ActionName("DeleteVanchuyen")]
+        public ActionResult xoaVanchuyen(string id)
+        {
+            CongTy_VanChuyen vanchuyen = db.CongTy_VanChuyens.SingleOrDefault(n => n.MaCT.Trim() == id.Trim());
+            ViewBag.MaCT = vanchuyen.MaCT;
+            if (vanchuyen == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            db.CongTy_VanChuyens.DeleteOnSubmit(vanchuyen);
+            db.SubmitChanges();
+            return RedirectToAction("vanchuyen", "Admin");
+        }
         //thuong hiệu
         public ActionResult thuonghieu(int? page)
         {

@@ -1,12 +1,12 @@
-﻿@model Web_Bán_Quần_Áo_SecondHand.Models.ThuongHieu
+﻿@model Web_Bán_Quần_Áo_SecondHand.Models.CongTy_VanChuyen
 
 @{
-    ViewBag.Title = "DeleteThuonghieu";
+    ViewBag.Title = "DeleteVanchuyen";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <p>
-    <h3 style="font-size:26pt;font-family:Tahoma">Thương hiệu</h3>
+    <h3 style="font-size:26pt;font-family:Tahoma">Xóa Vận Chuyển</h3>
 
 
 </p>
@@ -14,31 +14,21 @@
 
     <hr />
     <dl class="dl-horizontal">
-
         <div class="card">
-            <h5 class="card-header">Xóa thương hiệu</h5>
+            
             <div class="card-body">
-
         <dt>
-            Mã Thương Hiệu
+            Mã công ty
         </dt>
         <dt>
-            @Html.DisplayFor(model => model.MaTH)
+            @Html.DisplayFor(model => model.MaCT)
         </dt>
         <dt>
-            Tên Thương Hiệu
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TenTH)
-        </dd>
-
-        <dt>
-            Địa chỉ
+            Tên công ty
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DiaChi)
+            @Html.DisplayFor(model => model.TenCT)
         </dd>
 
         <dt>
@@ -47,6 +37,22 @@
 
         <dd>
             @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+        <dt>
+           Địa chỉ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+        <dt>
+            Cước phí
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CuocPhi)
         </dd>
 
     </dl>
@@ -58,7 +64,7 @@
         <div class="col-sm-6 pl-0">
             <p class="text-right">
                 <button type="submit" class="btn btn-space btn-primary">Xóa</button>
-                <a href="@Url.Action("thuonghieu", "Admin")" button class="btn btn-space btn-secondary">Cancel</a>
+                <a href="@Url.Action("vanchuyen", "Admin")" button class="btn btn-space btn-secondary">Cancel</a>
             </p>
         </div>
     }

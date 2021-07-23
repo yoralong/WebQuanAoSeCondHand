@@ -5023,8 +5023,8 @@ Vertical Timeline - by CodyHouse.co
 }
 
 #calendar {
-    float: right;
-    width:auto;
+    float: left;
+    width:70%;
 }
 
 

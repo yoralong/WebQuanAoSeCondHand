@@ -1,0 +1,90 @@
+﻿@model Web_Bán_Quần_Áo_SecondHand.Models.KhachHang
+
+@{
+    ViewBag.Title = "Quenmatkhau";
+
+}
+
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quên mật khẩu</title>
+    <title> Quên mật khẩu</title>
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="~/Content/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="~/Content/style.css">
+</head>
+<body1>
+
+    <div class="main">
+
+        <section class="signup">
+
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" id="signup-form" class="signup-form">
+                        <h2 class="form-title">Quên mật khẩu</h2>
+                        @Html.ValidationSummary(true)
+                        
+                        <span class="label">
+                            <span style="color:red; padding-left:10px">@ViewData["Loi2"] </span>
+                            <div class="form-group">
+                                <input type="text" class="form-input" name="TenDN" id="username" placeholder="Tên Đăng Nhập" required />
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-input" name="Matkhau" id="password" placeholder="Mật khẩu" required />
+                                <span toggle="#password"></span>
+                            </div>
+                            <span style="color:red; padding-left:10px">@ViewData["Loi4"] </span>
+                            <span style="color:red; padding-left:10px">@ViewData["Loi1"] </span>
+                            <div class="form-group">
+                                <input type="password" class="form-input" name="NhaplaiMatkhau" id="re_password" placeholder="Nhập lại mật khẩu" required />
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" class="form-input" name="email" placeholder="Email" required />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-input" name="Dienthoai" placeholder="Số điện thoại" required size="12" maxlength="12" />
+                            </div>
+                            
+                            
+                            <div class="form-group">
+                                <input type="submit" name="submit" id="submit" class="form-submit" value="Đồng ý" required />
+                            </div>
+                    </form>
+                   
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+
+</body1>
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+
+<script src="~/Scripts/jquery.min.js"></script>
+<script type="text/javascript">
+    (function ($) {
+
+        $(".toggle-password").click(function () {
+
+            $(this).toggleClass("zmdi-eye zmdi-eye-off");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+
+    })(jQuery);
+</script>

@@ -1,0 +1,71 @@
+﻿@model Web_Bán_Quần_Áo_SecondHand.Models.CongTy_VanChuyen
+
+@{
+    ViewBag.Title = "CreateVanchuyen";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<p>
+    <h3 style="font-size:26pt;font-family:Tahoma">Thêm Công ty vận chuyển</h3>
+
+
+</p>
+
+
+@using (Html.BeginForm("CreateVanchuyen", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <div class="control-label col-md-2">Mã Công Ty</div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MaCT, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MaCT, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="control-label col-md-2">Tên Công Ty</div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TenCT, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TenCT, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2">SĐT</div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2">Địa chỉ</div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DiaChi, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DiaChi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2">Cước phí</div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CuocPhi, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CuocPhi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="col-sm-6 pl-0">
+        <p class="text-right">
+            <button type="submit" class="btn btn-space btn-primary">Create</button>
+            <a href="@Url.Action("vanchuyen", "Admin")" button class="btn btn-space btn-secondary">Cancel</a>
+        </p>
+    </div>
+</div>
+}
+
+

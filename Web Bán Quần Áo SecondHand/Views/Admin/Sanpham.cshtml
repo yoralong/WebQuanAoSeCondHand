@@ -7,7 +7,8 @@
 @{
     ViewBag.Title = "Sanpham";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
-}
+    var keyword = TempData["kwd"];
+    }
 
 <p>
     <h3 style="font-size:26pt;font-family:Tahoma">Quản Lý Sản Phẩm</h3>
@@ -15,7 +16,19 @@
 
 </p>
 
-<table class="table" >
+<table class="table">
+
+    <div style="display:inline-block;width:100%">
+        <div style="float:right">
+            <form action="/Admin/TimKiem" method="post">
+                <form action="/Admin/TimKiem" method="post">
+                    <input type="text" name="keyword" />
+
+                    <button type="submit" style="color:inherit"><i class="fas fa-search"></i></button>
+                </form>
+            </form>
+        </div>
+
     <tr class="table-primary">
         <th style="border:double">
             Mã Loại
@@ -46,7 +59,7 @@
 
     @foreach (var item in Model)
     {
-        <tr >
+        <tr>
             <td style="border:double">
                 @Html.DisplayFor(modelItem => item.MaLoai)
             </td>
@@ -74,16 +87,16 @@
             <td style="border:double">
                 <button class="btn btn-sm btn-outline-light">
                     <i class="fas fa-edit"></i>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.MaSP }) 
+                    @Html.ActionLink("Edit", "Edit", new { id = item.MaSP })
                 </button>
                 <button class="btn btn-sm btn-outline-light">
                     <i class="fas fa-search-plus"></i>
-                    @Html.ActionLink("Details", "Details", new { id = item.MaSP }) 
+                    @Html.ActionLink("Details", "Details", new { id = item.MaSP })
                 </button>
-                    <button class="btn btn-sm btn-outline-light">
-                        <i class="far fa-trash-alt"></i>
-                        @Html.ActionLink("Delete", "Delete", new { id = item.MaSP })
-                    </button>
+                <button class="btn btn-sm btn-outline-light">
+                    <i class="far fa-trash-alt"></i>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.MaSP })
+                </button>
 
             </td>
         </tr>

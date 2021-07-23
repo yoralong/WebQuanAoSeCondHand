@@ -882,6 +882,10 @@
     <Content Include="Views\Admin\SuaAccount.cshtml" />
     <Content Include="Views\Admin\CreateAdmin.cshtml" />
     <Content Include="Views\Admin\DeleteAdmin.cshtml" />
+    <Content Include="Views\Admin\CreateVanchuyen.cshtml" />
+    <Content Include="Views\Admin\SuaVanchuyen.cshtml" />
+    <Content Include="Views\Admin\DeleteVanchuyen.cshtml" />
+    <Content Include="Views\Nguoidung\Quenmatkhau.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

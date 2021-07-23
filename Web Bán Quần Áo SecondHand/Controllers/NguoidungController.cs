@@ -105,5 +105,11 @@ namespace Web_Bán_Quần_Áo_SecondHand.Controllers
 
             return RedirectToAction("Index", "ShopSecondHand");
         }
+        public ActionResult Quenmatkhau()
+        {
+            
+            return View();
+        }
+        
     }
 }
